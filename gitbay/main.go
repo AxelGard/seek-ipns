@@ -21,7 +21,7 @@ func main() {
 		"/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt",
 		"/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
 		"/ip4/104.131.131.82/udp/4001/quic/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
-	} // found nodes used ipfs deamon cmd $ipfs bootstrap list
+	} // NOTE: found nodes used ipfs deamon cmd $ipfs bootstrap list
 
 	ctx := context.Background()
 
@@ -29,20 +29,20 @@ func main() {
 	host, err := libp2p.New()
 	if err != nil {
 		fmt.Println("Failed to create libp2p host:", err)
-		return
+		panic(err)
 	}
 
 	// Create a DHT instance
 	ipfs_DHT, err := dht.New(ctx, host)
 	if err != nil {
 		fmt.Println("Failed to create DHT:", err)
-		return
+		panic(err)
 	}
 
 	// Bootstrap the DHT to connect to the IPFS network
 	if err = ipfs_DHT.Bootstrap(ctx); err != nil {
 		fmt.Println("Failed to bootstrap DHT:", err)
-		return
+		panic(err)
 	}
 
 	for _, peerStr := range BootstrapNodes {
@@ -78,6 +78,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("Closest Peers:")
 	fmt.Println(peers)
 
 	const c_id = "QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o"
@@ -87,12 +88,7 @@ func main() {
 		panic(err)
 	}
 	fmt.Println("")
+	fmt.Println("Nodes that have the set CID:")
 	fmt.Println(prov_peers)
 
-	const local_node = "12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi"
-	pInfo, err := ipfs_DHT.FindPeer(ctx, peer.ID(local_node))
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(pInfo)
 }
