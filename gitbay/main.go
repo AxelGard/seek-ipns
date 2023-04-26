@@ -7,9 +7,18 @@ import (
 	"github.com/libp2p/go-libp2p"
 	dht "github.com/libp2p/go-libp2p-kad-dht"
 	crypto "github.com/libp2p/go-libp2p/core/crypto"
+	"github.com/libp2p/go-libp2p/core/peer"
+	"github.com/multiformats/go-multiaddr"
 )
 
 func main() {
+
+	BootstrapNodes := []string{
+		"/ip4/104.131.131.82/tcp/4001/ipfs/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
+		"/dnsaddr/bootstrap.libp2p.io/ipfs/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
+		"/dnsaddr/bootstrap.libp2p.io/ipfs/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa",
+	} // found nodes in a NPM pkg https://www.npmjs.com/package/libp2p-bootstrap
+
 	ctx := context.Background()
 
 	// Create a libp2p host
@@ -30,6 +39,26 @@ func main() {
 	if err = ipfs_DHT.Bootstrap(ctx); err != nil {
 		fmt.Println("Failed to bootstrap DHT:", err)
 		return
+	}
+
+	for _, peerStr := range BootstrapNodes {
+		p, err := multiaddr.NewMultiaddr(peerStr)
+		if err != nil {
+			panic(err)
+		}
+		pInfo, err := peer.AddrInfoFromP2pAddr(p)
+		if err != nil {
+			panic(err)
+		}
+		err = host.Connect(ctx, *pInfo)
+		if err != nil {
+			panic(err)
+		}
+		err = ipfs_DHT.Bootstrap(ctx)
+		if err != nil {
+			panic(err)
+		}
+
 	}
 
 	fmt.Println("DHT bootstrap successful")
