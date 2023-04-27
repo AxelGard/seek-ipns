@@ -3,10 +3,12 @@ package main
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/ipfs/go-cid"
 	"github.com/libp2p/go-libp2p"
 	dht "github.com/libp2p/go-libp2p-kad-dht"
+	dht_crawler "github.com/libp2p/go-libp2p-kad-dht/crawler"
 	crypto "github.com/libp2p/go-libp2p/core/crypto"
 	"github.com/libp2p/go-libp2p/core/peer"
 	"github.com/multiformats/go-multiaddr"
@@ -74,12 +76,32 @@ func main() {
 	raw_key, err := key.Raw()
 	str_key := crypto.ConfigEncodeKey(raw_key)
 
-	peers, err := ipfs_DHT.GetClosestPeers(ctx, str_key)
+	_peers, err := ipfs_DHT.GetClosestPeers(ctx, str_key)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println("Closest Peers:")
-	fmt.Println(peers)
+	fmt.Println(_peers)
+
+	fmt.Println("")
+
+	spider, err := dht_crawler.NewDefaultCrawler(host, dht_crawler.WithConnectTimeout(time.Second*10))
+	if err != nil {
+		fmt.Println("error init crawler ")
+		panic(err)
+	}
+	var peers_info []*peer.AddrInfo
+	for i, p := range _peers {
+		s, err := ipfs_DHT.FindPeer(ctx, p)
+		if err != nil {
+			fmt.Println("error formating peer adr, idx: ", i)
+		} else {
+
+			peers_info = append(peers_info, &s)
+		}
+	}
+
+	spider.Run(ctx, peers_info, dht_crawler.HandleQueryResult(func(p peer.ID, rtPeers []*peer.AddrInfo) { crawlQueryResult(p) }), dht_crawler.HandleQueryFail(func(p peer.ID, err error) {}))
 
 	const c_id = "QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o"
 	cid, err := cid.Decode(c_id)
@@ -90,5 +112,10 @@ func main() {
 	fmt.Println("")
 	fmt.Println("Nodes that have the set CID:")
 	fmt.Println(prov_peers)
+
+}
+
+func crawlQueryResult(p peer.ID) {
+	fmt.Println(p)
 
 }
