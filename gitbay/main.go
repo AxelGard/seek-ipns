@@ -6,6 +6,8 @@ import (
 	"time"
 
 	"github.com/ipfs/go-cid"
+	kuboCore "github.com/ipfs/kubo/core"
+	kuboBS "github.com/ipfs/kubo/core/bootstrap"
 	"github.com/libp2p/go-libp2p"
 	dht "github.com/libp2p/go-libp2p-kad-dht"
 	dht_crawler "github.com/libp2p/go-libp2p-kad-dht/crawler"
@@ -16,7 +18,7 @@ import (
 
 func main() {
 
-	BootstrapNodes := []string{
+	BootstrapNodes := [6]string{
 		"/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
 		"/dnsaddr/bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa",
 		"/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb",
@@ -113,6 +115,20 @@ func main() {
 	fmt.Println("Nodes that have the set CID:")
 	fmt.Println(prov_peers)
 
+}
+
+func makeKuboNode(ctx context.Context) *kuboCore.IpfsNode {
+	BCfg := kuboCore.BuildCfg{}
+	NewNode, err := kuboCore.NewNode(ctx, &BCfg)
+	if err != nil {
+		panic(err)
+	}
+	err = NewNode.Bootstrap(kuboBS.DefaultBootstrapConfig)
+	if err != nil {
+		panic(err)
+	}
+
+	return NewNode
 }
 
 func crawlQueryResult(p peer.ID) {
