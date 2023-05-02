@@ -19,6 +19,6 @@ def query():
 @app.get("/data/<file>")
 def serve_file(file):
     file_con = None 
-    with open(f"./data/{file}", "r") as f: 
+    with open(f"../data/{file}", "r") as f: 
         file_con = f.read()
     return file_con

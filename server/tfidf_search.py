@@ -2,8 +2,9 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from os import listdir
 from os.path import isfile, join
+from collections import defaultdict
 
-PATH = "data/"
+PATH = "../data/"
 contents = []
 files = [f"{PATH}{f}" for f in listdir(PATH) if isfile(join(PATH, f))]
 tf_idf_data = None 
@@ -39,7 +40,7 @@ def clean(content:list):
     numbers = "0123456789"
     non_acc_char =  "\n,.()[]`/:-_*=\\<>|&%@?!\"\'#" + numbers
     non_acc_tokens = ["https","www", "com", "org", "license"]
-    stop_words = load_stop_words("../playground/stopwords.txt")
+    stop_words = load_stop_words("../stopwords.txt")
     for i, _ in enumerate(content):
         for c in non_acc_char:
             content[i] = content[i].replace(c, " ")
@@ -70,21 +71,24 @@ def query_data(tf_idf_data:dict, query:str, result_size:int=2)->list:
     for word in query_words: 
         if word in tf_idf_data.keys():
             words_tf_idf[word] = tf_idf_data[word]
-    highest = 0
+
+    cum_tf_idf = defaultdict(int)
     for word, tf_idf in words_tf_idf.items():
         for idx, val in tf_idf.items(): 
-            if val > highest: 
-                result = idx
-    return [result]
+            cum_tf_idf[idx] += val
+
+    return list(dict(sorted(cum_tf_idf.items(), key=lambda item: item[1])).keys())[:result_size]
 
 
 def search_query(q:str)->list:
     result = []
     global data 
     global files
-    idxs = query_data(data, q)
+    idxs = query_data(data, q)[:2]
     if idxs == [[]]: 
         return []
     for idx in idxs: 
-        result.append(files[idx])
+        file = files[idx]
+        file = file[2:]
+        result.append(file)
     return result
