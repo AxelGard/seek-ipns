@@ -1,0 +1,30 @@
+{% extends "./base.html" %}
+{% block content %}
+
+<br>
+<form action="/query" method="get"> 
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" placeholder="Search" name="q"> 
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-6">
+                <button style="float: left; margin-top: 5px;" class="btn btn-primary" type="submit">Search 🔍</button>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+</form>
+{% block result %}
+{% endblock %}
+{% endblock %}
