@@ -9,7 +9,7 @@ files = [f"{PATH}{f}" for f in listdir(PATH) if isfile(join(PATH, f))]
 tf_idf_data = None 
 data = {}
 
-def init(): 
+def model_init(): 
     global contents 
     global files
     global tf_idf_data

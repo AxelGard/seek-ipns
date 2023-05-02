@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
-from .search import search_query, init
+from .tfidf_search import search_query, model_init
 
 app = Flask(__name__, static_url_path='/templates')
-init()
+model_init()
 
 @app.route("/")
 def landing():
