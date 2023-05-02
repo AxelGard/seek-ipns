@@ -84,9 +84,7 @@ def search_query(q:str)->list:
     result = []
     global data 
     global files
-    idxs = query_data(data, q)[:2]
-    if idxs == [[]]: 
-        return []
+    idxs = query_data(data, q, result_size=3)
     for idx in idxs: 
         file = files[idx]
         file = file[2:]
