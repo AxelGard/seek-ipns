@@ -13,7 +13,7 @@ def landing():
 def query():
     q = request.args.get("q")
     files = search_query(q)
-    return render_template("results.html", files=files)
+    return render_template("results.html", files=files, search_query=q)
 
 
 @app.get("/data/<file>")

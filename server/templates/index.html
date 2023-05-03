@@ -9,7 +9,11 @@
             <div class="col">
             </div>
             <div class="col-6">
+                {% if search_query %}
+                <input class="form-control" type="text" value="{{search_query}}" name="q"> 
+                {% else %}
                 <input class="form-control" type="text" placeholder="🔍" name="q"> 
+                {% endif %}
             </div>
             <div class="col">
             </div>
