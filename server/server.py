@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from .tfidf_search import search_query, model_init
+from .models.tfidf_search import search_query, model_init
 
 app = Flask(__name__, static_url_path='/templates')
 model_init()

@@ -27,7 +27,7 @@ def model_init():
     
 
 
-def load_stop_words(path:str="./stopwords.txt"):
+def load_stop_words(path:str="../stopwords.txt"):
     words = []
     with open(path, "r") as f: 
        words = f.read().split("\n")
@@ -38,9 +38,9 @@ def load_stop_words(path:str="./stopwords.txt"):
 def clean(content:list):
     ascii_char = [chr(i) for i in range(0,255)]
     numbers = "0123456789"
-    non_acc_char =  "\n,.()[]`/:-_*=\\<>|&%@?!\"\'#" + numbers
+    non_acc_char =  "\n,.()[]{}`/:-_*=\\<>|&%@?!\"\'#" + numbers
     non_acc_tokens = ["https","www", "com", "org", "license"]
-    stop_words = load_stop_words("../stopwords.txt")
+    stop_words = load_stop_words()
     for i, _ in enumerate(content):
         for c in non_acc_char:
             content[i] = content[i].replace(c, " ")
@@ -49,6 +49,9 @@ def clean(content:list):
         content[i] = [t for t in content[i] if not t in non_acc_tokens ] 
         content[i] = [s.lower() for s in content[i] if all(c in ascii_char for c in s)]
         content[i] = [t for t in content[i] if not t in stop_words] 
+        for j, word in enumerate(content[i]):
+            if word[-1] == "s": 
+                content[i][j] = word[:-1]
     return [" ".join(con) for con in content]
 
 
