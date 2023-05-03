@@ -61,30 +61,34 @@ def TfIdf(content:list):
     df = pd.DataFrame(dense_list, columns=feature_names)
     return df
 
-
-def query_data(tf_idf_data:dict, query:str, result_size:int=2)->list:
+def query_data(tf_idf_data:dict, query:str)->list:
     query = clean([query])[0]
-    result = []
     words_tf_idf = {}
-    query = query.lower()
     query_words = query.split(" ")
     for word in query_words: 
         if word in tf_idf_data.keys():
             words_tf_idf[word] = tf_idf_data[word]
 
-    cum_tf_idf = defaultdict(int)
+    result = []
+    highest = 0.0
     for word, tf_idf in words_tf_idf.items():
         for idx, val in tf_idf.items(): 
-            cum_tf_idf[idx] += val
+            if val > highest: 
+                highest = val 
+                result.append((val, idx))
+    result.sort()
+    result.reverse()
+    lookup = set()
+    result = [idx for _, idx in result if idx not in lookup and lookup.add(idx) is None]
+    return result
 
-    return list(dict(sorted(cum_tf_idf.items(), key=lambda item: item[1])).keys())[:result_size]
 
 
 def search_query(q:str)->list:
     result = []
     global data 
     global files
-    idxs = query_data(data, q, result_size=3)
+    idxs = query_data(data, q)
     for idx in idxs: 
         file = files[idx]
         file = file[2:]

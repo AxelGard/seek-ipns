@@ -10,13 +10,17 @@
             </div>
             <div class="col-6">
                 <hr>
+                {% if files %}
                 <ul class="list-group list-group-flush">
                     {% for file in files %}
                         <li class="list-group-item">
                             <a class="cidLink" href="{{file}}">{{file}}</a>
                         </li>
                     {% endfor %}
-                </ul>                
+                </ul> 
+                {% else %}  
+                  <p>No result was found 😭</p> 
+                {% endif %}
             </div>
             <div class="col">
             </div>
