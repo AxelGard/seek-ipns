@@ -28,7 +28,7 @@ class WordAppearance(SearchModel):
                 appearance[i] += w_c
         _filtered = {file_idx:cnt for file_idx, cnt in appearance.items() if cnt >= self.appearance_min}
         results = list(dict(sorted(_filtered.items(), key=lambda item: item[1], reverse=True)).keys())      
-        results = [self.files[idx] for idx in results]
+        results = [self.files[idx][2:] for idx in results]
         return results
 
 
