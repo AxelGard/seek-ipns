@@ -1,24 +1,25 @@
 from flask import Flask, render_template, request
-from .models.tfidf_search import search_query, model_init
+from .models.tfidf_search import TfIdf as Model
+import json
 
-app = Flask(__name__, static_url_path='/templates')
-model_init()
+app = Flask(__name__)
+model = Model()
+model.train()
 
 @app.route("/")
 def landing():
-    return render_template("index.html") 
+    return {"msg":"GitBay API"}
 
 
-@app.get("/query")
-def query():
-    q = request.args.get("q")
-    files = search_query(q)
-    return render_template("results.html", files=files, search_query=q)
-
-
-@app.get("/data/<file>")
-def serve_file(file):
-    file_con = None 
-    with open(f"../data/{file}", "r") as f: 
-        file_con = f.read()
-    return file_con
+@app.get("/api/query/<q>")
+def query(q):
+    files = model.query(q)
+    result = []
+    for f in files: 
+        result.append({
+            "file":f,
+            "CID": "",
+            "info": "",
+            "meta_data":{}
+            })
+    return json.dumps(result) 
