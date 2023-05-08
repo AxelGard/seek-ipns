@@ -38,3 +38,13 @@ def clean(contents:list):
             if word[-1] == "s": 
                 contents[i][j] = word[:-1]
     return [" ".join(con) for con in contents]
+
+
+def words_to_vec(words:str, labels:dict={}):
+    _words = words.split(" ")
+    vec = []
+    for word in _words:
+        if word not in labels:
+            labels[word]=len(labels)
+        vec.append(labels[word])
+    return vec, labels

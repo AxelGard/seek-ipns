@@ -4,7 +4,7 @@ class SearchModel:
         """ setup vectorizer and other needed classes and pre train functions """
         pass 
 
-    def train(self):
+    def train(self) -> None:
         """ fit and train model on data so that it is ready to run """
         raise NotImplementedError
 

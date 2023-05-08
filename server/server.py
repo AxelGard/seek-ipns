@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request
-from .models.tfidf_search import TfIdf as Model
+from flask import Flask
+from .models import WordAppearance as Model
 import json
 
 app = Flask(__name__)
@@ -15,11 +15,12 @@ def landing():
 def query(q):
     files = model.query(q)
     result = []
-    for f in files: 
+    for i,f in enumerate(files): 
         result.append({
             "file":f,
             "cid": "",
             "info": "",
-            "meta_data":{}
+            "meta_data":{},
+            "rank":i
             })
     return json.dumps(result) 

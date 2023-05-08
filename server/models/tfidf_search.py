@@ -12,7 +12,7 @@ class TfIdf(SearchModel):
         self.tf_idf = None
         self.tf_idf_limit = tf_idf_limit
 
-    def train(self):
+    def train(self)-> None:
         self.contents = util.clean(self.contents)
         self.features = self.vectorizer.fit_transform(self.contents)
         self.feature_names = self.vectorizer.get_feature_names_out()
