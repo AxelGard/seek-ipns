@@ -18,7 +18,7 @@ def query(q):
     for f in files: 
         result.append({
             "file":f,
-            "CID": "",
+            "cid": "",
             "info": "",
             "meta_data":{}
             })

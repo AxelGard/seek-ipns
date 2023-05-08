@@ -4,12 +4,13 @@ from .template import SearchModel
 from . import util
 
 class TfIdf(SearchModel):
-    def __init__(self) -> None:
+    def __init__(self, tf_idf_limit:float=0.01) -> None:
         super().__init__()
         self.vectorizer = TfidfVectorizer()
         self.features = None 
         self.files, self.contents = util.load_data()
         self.tf_idf = None
+        self.tf_idf_limit = tf_idf_limit
 
     def train(self):
         self.contents = util.clean(self.contents)
@@ -29,11 +30,9 @@ class TfIdf(SearchModel):
                 words_tf_idf[word] = self.tf_idf[word]
 
         result = []
-        highest = 0.0
         for word, tf_idf in words_tf_idf.items():
             for idx, val in tf_idf.items(): 
-                if val > highest: 
-                    highest = val 
+                if val >= self.tf_idf_limit: 
                     result.append((val, idx))
         result.sort()
         result.reverse()
