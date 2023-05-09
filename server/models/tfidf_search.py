@@ -48,4 +48,3 @@ class TfIdf(SearchModel):
             file = file[2:]
             result.append(file)
         return result
- 

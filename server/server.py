@@ -1,6 +1,7 @@
 from flask import Flask
-from .models import WordAppearance as Model
+from .models import SupportVectorMachine as Model
 import json
+from .models import score
 
 app = Flask(__name__)
 model = Model()
@@ -24,3 +25,8 @@ def query(q):
             "rank":i
             })
     return json.dumps(result) 
+
+@app.get("/api/model/score")
+def get_score():
+    scores = score.main()
+    return json.dumps(scores)
