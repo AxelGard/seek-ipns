@@ -26,7 +26,6 @@ class RandomForest(SearchModel):
         result = [(prob,self.files[idx]) for idx, prob in enumerate(prob_of_file) if  prob > self.prob_min]
         result.sort()
         result.reverse()
-        print(result)
         result = [f for _, f in result]
         return result
 
