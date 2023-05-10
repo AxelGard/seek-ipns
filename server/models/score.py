@@ -8,6 +8,7 @@ ALL = [TfIdf, SupportVectorMachine, CosineSimilarity, RandomForest]
 
 
 from sklearn.metrics import f1_score
+from sklearn.metrics import accuracy_score
 from . import util
 import numpy as np
 
@@ -46,16 +47,24 @@ query_results_answer = {
 
 FILES, _ = util.load_data()
 
-def get_scores(Model):
+def get_f1_scores(model):
     scores = {}
-    model = Model()
-    model.train()
     for query, expec_files in query_results_answer.items():
         results = model.query(query)
         results = files_to_vec(results)
         f1 = f1_score(expec_files, results)
         scores[query] = f1
     return scores
+
+def get_accuracy_scores(model):
+    scores = {}
+    for query, expec_files in query_results_answer.items():
+        results = model.query(query)
+        results = files_to_vec(results)
+        acc = accuracy_score(expec_files, results)
+        scores[query] = acc
+    return scores
+
 
 def files_to_vec(files):
     ans_q = [0]*len(FILES)
@@ -67,12 +76,17 @@ def files_to_vec(files):
 
 def run_score_test():
     scores = []
-    for model in ALL:
-        _scores = get_scores(model)
+    for Model in ALL:
+        model = Model()
+        model.train()
+        f1_scores = get_f1_scores(model)
+        acc_scores = get_accuracy_scores(model)
         scores.append({
             "model":str(model), 
-            "mean": np.array(list(_scores.values())).mean(),
-            #"f1_scores":_scores,
+            "f1_mean": np.array(list(f1_scores.values())).mean(),
+            #"f1_scores":f1_scores,
+            "acc_mean": np.array(list(acc_scores.values())).mean(),
+            #"acc_scores":acc_scores,
         })
 
     return scores
@@ -82,5 +96,5 @@ def main():
         ans_q = files_to_vec(expec_files)
         query_results_answer[query] = ans_q
     scores = run_score_test()
-    scores = sorted(scores, key=lambda x: x["mean"], reverse=True)
+    scores = sorted(scores, key=lambda x: x["f1_mean"], reverse=True)
     return scores

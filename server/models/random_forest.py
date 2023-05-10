@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 
 class RandomForest(SearchModel):
-    def __init__(self, clean:bool=True, n_estimators:int=1000, prob_min:float=0.05) -> None:
+    def __init__(self, clean:bool=False, n_estimators:int=1000, prob_min:float=0.05) -> None:
         self.clean = clean
         self.prob_min = prob_min
         self.vectorizer = TfidfVectorizer()
