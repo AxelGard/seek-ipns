@@ -1,14 +1,15 @@
 
 from .tfidf_search import TfIdf
-from .word_appearance_search import WordAppearance
 from .cosine import CosineSimilarity
 from .svm import SupportVectorMachine
+from .random_forest import RandomForest
 
-ALL = [TfIdf, SupportVectorMachine]
+ALL = [TfIdf, SupportVectorMachine, CosineSimilarity, RandomForest]
 
 
 from sklearn.metrics import f1_score
 from . import util
+import numpy as np
 
 
 
@@ -21,6 +22,26 @@ query_results_answer = {
         "../data/react_README.md",
         "../data/vuejs_README.md",
     ],
+    "A memory safe programming language": [ 
+        "../data/rust_README.md",
+    ],
+    "A compiler for my C":[
+        "../data/gcc_README.txt",
+    ], 
+    "framework or library for ML and AI": [
+        "../data/pytorch_README.md", 
+        "../data/tensorflow_README.md",
+    ],
+    "framework or library for Machine learning and artificial intelligence": [
+        "../data/pytorch_README.md", 
+        "../data/tensorflow_README.md",
+    ],
+    "a simple programming language":[
+        "../data/cpython_README.rst", 
+        "../data/rust_README.md",
+    ],
+    "":[],
+
 }
 
 FILES, _ = util.load_data()
@@ -47,9 +68,13 @@ def files_to_vec(files):
 def run_score_test():
     scores = []
     for model in ALL:
+        _scores = get_scores(model)
         scores.append({
             "model":str(model), 
-            "scores": get_scores(model)})
+            "mean": np.array(list(_scores.values())).mean(),
+            #"f1_scores":_scores,
+        })
+
     return scores
 
 def main():
@@ -57,4 +82,5 @@ def main():
         ans_q = files_to_vec(expec_files)
         query_results_answer[query] = ans_q
     scores = run_score_test()
+    scores = sorted(scores, key=lambda x: x["mean"], reverse=True)
     return scores
