@@ -4,25 +4,26 @@ import (
 	"context"
 	"fmt"
 
-	kubo "github.com/ipfs/kubo"
 	"github.com/ipfs/kubo/config"
 	"github.com/ipfs/kubo/core"
 	"github.com/ipfs/kubo/core/bootstrap"
 )
 
 func main() {
-	fmt.Println(kubo.GetUserAgentVersion())
-	fmt.Println(config.DefaultConnMgrHighWater)
-
 	ctx := context.Background()
 	conf := core.BuildCfg{}
 	node, err := core.NewNode(ctx, &conf)
 	if err != nil {
 		panic(err)
 	}
-	err = node.Bootstrap(bootstrap.DefaultBootstrapConfig)
+	peers, err := config.DefaultBootstrapPeers()
 	if err != nil {
 		panic(err)
 	}
-
+	bs_conf := bootstrap.BootstrapConfigWithPeers(peers)
+	err = node.Bootstrap(bs_conf) // this gets nil pointer dereference
+	fmt.Println("THIS LINE WILL NOT PRINT")
+	if err != nil {
+		panic(err)
+	}
 }
