@@ -1,5 +1,5 @@
 from flask import Flask
-from .models import SupportVectorMachine as Model
+from .models import RandomForest as Model
 import json
 from .models import score
 
