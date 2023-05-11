@@ -21,6 +21,7 @@ func main() {
 		panic(err)
 	}
 	bs_conf := bootstrap.BootstrapConfigWithPeers(peers)
+	fmt.Println(bs_conf)
 	err = node.Bootstrap(bs_conf) // this gets nil pointer dereference
 	fmt.Println("THIS LINE WILL NOT PRINT")
 	if err != nil {
