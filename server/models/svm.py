@@ -20,13 +20,17 @@ class SupportVectorMachine(SearchModel):
         self.model = SVC(probability=True, kernel=self.kernel, C=self.C)
         self.model.fit(features, self.files)
 
-    def query(self, q: str) -> list:
+    def query_proba(self, q: str) -> list:
         assert self.model != None, "train needs to have run before query"
-        result = []
         if self.clean:
             q = util.clean([q])[0]
         q_vec = self.vectorizer.transform([q])
         prob_of_file = self.model.predict_proba(q_vec)[0]
+        return prob_of_file
+
+    def query(self, q: str) -> list:
+        prob_of_file = self.query_proba(q)
+        result = []
         result = [(prob, self.files[idx]) for idx, prob in enumerate(prob_of_file) if prob > self.prob_min]
         result.sort()
         result.reverse()

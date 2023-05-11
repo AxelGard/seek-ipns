@@ -13,3 +13,7 @@ class SearchModel:
         where the first file in the list is the most correlated
         result to the given query """
         raise NotImplementedError
+
+    def query_proba(self, q:str)->list:
+        """ returns the probability of files for a query """
+        raise NotImplementedError

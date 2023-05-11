@@ -18,11 +18,15 @@ class RandomForest(SearchModel):
         self.features  = self.vectorizer.fit_transform(contents)
         self.model.fit(self.features, self.files_idxs)
     
-    def query(self, q: str) -> list:
+    def query_proba(self, q: str) -> list:
         if self.clean:
             q = util.clean([q])[0]
         q_vec = self.vectorizer.transform([q])
         prob_of_file = self.model.predict_proba(q_vec)[0]
+        return prob_of_file
+
+    def query(self, q: str) -> list:
+        prob_of_file = self.query_proba(q)
         result = [(prob,self.files[idx]) for idx, prob in enumerate(prob_of_file) if  prob > self.prob_min]
         result.sort()
         result.reverse()
