@@ -50,3 +50,6 @@ class TfIdf(SearchModel):
             if p_result[i] > self.prob_cut_of:
                 result.append(self.files[i])
         return result
+
+    def __str__(self) -> str:
+        return "TfIdf" 

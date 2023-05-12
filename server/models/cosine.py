@@ -36,6 +36,8 @@ class CosineSimilarity(SearchModel):
         result = [s / _sum for s in result]  
         return result 
 
+    def __str__(self) -> str:
+        return "CosineSimilarity"
 
     def query(self, q: str) -> list: 
         result = []

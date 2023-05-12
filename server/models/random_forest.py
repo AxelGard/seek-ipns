@@ -33,4 +33,6 @@ class RandomForest(SearchModel):
         result = [f for _, f in result]
         return result
 
+    def __str__(self) -> str:
+        return "RandomForest"
 

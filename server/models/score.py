@@ -56,22 +56,21 @@ def files_to_vec(files):
     return ans_q
 
 def run_score_test():
-    scores = []
+    scores = {}
     for Model in ALL:
         model = Model()
         model.train()
         f1_scores = get_f1_scores(model)
         acc_scores = get_accuracy_scores(model)
         prec_scores = get_average_precision_scores(model)
-        scores.append({
-            "model":str(model), 
+        scores[str(model)] = {
             "prec_mean": np.array(list(prec_scores.values())).mean(),
             #"prec_scores":prec_scores,
             "f1_mean": np.array(list(f1_scores.values())).mean(),
             #"f1_scores":f1_scores,
             "acc_mean": np.array(list(acc_scores.values())).mean(),
             #"acc_scores":acc_scores,
-        })
+        }
 
     return scores
 
@@ -120,5 +119,5 @@ def main():
         ans_q = files_to_vec(expec_files)
         query_results_answer[query] = ans_q
     scores = run_score_test()
-    scores = sorted(scores, key=lambda x: x["prec_mean"], reverse=True)
+    #scores = sorted(scores, key=lambda x: x["prec_mean"], reverse=True)
     return scores
