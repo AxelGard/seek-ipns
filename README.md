@@ -1,4 +1,4 @@
-# GitBay
+# GitBay - IPFS 
 A search engine for git repositories on IPFS. 
 
 
