@@ -3,15 +3,22 @@ from . import util
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import SVC
 
+
 class SupportVectorMachine(SearchModel):
-    def __init__(self, kernel:str="linear", C:float=1.0, prob_min:float=0.1005 ,clean:bool=True) -> None:
+    def __init__(
+        self,
+        kernel: str = "linear",
+        C: float = 1.0,
+        prob_min: float = 0.1005,
+        clean: bool = True,
+    ) -> None:
         self.vectorizer = TfidfVectorizer()
-        self.clean=clean
+        self.clean = clean
         self.model = None
-        self.kernel=kernel
+        self.kernel = kernel
         self.C = C
         self.prob_min = prob_min
-        
+
     def train(self) -> None:
         self.files, contents = util.load_data()
         if self.clean:
@@ -31,11 +38,15 @@ class SupportVectorMachine(SearchModel):
     def query(self, q: str) -> list:
         prob_of_file = self.query_proba(q)
         result = []
-        result = [(prob, self.files[idx]) for idx, prob in enumerate(prob_of_file) if prob > self.prob_min]
+        result = [
+            (prob, self.files[idx])
+            for idx, prob in enumerate(prob_of_file)
+            if prob > self.prob_min
+        ]
         result.sort()
         result.reverse()
-        result = [f for _, f in result ]
+        result = [f for _, f in result]
         return result
-    
+
     def __str__(self) -> str:
         return "SupportVectorMachine"

@@ -3,8 +3,11 @@ from . import util
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 
+
 class RandomForest(SearchModel):
-    def __init__(self, clean:bool=False, n_estimators:int=1000, prob_min:float=0.05) -> None:
+    def __init__(
+        self, clean: bool = False, n_estimators: int = 1000, prob_min: float = 0.05
+    ) -> None:
         self.clean = clean
         self.prob_min = prob_min
         self.vectorizer = TfidfVectorizer()
@@ -15,9 +18,9 @@ class RandomForest(SearchModel):
         if self.clean:
             contents = util.clean(contents)
         self.files_idxs = [i for _, i in enumerate(self.files)]
-        self.features  = self.vectorizer.fit_transform(contents)
+        self.features = self.vectorizer.fit_transform(contents)
         self.model.fit(self.features, self.files_idxs)
-    
+
     def query_proba(self, q: str) -> list:
         if self.clean:
             q = util.clean([q])[0]
@@ -27,7 +30,11 @@ class RandomForest(SearchModel):
 
     def query(self, q: str) -> list:
         prob_of_file = self.query_proba(q)
-        result = [(prob,self.files[idx]) for idx, prob in enumerate(prob_of_file) if  prob > self.prob_min]
+        result = [
+            (prob, self.files[idx])
+            for idx, prob in enumerate(prob_of_file)
+            if prob > self.prob_min
+        ]
         result.sort()
         result.reverse()
         result = [f for _, f in result]
@@ -35,4 +42,3 @@ class RandomForest(SearchModel):
 
     def __str__(self) -> str:
         return "RandomForest"
-

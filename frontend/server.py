@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request
 import requests
 
-app = Flask(__name__, static_url_path='/templates')
+app = Flask(__name__, static_url_path="/templates")
+
 
 @app.route("/")
 def landing():
-    return render_template("index.html") 
+    return render_template("index.html")
 
 
 @app.get("/query")
@@ -22,11 +23,11 @@ def query():
 
 @app.get("/data/<file>")
 def serve_file(file):
-    file_con = None 
-    with open(f"../data/{file}", "r") as f: 
+    file_con = None
+    with open(f"../data/{file}", "r") as f:
         file_con = f.read()
     return file_con
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(host="localhost", port=8000, debug=True)
