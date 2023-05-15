@@ -3,18 +3,15 @@ package main
 import (
 	"context"
 	"fmt"
-	"time"
 
-	"github.com/ipfs/go-cid"
 	"github.com/libp2p/go-libp2p"
 	dht "github.com/libp2p/go-libp2p-kad-dht"
-	dht_crawler "github.com/libp2p/go-libp2p-kad-dht/crawler"
 	crypto "github.com/libp2p/go-libp2p/core/crypto"
 	"github.com/libp2p/go-libp2p/core/peer"
 	"github.com/multiformats/go-multiaddr"
 )
 
-func Start_crawling() {
+func Start_crawling() ([]*peer.AddrInfo, error) {
 
 	BootstrapNodes := [6]string{
 		"/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
@@ -31,38 +28,38 @@ func Start_crawling() {
 	host, err := libp2p.New()
 	if err != nil {
 		fmt.Println("Failed to create libp2p host:", err)
-		panic(err)
+		return nil, err
 	}
 
 	// Create a DHT instance
 	ipfs_DHT, err := dht.New(ctx, host)
 	if err != nil {
 		fmt.Println("Failed to create DHT:", err)
-		panic(err)
+		return nil, err
 	}
 
 	// Bootstrap the DHT to connect to the IPFS network
 	if err = ipfs_DHT.Bootstrap(ctx); err != nil {
 		fmt.Println("Failed to bootstrap DHT:", err)
-		panic(err)
+		return nil, err
 	}
 
 	for _, peerStr := range BootstrapNodes {
 		p, err := multiaddr.NewMultiaddr(peerStr)
 		if err != nil {
-			panic(err)
+			return nil, err
 		}
 		pInfo, err := peer.AddrInfoFromP2pAddr(p)
 		if err != nil {
-			panic(err)
+			return nil, err
 		}
 		err = host.Connect(ctx, *pInfo)
 		if err != nil {
-			panic(err)
+			return nil, err
 		}
 		err = ipfs_DHT.Bootstrap(ctx)
 		if err != nil {
-			panic(err)
+			return nil, err
 		}
 
 	}
@@ -71,24 +68,24 @@ func Start_crawling() {
 
 	key, err := ipfs_DHT.GetPublicKey(ctx, host.ID())
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	raw_key, err := key.Raw()
 	str_key := crypto.ConfigEncodeKey(raw_key)
 
 	_peers, err := ipfs_DHT.GetClosestPeers(ctx, str_key)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	fmt.Println("Closest Peers:")
 	fmt.Println(_peers)
 
 	fmt.Println("")
 
-	spider, err := dht_crawler.NewDefaultCrawler(host, dht_crawler.WithConnectTimeout(time.Second*10))
+	//spider, err := dht_crawler.NewDefaultCrawler(host, dht_crawler.WithConnectTimeout(time.Second*10))
 	if err != nil {
 		fmt.Println("error init crawler ")
-		panic(err)
+		return nil, err
 	}
 	var peers_info []*peer.AddrInfo
 	for i, p := range _peers {
@@ -100,18 +97,18 @@ func Start_crawling() {
 			peers_info = append(peers_info, &s)
 		}
 	}
+	return peers_info, nil
+	//spider.Run(ctx, peers_info, dht_crawler.HandleQueryResult(func(p peer.ID, rtPeers []*peer.AddrInfo) { crawlQueryResult(p) }), dht_crawler.HandleQueryFail(func(p peer.ID, err error) {}))
 
-	spider.Run(ctx, peers_info, dht_crawler.HandleQueryResult(func(p peer.ID, rtPeers []*peer.AddrInfo) { crawlQueryResult(p) }), dht_crawler.HandleQueryFail(func(p peer.ID, err error) {}))
-
-	const c_id = "QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o"
-	cid, err := cid.Decode(c_id)
-	prov_peers, err := ipfs_DHT.FindProviders(ctx, cid)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("")
-	fmt.Println("Nodes that have the set CID:")
-	fmt.Println(prov_peers)
+	//const c_id = "QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o"
+	//cid, err := cid.Decode(c_id)
+	//prov_peers, err := ipfs_DHT.FindProviders(ctx, cid)
+	//if err != nil {
+	//	return nil, err
+	//}
+	//fmt.Println("")
+	//fmt.Println("Nodes that have the set CID:")
+	//fmt.Println(prov_peers)
 
 }
 
