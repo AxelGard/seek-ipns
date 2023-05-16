@@ -1,20 +1,12 @@
 import { create } from 'ipfs';
+import all from 'it-all'
 
 async function main() {
-  try {
     const ipfs = await create();
-    const peers = await ipfs.pubsub.peers();
-    const targetPeerId = 'QmcMdoQ3vDUpd1uXc3XUyzDcF6e214pUii5wXQBL5nV2xq';
-    const targetPeers = peers.filter(peer => peer.includes(targetPeerId));
-
-    for (const peer of targetPeers) {
-      const cidList = await ipfs.ls(peer);
-      console.log(`CIDs for peer ${peer}:`, cidList);
+    const cid = "bafybeiarvsvlo6hmb6v5uiz6zm2c7hssv6smctoiddya6bemixagmsbcdu"
+    for await (const file of ipfs.ls(cid)) {
+      console.log(file)
     }
-  } catch (error) {
-    console.error('An error occurred:', error);
-  }
-  console.log("DONE")
 }
 
 main();
