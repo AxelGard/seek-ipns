@@ -99,7 +99,7 @@ func Start_crawling() ([]*peer.AddrInfo, error) {
 			peers_info = append(peers_info, &s)
 		}
 	}
-	spider.Run(ctx, peers_info, dht_crawler.HandleQueryResult(func(p peer.ID, rtPeers []*peer.AddrInfo) { crawlQueryResult(p) }), dht_crawler.HandleQueryFail(func(p peer.ID, err error) {}))
+	spider.Run(ctx, peers_info, dht_crawler.HandleQueryResult(func(p peer.ID, rtPeers []*peer.AddrInfo) { crawlQueryResult(rtPeers) }), dht_crawler.HandleQueryFail(func(p peer.ID, err error) {}))
 
 	//const c_id = "QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o"
 	//cid, err := cid.Decode(c_id)
@@ -114,7 +114,8 @@ func Start_crawling() ([]*peer.AddrInfo, error) {
 
 }
 
-func crawlQueryResult(p peer.ID) {
-	cid := peer.ToCid(p)
-	fmt.Println(cid)
+func crawlQueryResult(peers []*peer.AddrInfo) {
+	for _, p := range peers {
+		fmt.Println(p.ID)
+	}
 }

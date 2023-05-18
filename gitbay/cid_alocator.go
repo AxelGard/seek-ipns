@@ -4,7 +4,6 @@ import (
 	"crypto/rand"
 	"fmt"
 	"io/ioutil"
-	"log"
 
 	cid "github.com/ipfs/go-cid"
 	shell "github.com/ipfs/go-ipfs-api"
@@ -14,12 +13,12 @@ func GetDataFromCID(cid string) string {
 	sh := shell.NewShell("localhost:5001")
 	reader, err := sh.Cat(cid)
 	if err != nil {
-		log.Fatal(err)
+		return ""
 	}
 
 	data, err := ioutil.ReadAll(reader)
 	if err != nil {
-		log.Fatal(err)
+		return ""
 	}
 
 	return string(data)
