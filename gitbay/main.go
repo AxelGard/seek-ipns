@@ -2,23 +2,35 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
-	cid "github.com/ipfs/go-cid"
+	"github.com/AxelGard/gitbay/ipfs"
+	"github.com/ipfs/boxo/ipns"
+	shell "github.com/ipfs/go-ipfs-api"
 	"github.com/libp2p/go-libp2p/core/peer"
 )
 
 func main() {
-	peerId := "12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi"
-	c := peer.ToCid(peer.ID(peerId)).String()
-	fmt.Println(cid.Decode(c))
-	files, err := GetFileNamesFromCID(c)
+
+	pID := "12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi"
+	RecordKey := ipns.RecordKey(peer.ID(pID))
+	sh := ipfs.GetIpfsShell()
+	resolved, err := sh.Resolve(RecordKey)
 	if err != nil {
 		panic(err)
 	}
-	if len(files) != 0 {
-		fmt.Println(c)
-		fmt.Println(files)
-		fmt.Println(GetDataFromCID(c + "/" + files[0]))
-		fmt.Println("----")
+	cid := strings.TrimPrefix(resolved, "/ipfs/")
+	data := GetDataFromCID(cid)
+	fmt.Println(data)
+
+}
+
+func GetDataFromIpnsUsingPeerID(peerID string, sh shell.Shell) string {
+	RecordKey := ipns.RecordKey(peer.ID(peerID))
+	resolved, err := sh.Resolve(RecordKey)
+	if err != nil {
+		panic(err)
 	}
+	cid := strings.TrimPrefix(resolved, "/ipfs/")
+	return GetDataFromCID(cid)
 }

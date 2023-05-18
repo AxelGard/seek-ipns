@@ -1,19 +1,17 @@
 import { create } from 'ipfs';
-import all from 'it-all'
-
-async function getLsCid() {
-    const ipfs = await create();
-    const cid = "bafybeiarvsvlo6hmb6v5uiz6zm2c7hssv6smctoiddya6bemixagmsbcdu"
-    for await (const file of ipfs.ls(cid)) {
-      console.log(file)
-    }
-}
+import * as ipns from 'ipns'
 
 async function main() {
+
     const ipfs = await create();
-    const peerId = "12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi"
-    const list = await ipfs.bitswap.wantlistForPeer(peerId)
-    console.log(list)
-}
+    const publicKey = "k51qzi5uqu5diel2vj3pzz1g5wbat1qmilgj0z8qb98vwsybplo5ulwwmrtnji"
+    const ipnsEntry ="QmcaiYMh28qQCCSesrZ28mkuR2DhVjsYfopJG3jfnUMrRG"
+
+    const topic = 'ipns'
+    const receiveMsg = (msg) => console.log(new TextDecoder().decode(msg.data))
+
+    await ipfs.pubsub.subscribe(topic, receiveMsg)
+    console.log(`subscribed to ${topic}`)
+    }
 
 main();

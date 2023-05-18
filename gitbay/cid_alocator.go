@@ -1,10 +1,12 @@
 package main
 
 import (
+	"crypto/rand"
 	"fmt"
 	"io/ioutil"
 	"log"
 
+	cid "github.com/ipfs/go-cid"
 	shell "github.com/ipfs/go-ipfs-api"
 )
 
@@ -55,4 +57,15 @@ func TestCidCollection() {
 			fmt.Println("----")
 		}
 	}
+}
+
+func generateRandomCid() (cid.Cid, error) {
+	length := 30
+	bytes := make([]byte, length)
+	_, err := rand.Read(bytes)
+	if err != nil {
+		return cid.Cid{}, err
+	}
+	_cid, err := cid.Builder.Sum(cid.V0Builder{}, bytes)
+	return _cid, nil
 }
