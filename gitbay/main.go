@@ -62,6 +62,9 @@ func test_run() {
 		if err != nil {
 			panic(err)
 		}
+		if len(files) == 0 {
+			continue
+		}
 		if isGitRepo(files) {
 			err = cc.ToStorage(c)
 			if err != nil {
