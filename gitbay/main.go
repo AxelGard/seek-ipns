@@ -3,13 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 )
 
 func main() {
-	test_run()
-}
-
-func test_run() {
 
 	bootstrapNodes := []string{
 		"/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
@@ -20,57 +17,55 @@ func test_run() {
 		"/ip4/104.131.131.82/udp/4001/quic/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
 	} // NOTE: found nodes used ipfs deamon cmd $ipfs bootstrap list
 	ctx := context.Background()
+
+	peerChan := make(chan string)
+
 	crawler := Crawler{}
-	err := crawler.Init(bootstrapNodes, ctx)
+	err := crawler.Init(bootstrapNodes, ctx, peerChan)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println("DHT bootstrap successful")
 
-	peers, err := crawler.GetClosestPeers()
-	if err != nil {
-		panic(err)
-	}
-	var peersIds []string
-	for _, p := range peers {
-		peersIds = append(peersIds, string(p.ID))
-	}
-
-	mypeer := "12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi"
-	peersIds = append(peersIds, mypeer)
-
 	ic := IpnsCollector{}
 	ic.Init()
-	var cids []string
-	for _, p := range peersIds {
-		c, err := ic.GetIpnsCid(p)
-		if err != nil {
-			panic(err)
-		}
-		if c != "" {
-			cids = append(cids, c)
-		}
-	}
-	fmt.Println(cids)
+
 	cc := CidCollector{}
 	cc.Init()
-	for _, c := range cids {
-		if c == "" {
-			continue
-		}
-		files, err := cc.GetFileNamesFromCid(c)
+
+	go crawler.Run()
+
+	for peer := range peerChan {
+		fmt.Println(peer)
+		err := Collecting(peer, ic, cc)
+		log.Println(err, peer)
+	}
+
+}
+
+func Collecting(peer string, ic IpnsCollector, cc CidCollector) error {
+	cid, err := ic.GetIpnsCid(peer)
+	if err != nil {
+		return err
+	}
+	if cid != "" {
+		return nil
+	}
+	files, err := cc.GetFileNamesFromCid(cid)
+	if err != nil {
+		return err
+	}
+	if len(files) == 0 {
+		return nil
+	}
+	fmt.Println(cid, " : ", files)
+	if isGitRepo(files) {
+		err = cc.ToStorage(cid)
 		if err != nil {
-			panic(err)
-		}
-		if len(files) == 0 {
-			continue
-		}
-		if isGitRepo(files) {
-			err = cc.ToStorage(c)
-			if err != nil {
-				panic(err)
-			}
+			return err
 		}
 	}
+
+	return nil
 
 }

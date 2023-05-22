@@ -19,11 +19,13 @@ type Crawler struct {
 	bootstrappedNodes []string
 	discoverdPeers    []peer.AddrInfo
 	ctx               context.Context
+	peerChan          chan string
 }
 
-func (c *Crawler) Init(bootstrapNodes []string, ctx context.Context) error {
+func (c *Crawler) Init(bootstrapNodes []string, ctx context.Context, peerChan chan string) error {
 	var err error
 	c.ctx = ctx
+	c.peerChan = peerChan
 	c.bootstrappedNodes = bootstrapNodes
 	c.host, err = libp2p.New()
 	if err != nil {
@@ -97,6 +99,6 @@ func (c *Crawler) Run() error {
 
 func (c *Crawler) CrawlingResult(peers []*peer.AddrInfo) {
 	for _, p := range peers {
-		c.discoverdPeers = append(c.discoverdPeers, *p)
+		c.peerChan <- p.ID.String()
 	}
 }
