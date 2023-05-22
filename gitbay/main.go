@@ -1,38 +1,73 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"strings"
-
-	"github.com/AxelGard/gitbay/ipfs"
-	"github.com/ipfs/boxo/ipns"
-	shell "github.com/ipfs/go-ipfs-api"
-	"github.com/libp2p/go-libp2p/core/peer"
 )
 
 func main() {
-
-	//Start_crawling()
-
-	var _peers = [1]string{
-		"12D3KooWMikyELrvaczTNDkWMGT2G3qrwagfLRfURADV6gAGWraQ",
-	}
-
-	sh := ipfs.GetIpfsShell()
-	for i, p := range _peers {
-		_cid := GetDataFromIpnsUsingPeerID(p, *sh)
-		fmt.Println(GetDataFromCID(_cid))
-		fmt.Println(i, "------------")
-	}
+	test_run()
 }
 
-func GetDataFromIpnsUsingPeerID(peerID string, sh shell.Shell) string {
-	RecordKey := ipns.RecordKey(peer.ID(peerID))
-	resolved, err := sh.Resolve(RecordKey)
+func test_run() {
+
+	bootstrapNodes := []string{
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa",
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb",
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt",
+		"/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
+		"/ip4/104.131.131.82/udp/4001/quic/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
+	} // NOTE: found nodes used ipfs deamon cmd $ipfs bootstrap list
+	ctx := context.Background()
+	crawler := Crawler{}
+	err := crawler.Init(bootstrapNodes, ctx)
 	if err != nil {
-		fmt.Println("could not be resolved:", peerID)
 		panic(err)
 	}
-	cid := strings.TrimPrefix(resolved, "/ipfs/")
-	return cid
+	fmt.Println("DHT bootstrap successful")
+
+	peers, err := crawler.GetClosestPeers()
+	if err != nil {
+		panic(err)
+	}
+	var peersIds []string
+	for _, p := range peers {
+		peersIds = append(peersIds, string(p.ID))
+	}
+
+	mypeer := "12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi"
+	peersIds = append(peersIds, mypeer)
+
+	ic := IpnsCollector{}
+	ic.Init()
+	var cids []string
+	for _, p := range peersIds {
+		c, err := ic.GetIpnsCid(p)
+		if err != nil {
+			panic(err)
+		}
+		if c != "" {
+			cids = append(cids, c)
+		}
+	}
+	fmt.Println(cids)
+	cc := CidCollector{}
+	cc.Init()
+	for _, c := range cids {
+		if c == "" {
+			continue
+		}
+		files, err := cc.GetFileNamesFromCid(c)
+		if err != nil {
+			panic(err)
+		}
+		if isGitRepo(files) {
+			err = cc.ToStorage(c)
+			if err != nil {
+				panic(err)
+			}
+		}
+	}
+
 }
