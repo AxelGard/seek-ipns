@@ -33,12 +33,15 @@ func main() {
 	cc := CidCollector{}
 	cc.Init()
 
+	fmt.Println(Collecting("12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi", ic, cc))
+
 	go crawler.Run()
 
+	count := 0
 	for peer := range peerChan {
-		fmt.Println(peer)
-		err := Collecting(peer, ic, cc)
-		log.Println(err, peer)
+		count++
+		Collecting(peer, ic, cc)
+		log.Println(count)
 	}
 
 }
@@ -48,7 +51,7 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector) error {
 	if err != nil {
 		return err
 	}
-	if cid != "" {
+	if cid == "" {
 		return nil
 	}
 	files, err := cc.GetFileNamesFromCid(cid)
@@ -56,9 +59,13 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector) error {
 		return err
 	}
 	if len(files) == 0 {
-		return nil
+		cid_data, err := cc.GetDataFromCid(cid)
+		if err != nil {
+			return nil
+		}
+		fmt.Println(cid, " ==> ", string(cid_data))
 	}
-	fmt.Println(cid, " : ", files)
+	fmt.Println(cid, " --> ", files)
 	if isGitRepo(files) {
 		err = cc.ToStorage(cid)
 		if err != nil {
