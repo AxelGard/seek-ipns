@@ -6,6 +6,7 @@ import (
 	"log"
 	"time"
 
+	shell "github.com/ipfs/go-ipfs-api"
 	"github.com/libp2p/go-libp2p"
 	dht "github.com/libp2p/go-libp2p-kad-dht"
 	dht_crawler "github.com/libp2p/go-libp2p-kad-dht/crawler"
@@ -42,15 +43,29 @@ func CrawlingEachNode() {
 	cc := CidCollector{}
 	cc.Init()
 
+	var peerCache []string
+
 	fmt.Println(Collecting("12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi", ic, cc))
 
 	go crawler.Run()
 
+	sh := shell.NewShell("localhost:5001")
+
 	count := 0
+	foundPeers := 0
 	for peer := range peerChan {
+		if Contains(peerCache, peer) {
+			continue
+		}
 		count++
+		_, err := sh.FindPeer(peer)
+		time.Sleep(time.Second * 1) // sleep so that we don't spam the network with requests
+		if err != nil {
+			continue
+		}
+		foundPeers++
+		log.Println("found peers", foundPeers, "/", count)
 		Collecting(peer, ic, cc)
-		log.Println(count)
 	}
 
 }
@@ -72,9 +87,12 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector) error {
 		if err != nil {
 			return nil
 		}
-		fmt.Println(cid, " ==> ", string(cid_data))
+		fmt.Println(cid, " --> ", string(cid_data))
+		cc.ToDiscovery(peer, cid, files)
+		return nil
 	}
-	fmt.Println(cid, " --> ", files)
+	cc.ToDiscovery(peer, cid, files)
+	fmt.Println(cid, " ==> ", files)
 	if isGitRepo(files) {
 		err = cc.ToStorage(cid)
 		if err != nil {

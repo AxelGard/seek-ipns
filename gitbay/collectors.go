@@ -65,6 +65,21 @@ func (cc *CidCollector) ToStorage(cid string) error {
 	return nil
 }
 
+func (cc *CidCollector) ToDiscovery(peer string, cid string, files []string) error {
+	filepath := "../found.csv"
+	filesAsStr := ""
+	for _, f := range files {
+		filesAsStr += f + ","
+	}
+	row := []string{
+		peer,
+		cid,
+		filesAsStr,
+	}
+	err := AddRowToCSV(filepath, row)
+	return err
+}
+
 func (cc *CidCollector) GetFileNamesFromCid(cid string) ([]string, error) {
 	var result []string
 	f_list, err := cc.sh.List(cid)
