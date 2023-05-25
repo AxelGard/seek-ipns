@@ -114,3 +114,53 @@ func test_GetFileNamesFromCid() {
 		}
 	}
 }
+
+func Collecting(peer string, ic IpnsCollector, cc CidCollector) error {
+	EMPTY_CID := "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn"
+	NO_FILES := []string{}
+	NO_CID := ""
+	cid, err := ic.GetIpnsCid(peer)
+	if err != nil {
+		fmt.Println("ERROR::", err)
+		return err
+	}
+	if cid == NO_CID {
+		cc.ToDiscovery(peer, NO_CID, NO_FILES)
+		return nil
+	}
+	if cid == EMPTY_CID {
+		cc.ToDiscovery(peer, EMPTY_CID, NO_FILES)
+	}
+	files, err := cc.GetFileNamesFromCid(cid)
+	if err != nil {
+		return err
+	}
+	if len(files) == 0 {
+		cid_data, err := cc.GetDataFromCid(cid)
+		if err != nil {
+			return nil
+		}
+		fmt.Println(cid, " --> ", string(cid_data))
+		contentType, err := GetContentType(cid_data)
+		if err != nil {
+			cc.ToDiscovery(peer, cid, NO_FILES)
+		}
+		if contentType == "text/plain; charset=utf-8," {
+			contentType = "text/plain"
+		}
+		singel_file := []string{contentType}
+		cc.ToDiscovery(peer, cid, singel_file)
+		return nil
+	}
+	cc.ToDiscovery(peer, cid, files)
+	fmt.Println(cid, " ==> ", files)
+	if isGitRepo(files) {
+		err = cc.ToStorage(cid)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+
+}

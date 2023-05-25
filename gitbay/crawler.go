@@ -70,40 +70,6 @@ func CrawlingEachNode() {
 
 }
 
-func Collecting(peer string, ic IpnsCollector, cc CidCollector) error {
-	cid, err := ic.GetIpnsCid(peer)
-	if err != nil {
-		return err
-	}
-	if cid == "" {
-		return nil
-	}
-	files, err := cc.GetFileNamesFromCid(cid)
-	if err != nil {
-		return err
-	}
-	if len(files) == 0 {
-		cid_data, err := cc.GetDataFromCid(cid)
-		if err != nil {
-			return nil
-		}
-		fmt.Println(cid, " --> ", string(cid_data))
-		cc.ToDiscovery(peer, cid, files)
-		return nil
-	}
-	cc.ToDiscovery(peer, cid, files)
-	fmt.Println(cid, " ==> ", files)
-	if isGitRepo(files) {
-		err = cc.ToStorage(cid)
-		if err != nil {
-			return err
-		}
-	}
-
-	return nil
-
-}
-
 type Crawler struct {
 	host              host.Host
 	ipfs_DHT          *dht.IpfsDHT

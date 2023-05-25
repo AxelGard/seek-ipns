@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/csv"
 	"os"
+
+	"github.com/gabriel-vasile/mimetype"
 )
 
 func AddRowToCSV(filepath string, row []string) error {
@@ -30,4 +32,9 @@ func Contains(seq []string, target string) bool {
 		}
 	}
 	return false
+}
+
+func GetContentType(data []byte) (string, error) {
+	mime := mimetype.Detect(data)
+	return mime.String(), nil
 }
