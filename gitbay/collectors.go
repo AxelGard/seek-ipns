@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -92,14 +93,44 @@ func (cc *CidCollector) GetFileNamesFromCid(cid string) ([]string, error) {
 	return result, nil
 }
 
+func (cc *CidCollector) GetAllFilesNamesFromCid(cid string, ctx context.Context) ([]string, error) {
+	var result []string
+	f_list, err := cc.sh.List(cid)
+	if err != nil {
+		return nil, err
+	}
+	for _, f := range f_list {
+
+		cidf := cid + "/" + f.Name
+		if cidf[0] != '/' {
+			cidf = "/ipfs/" + cidf
+		}
+		fs, err := cc.sh.FilesStat(ctx, cidf)
+		if err != nil {
+			return nil, err
+		}
+		if fs.Type == "directory" {
+			sub_files, err := cc.GetAllFilesNamesFromCid(cidf, ctx)
+			if err != nil {
+				return nil, err
+			}
+			result = append(result, sub_files...)
+		} else {
+			result = append(result, f.Name)
+		}
+	}
+	return result, nil
+}
+
 func test_GetFileNamesFromCid() {
 	cc := CidCollector{}
 	cc.Init()
-	dir_cids := [4]string{
+	dir_cids := [5]string{
 		"bafybeicnxhkmocvutxrexcwj62eqidgunz22wqmwzrrghtdyvi5vjgn6ci",
 		"QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o", // NOT A DIR, as a test case
 		"QmQmhYjzuJUzsM3uMVtByzsfdQG6H3LeGTkUUD1yHVf1vb",
 		"QmPXeM8QwpqBcnzE54fduPb5mm9trMDfd2adgL1KrmNNP6",
+		"QmNb2LcaN8hzSNp4g7z8FtLsqvNyo3XDiR1gnDna1TWMqe",
 	}
 	for _, c := range dir_cids {
 		files, err := cc.GetFileNamesFromCid(c)
@@ -109,13 +140,12 @@ func test_GetFileNamesFromCid() {
 		if len(files) != 0 {
 			fmt.Println(c)
 			fmt.Println(files)
-			fmt.Println(GetDataFromCID(c + "/" + files[0]))
 			fmt.Println("----")
 		}
 	}
 }
 
-func Collecting(peer string, ic IpnsCollector, cc CidCollector) error {
+func Collecting(peer string, ic IpnsCollector, cc CidCollector, ctx context.Context) error {
 	EMPTY_CID := "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn"
 	NO_FILES := []string{}
 	NO_CID := ""
@@ -146,7 +176,7 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector) error {
 			cc.ToDiscovery(peer, cid, NO_FILES)
 		}
 		if contentType == "text/plain; charset=utf-8," {
-			contentType = "text/plain"
+			contentType = "text/plain,"
 		}
 		singel_file := []string{contentType}
 		cc.ToDiscovery(peer, cid, singel_file)

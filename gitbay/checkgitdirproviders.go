@@ -56,7 +56,7 @@ func CheckGitProvders() {
 			if err != nil {
 				continue
 			}
-			err = Collecting(peer, ic, cc)
+			err = Collecting(peer, ic, cc, ctx)
 			if err != nil {
 				panic(err)
 			}

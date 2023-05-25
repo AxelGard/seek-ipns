@@ -45,7 +45,7 @@ func CrawlingEachNode() {
 
 	var peerCache []string
 
-	fmt.Println(Collecting("12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi", ic, cc))
+	fmt.Println(Collecting("12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi", ic, cc, ctx))
 
 	go crawler.Run()
 
@@ -65,7 +65,7 @@ func CrawlingEachNode() {
 		}
 		foundPeers++
 		log.Println("found peers", foundPeers, "/", count)
-		Collecting(peer, ic, cc)
+		Collecting(peer, ic, cc, ctx)
 	}
 
 }

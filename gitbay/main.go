@@ -13,6 +13,7 @@ func main() {
 	//CrawlingEachNode()
 	SwarmCrawl()
 	//CheckGitProvders()
+	//test_GetFileNamesFromCid()
 }
 
 func SwarmCrawl() {
@@ -48,17 +49,11 @@ func SwarmCrawl() {
 			_, err := sh.FindPeer(peer)
 			time.Sleep(time.Second * 1) // sleep so that we don't spam the network with requests
 			if err != nil {
-				//row := []string{peer, "False"}
-				//AddRowToCSV("../peerlog.csv", row)
 				continue
 			}
-			//row := []string{peer, "True"}
-			//AddRowToCSV("../peerlog.csv", row)
 			foundPeers++
-			err = Collecting(peer, ic, cc)
-			if err != nil {
-				panic(err)
-			}
+			go Collecting(peer, ic, cc, ctx)
+
 		}
 
 	}
