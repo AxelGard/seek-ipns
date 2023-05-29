@@ -29,6 +29,9 @@ func CheckGitProvders() {
 	cc := CidCollector{}
 	cc.Init()
 
+	dc := DataCollector{}
+	dc.Init()
+
 	git_cid := "QmXm6JkdHVrpxHXkUahBHcRzpU4iZ5xAKJojeE5y3z1dMr"
 	var git_cids []string
 	git_sub_dir, err := sh.List(git_cid)
@@ -56,7 +59,7 @@ func CheckGitProvders() {
 			if err != nil {
 				continue
 			}
-			err = Collecting(peer, ic, cc, ctx)
+			err = Collecting(peer, ic, cc, &dc, ctx)
 			if err != nil {
 				panic(err)
 			}

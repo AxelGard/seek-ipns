@@ -93,7 +93,7 @@ func (cc *CidCollector) GetFileNamesFromCid(cid string) ([]string, error) {
 	return result, nil
 }
 
-func (cc *CidCollector) GetAllFilesNamesFromCid(cid string, ctx context.Context) ([]string, error) {
+func (cc *CidCollector) GetAllFilesNamesFromCid(cid string, dc *DataCollector, ctx context.Context) ([]string, error) {
 	var result []string
 	f_list, err := cc.sh.List(cid)
 	if err != nil {
@@ -110,13 +110,17 @@ func (cc *CidCollector) GetAllFilesNamesFromCid(cid string, ctx context.Context)
 			return nil, err
 		}
 		if fs.Type == "directory" {
-			sub_files, err := cc.GetAllFilesNamesFromCid(cidf, ctx)
+			sub_files, err := cc.GetAllFilesNamesFromCid(cidf, dc, ctx)
 			if err != nil {
 				return nil, err
 			}
 			result = append(result, sub_files...)
 		} else {
 			result = append(result, f.Name)
+			_, err = dc.GetFileData(cid+"/"+f.Name, f.Name, ctx)
+			if err != nil {
+				return nil, err
+			}
 		}
 	}
 	return result, nil
@@ -145,10 +149,12 @@ func test_GetFileNamesFromCid() {
 	}
 }
 
-func Collecting(peer string, ic IpnsCollector, cc CidCollector, ctx context.Context) error {
+func Collecting(peer string, ic IpnsCollector, cc CidCollector, dc *DataCollector, ctx context.Context) error {
 	EMPTY_CID := "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn"
 	NO_FILES := []string{}
 	NO_CID := ""
+	dc.CurrentFiles = []CidData{}
+	dc.CurrentPeer = peer
 	cid, err := ic.GetIpnsCid(peer)
 	if err != nil {
 		fmt.Println("ERROR::", err)
@@ -161,7 +167,7 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector, ctx context.Cont
 	if cid == EMPTY_CID {
 		cc.ToDiscovery(peer, EMPTY_CID, NO_FILES)
 	}
-	files, err := cc.GetFileNamesFromCid(cid)
+	files, err := cc.GetAllFilesNamesFromCid(cid, dc, ctx)
 	if err != nil {
 		return err
 	}
@@ -175,14 +181,14 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector, ctx context.Cont
 		if err != nil {
 			cc.ToDiscovery(peer, cid, NO_FILES)
 		}
-		if contentType == "text/plain; charset=utf-8," {
-			contentType = "text/plain,"
-		}
 		singel_file := []string{contentType}
 		cc.ToDiscovery(peer, cid, singel_file)
+		dc.GetFileData(cid, "NONE", ctx)
+		dc.ToDiscovery()
 		return nil
 	}
 	cc.ToDiscovery(peer, cid, files)
+	dc.ToDiscovery()
 	fmt.Println(cid, " ==> ", files)
 	if isGitRepo(files) {
 		err = cc.ToStorage(cid)
