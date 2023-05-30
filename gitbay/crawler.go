@@ -47,7 +47,6 @@ func CrawlingEachNode() {
 	dc.Init()
 
 	var peerCache []string
-
 	fmt.Println(Collecting("12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi", ic, cc, &dc, ctx))
 
 	go crawler.Run()
@@ -160,5 +159,36 @@ func (c *Crawler) Run() error {
 func (c *Crawler) CrawlingResult(peers []*peer.AddrInfo) {
 	for _, p := range peers {
 		c.peerChan <- p.ID.String()
+	}
+}
+
+func test_crawled_peer() {
+
+	bootstrapNodes := []string{
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa",
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb",
+		"/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt",
+		"/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
+		"/ip4/104.131.131.82/udp/4001/quic/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
+	} // NOTE: found nodes used ipfs deamon cmd $ipfs bootstrap list
+	ctx := context.Background()
+	peerChan := make(chan string)
+	crawler := Crawler{}
+	crawler.Init(bootstrapNodes, ctx, peerChan)
+	go crawler.Run()
+	sh := shell.NewShell("localhost:5001")
+	peerNotFoundCount := 0
+	FoundPeers := 0
+	fmt.Println("Done with setup.")
+	for peer := range peerChan {
+		_, err := sh.FindPeer(peer)
+		time.Sleep(time.Second * 2)
+		if err != nil {
+			peerNotFoundCount++
+			continue
+		}
+		FoundPeers++
+		fmt.Println("have ", FoundPeers, "/", FoundPeers+peerNotFoundCount)
 	}
 }
