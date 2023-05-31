@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"strings"
 
@@ -52,11 +53,7 @@ func (cc *CidCollector) GetDataFromCid(cid string) ([]byte, error) {
 	return data, err
 }
 
-func (cc *CidCollector) ToStorage(cid string) error {
-	data, err := cc.GetDataFromCid(cid + "/README.md")
-	if err != nil {
-		return err
-	}
+func (cc *CidCollector) ToStorage(data []byte, cid string) error {
 	filePath := "../data/" + cid
 	f, err := os.Create(filePath)
 	if err != nil {
@@ -191,7 +188,12 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector, dc *DataCollecto
 	dc.ToDiscovery()
 	fmt.Println(cid, " ==> ", files)
 	if isGitRepo(files) {
-		err = cc.ToStorage(cid)
+		readme, err := GetRepoFileData(cid, *cc.sh, ctx)
+		if readme == nil {
+			log.Println("Found repository but failed to save, cid: ", cid)
+			return nil
+		}
+		err = cc.ToStorage(readme, cid)
 		if err != nil {
 			return err
 		}

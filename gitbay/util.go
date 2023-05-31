@@ -25,6 +25,20 @@ func AddRowToCSV(filepath string, row []string) error {
 	return nil
 }
 
+func ReadCSV(filepath string) ([][]string, error) {
+	file, err := os.Open(filepath)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+	r := csv.NewReader(file)
+	rows, err := r.ReadAll()
+	if err != nil {
+		return nil, err
+	}
+	return rows, nil
+}
+
 func Contains(seq []string, target string) bool {
 	for _, item := range seq {
 		if target == item {

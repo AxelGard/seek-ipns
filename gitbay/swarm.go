@@ -25,6 +25,14 @@ func SwarmCrawl() {
 	foundPeers := 0
 	var peerCache []string
 
+	rows, err := ReadCSV("../cid_data.csv")
+	if err != nil {
+		panic(err)
+	}
+	for _, row := range rows {
+		peerCache = append(peerCache, row[0])
+	}
+
 	for {
 		info, err := sh.SwarmPeers(ctx)
 		if err != nil {
@@ -71,18 +79,16 @@ func recollectData() {
 		"12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi",
 	}
 	ctx := context.Background()
-	sh := shell.NewShell("localhost:5001")
+	//sh := shell.NewShell("localhost:5001")
 	for i, peer := range peers {
 		fmt.Println(i, "/", len(peers))
-		if i <= 5 {
-			continue
-		}
 		time.Sleep(time.Second * 1) // sleep so that we don't spam the network with requests
-		_, err := sh.FindPeer(peer)
-		if err != nil {
-			continue
-		}
-		err = Collecting(peer, ic, cc, &dc, ctx)
+		//_, err := sh.FindPeer(peer)
+		//if err != nil {
+		//	fmt.Println(err)
+		//	continue
+		//}
+		err := Collecting(peer, ic, cc, &dc, ctx)
 		fmt.Println(err)
 	}
 
