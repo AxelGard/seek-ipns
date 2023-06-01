@@ -1,8 +1,8 @@
 package main
 
 func main() {
-	//SwarmCrawl()
-	recollectData()
+	SwarmCrawl()
+	//recollectData()
 	//CrawlingEachNode()
 	//CheckGitProvders()
 	//test_GetFileNamesFromCid()
