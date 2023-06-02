@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-12-06 Вт 05:58 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>memory heap</title>
+<meta name="author" content="avp" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="./static/css/s.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">memory heap</h1>
+<p>
+[<a href="https://memory-heap.org/">memory-heap.org</a>] [<a href="https://[209:81d:7123:9c1:7a4:586e:2c54:37af]">yggdrasil</a>]
+</p>
+
+<ul class="org-ul">
+<li><a href="./projects.html">projects</a></li>
+<li><a href="./talks.html">talks</a></li>
+<li><a href="./poetry.html">poetry</a></li>
+<li><a href="./photos.html">photos</a></li>
+<li><a href="./cv.html">cv</a></li>
+<li><a href="./about.html">about</a></li>
+</ul>
+
+<p>
+Copyright © 2021-2022 Artyom V. Poptsov
+</p>
+
+<p>
+Verbatim copying and redistribution of this entire page are permitted provided this notice is preserved.
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: avp</p>
+<p class="date">Created: 2022-12-06 Вт 05:58</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

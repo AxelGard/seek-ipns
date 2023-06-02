@@ -16,7 +16,6 @@ def query():
     if r.status_code != 200:
         return r.status_code
     data = r.json()
-    print(data)
     return render_template("results.html", data=data, search_query=q)
 
 

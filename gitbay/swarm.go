@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"time"
 
@@ -53,7 +54,7 @@ func SwarmCrawl() {
 			peerCache = append(peerCache, peer)
 
 			_, err := sh.FindPeer(peer)
-			time.Sleep(time.Second * 1) // sleep so that we don't spam the network with requests
+			time.Sleep(time.Second * 1) // sleep so that we don"t spam the network with requests
 			if err != nil {
 				continue
 			}
@@ -75,50 +76,23 @@ func recollectData() {
 	dc := DataCollector{}
 	dc.Init()
 
-	peers := []string{
-		"12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi",
-		"12D3KooWMXKtvVetid8sBR3AMaRNa2c5dTYabPeYWCr1SPuHFTeF",
-		"12D3KooWHiV1Tq5dttWhgPyWkycJQkR2afrG66XRnpD7FDKHzrF5",
-		"QmYGVgGGfD5N4Xcc78CcMJ99dKcH6K6myhd4Uenv5yJwiJ",
-		"12D3KooWBJqN2X6K6qpT7zb1RNiVVoRKPG114W1wJShoriJ2hpZH",
-		"12D3KooWCnnBKgQ7LhSUU2Fvw2qoJqicYxsmSPLTWexWZqeR7NTK",
-		"QmVTUsvmcokhtW5sfXAqLm7Foh2n1zmQUunAhDkcAcyfTq",
-		"12D3KooWHw6vFKpKdc82j2nsKJSSfhZQgpwYbwTKyWKMkZk9nRoN",
-		"12D3KooWRLrYmJiotityz2JsvvivBqTdSFnNeh5NcKZwfikpGM7o",
-		"12D3KooWGNWHDZpvTG3TzgYgtGsS365FzjiRah6eNhc98mqrnzNZ",
-		"12D3KooWGDmMuvcceU8g3STFfFrh8JjDd3FgrMygGrfK5bWmRdY6",
-		"12D3KooWCffjYJZ873aVipvNeXWBubQqgT3NQzZEg8EeQEefGUH5",
-		"12D3KooWMbWYrXGiHy1NNYixDjQf5BCG3rMpgBMrUaP5By5sELvk",
-		"12D3KooWCzpBAgnkmdCakWCpd9gfDwSUFqwGgVfFjJnoDAGHCgyC",
-		"12D3KooWEo3jHX5KaZXdVPHW6doigj85jb4fRHgawZS8dVKRfJVx",
-		"12D3KooWFrNCsnR9w8MfVcm2NEL3fAYBxVygAdfpAbtCqeKsJF8U",
-		"12D3KooWBqgDYmbXdquvXUF46hVaKe4MVZLfYEutVRXarZqQQSZS",
-		"12D3KooWADhw6mFtYVsFf1pZ4d8ZZKM71PBBAnbJtzXezkuGCTTC",
-		"12D3KooWSPsLTZW9Gg7tHxEY2sNwXkzHqD9pqUhGWGrXGNXyLN8o",
-		"12D3KooWJ2NmXCpKeAhku7scoyMAqjbF88DSLipUSrgovUGYo4wc",
-		"12D3KooWLcck3DE33chSgEUdrSKB7UUWt3uayStL6gcVww7eDxSo",
-		"12D3KooWLxDRpUNCY5SSH71MDRbUxMFwgZD7vXTV7cM6r71bcSwc",
-		"12D3KooWDbeULzLoPgDt75v7jbWpX8h3VzCQUPX2stWoycYFCDGo",
-		"12D3KooWQ15qxGi87cea4YKPc8bddJca8njaiU5WZcvprMwNaBfk",
-		"12D3KooWAzNnK9YbvGjjBxxjyiXLQGhBFsuPzxpdVxBzAf2RUT4c",
-		"12D3KooWKbe1Ukivkg8Z1HqxJeUWTTe2BrxzV53ur3egWXNZurPS",
-		"12D3KooWJsk9pYxP7gxzGDG9uc3YbFAGniTYs6uxeziqzwN6wUwg",
-		"12D3KooWSLyAoLYUrJMn4RXhSyAd63PhCnoF9Mhr7yqzVaABoYje",
-		"12D3KooWAgh5H8TKTeXdpvQHJKySecrjnMGYCgw7j1wv7x2z5qd1",
-		"12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi",
-	}
-	ctx := context.Background()
 	sh := shell.NewShell("localhost:5001")
-	for i, peer := range peers {
-		fmt.Println(i, "/", len(peers))
-		time.Sleep(time.Second * 1) // sleep so that we don"t spam the network with requests
-		_, err := sh.FindPeer(peer)
+	cids := []string{
+		//	"QmUWAPdR2N7wzAhuMxpvhE69rge9ayKTnFB6WtFXiXoQMC", "QmauhUbPerCeRjJAbPCoDAdASuzWJ9sMrx5k7FUPeSQDyU", "QmR4kqBs7sis2dBuhfriAd4szr7VPERqnEvqvgaYvMomSj", "QmXLt7pG2XfnPXv98GiL2Y3xXJiaAkE8oA3yCT6L6n6J57", "QmVLMsn9dP6Uh2mCTdY2R5CDPKcZtnq7R6kcErmXohLDT2", "QmSyVtPo3GegNrDQj93gUKAMehghPTZV2oo6gfJd5yU9SQ", "QmYnfgAZfX111YhkJNN5JKUYv38T4s3NhZ1wJssAWCiExk", "QmYPytb5JpD6jQ7sPDdPRa9jQLnj8hjk4wCeDwZQDiNBgi", "Qmapmvi92Lf6yzHRj3uLuYXnPPL8QznkcBMUgijEtyWmyU", "Qmcubtd8GBz8ihk2t6nWTHmw9ChvABcsWgm5u4tt1XRxGC", "QmbyBDYob9rTHCxHgBhmr9t5FX7c8gMy2HnFz8EmRiCGrw", "Qma4TxpzdcYqDMzpgGAHYCyjrsbin2C6hTnXvjbMUFondJ", "QmYaMCtgVF46b5jTJ9n95F5yTgw9ZYCRNupBeJrvnphjTW", "QmaYukD44EuV5HeQBa6yyZbC15FWnMzhHrcaFfkuRpyD42", "QmepVMTaAzgx6rNdGA1kpvRDLtcJTq1Yxn6KmXg4RvRDp6",
+		"QmS8DvEzaK37nCdkFAP5SFgJgcwF3oM6VRjsHVzhrToBat",
+	}
+
+	for i, cid := range cids {
+		fmt.Println(i, len(cids))
+		r, err := sh.Cat(cid + "/index.html")
 		if err != nil {
-			fmt.Println(err)
 			continue
 		}
-		err = Collecting(peer, ic, cc, &dc, ctx)
-		fmt.Println(err)
+		data, err := ioutil.ReadAll(r)
+		if err != nil {
+			continue
+		}
+		cc.ToStorage(data, cid)
 	}
 
 }

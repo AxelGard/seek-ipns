@@ -12,6 +12,5 @@
     </head>
     <body>
         <button onclick="show_msg()">press me</button>  
-        <p>some data </p>
     </body>
 </html>

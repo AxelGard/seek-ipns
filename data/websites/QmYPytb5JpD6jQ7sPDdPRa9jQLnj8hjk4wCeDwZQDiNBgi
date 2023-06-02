@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>De Profundis Clamavi</title>
+    <link rel="stylesheet" href="/style/terminal.min.css">
+    <link rel="stylesheet" href="/style/profundis.min.css">
+    <link rel="icon" href="/favicon.ico" />
+</head>
+<body class="terminal">
+<div class="container">
+    <div class="terminal-nav">
+        <header class="page-title">
+            <div><a href="//" class="no-style">De Profundis Clamavi</a></div>
+        </header>
+        <nav class="terminal-menu">
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <div class="components components-grid">
+        <aside id="menu">
+            <h2>Videos</h2>
+            <nav>
+                <ul>
+                    <li><b><a href="/0001_NCRI.html">#0001 Network Contagion Research Institute</a></b></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <section>
+                <header class="terminal-logo">
+                    <h2 class="logo terminal-prompt">#0001 Network Contagion Research Institute</h2>
+                </header>
+                <video width="100%" height="auto"  controls="" autoplay=""><source src="/videos/0001_ncri.mp4" type="video/webm"></video>
+            </section>
+
+            <hr>
+        </main>
+    </div>
+</div>
+<script src="/js/highlight.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll("pre code").forEach(block => {
+            window.hljs.highlightBlock(block);
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

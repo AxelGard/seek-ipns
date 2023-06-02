@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./favicon.ico">
+  <title>Samizdat</title>
+  <meta name="author" content="Samizdat Developers">
+  <meta name="description" content="Samizdat is a decentralized, censorship-resistant content delivery system." />
+  <link type="text/css" rel="stylesheet" href="./css/style.css">
+  <script defer src="./samizdat.js"></script>
+</head>
+
+<body>
+  <div id="header">
+    <h1>Saмiзdaт</h1>
+    <p id="subtitle">Interpret censorship as damage.</p>
+    <ul class="samizdat-status-display"></ul>
+  </div>
+  <div id="description">
+    <p><em>Samizdat</em> is a browser-based Web censorship circumvention library, easily deployable on any website.</p>
+    <p>Implemented in JavaScript, it uses  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers">ServiceWorkers</a> and a set of non-standard in-browser content delivery mechanisms (with a strong focus on decentralized ones like <a href="https://github.com/ipfs/js-ipfs">JS-IPFS</a>).</p>
+    <p>Ideally, as soon as users are able to access a blocked <em>Samizdat</em>-enabled site <em>once</em>, they would not need to install any special software nor change any settings in order to continue to access that site.</p>
+    <p><em>Samizdat</em> is currently considered <code>alpha</code> software. We would love to hear if you'd like to test it &ndash; you can contact us at <code>rysiek+samizdat[at]hackerspace.pl</code>.<p>
+  </div>
+  <div id="logo-container">
+    <div id="logo">
+      <div class="cannonball" id="logo-cannonball-text"></div>
+      <div class="cannonball" id="logo-cannonball-audio"></div>
+      <div class="cannonball" id="logo-cannonball-video"></div>
+      <div class="cannonball" id="logo-cannonball-image"></div>
+      <div id="logo-cannon"></div>
+      <div id="logo-planet"></div>
+    </div>
+  </div>
+  <div id="samizdat-fetched-resources-container">
+    <h2>Fetched resources</h2>
+    <p>The list below contains all resources fetched in relation to this page.</p>
+    <ul class="samizdat-fetched-resources-list"></ul>
+    <p class="samizdat-fetched-resources-list-empty">The list is empty, but if the ServiceWorker is running it should be populated soon.</p>
+    <p class="samizdat-fetched-resources-controls"><button type="button" onclick="samizdat.toggleResourceCheckboxes()">Toggle selection</button><span class="spacer"></span><button type="button" onclick="samizdat.stashOrUnstashResources(true)">Add selected to cache</button><button type="button" onclick="samizdat.stashOrUnstashResources(false)">Clear selected from cache</button><span class="spacer"></span><input type="text" placeholder="Gun username" id="samizdat-gun-user"/><input type="password" placeholder="Gun password" id="samizdat-gun-password"/><button type="button" onclick="samizdat.publishResourcesToGunAndIPFS()">Publish to Gun and IPFS</button></p>
+  </div>
+  <p id="footer">ServiceWorker: <span class="samizdat-commit-service-worker">NO_INFO</span>&nbsp;::&nbsp;index.html: <span class="samizdat-commit-index-html">6a27f904</span><br/>code: <span id="samizdat-code"><a href="https://0xacab.org/rysiek/samizdat/">here</a></span>&nbsp;::&nbsp;news: <span id="samizdat-news"><a href="https://mastodon.technology/tags/Samizdat">on Fediverse</a></span>&nbsp;::&nbsp;license: <span id="samizdat-license"><a href="https://0xacab.org/rysiek/samizdat/blob/master/LICENSE">AGPL</a></span><br/><span id="samizdat-code-of-conduct"><a href="https://0xacab.org/rysiek/samizdat/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></span></p>
+</body>
+
+</html>

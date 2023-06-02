@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>VibesIRL</title>
+    <meta
+      name="description"
+      content="Vibes IRL."
+    />
+    <meta name="author" content="The IPFS Docs team." />
+    <style>
+      body {
+        margin: 15px auto;
+        max-width: 650px;
+        line-height: 1.2;
+        font-family: sans-serif;
+        font-size: 2em;
+        color: #fff;
+        background: #444;
+      }
+      a {
+        color: yellowgreen;
+      }
+    </style>
+  </head>
+  <body onload="main()">
+    <h1>VisionBoard IRL</h1>
+    <p id="output_p"></p>
+    <h2><a href="about.html">Privacy Policy</a></h2>
+  </body>
+</html>

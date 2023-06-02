@@ -12,7 +12,8 @@ func isGitRepo(files []string) bool {
 	for _, name := range files {
 		//if name == ".git" || name == "README.md" {
 		//if strings.Contains(name, "README") {
-		if strings.Contains(name, "index.html") {
+		lowName := strings.ToLower(name)
+		if strings.Contains(lowName, "index") || strings.Contains(lowName, "readme") {
 			return true
 		}
 	}
