@@ -2,19 +2,21 @@
 {% block result %}
 <br>
 
-
-
     <div class="container text-center">
         <div class="row">
             <div class="col">
             </div>
             <div class="col-6">
                 <hr>
-                {% if files %}
+                {% if data %}
                 <ul class="list-group list-group-flush">
-                    {% for file in files %}
+                    {% for file in data %}
                         <li class="list-group-item">
-                            <a class="cidLink" href="{{file}}">{{file}}</a>
+                            <a class="cidTitle" href="{{file['file']}}">{{file['cid']}}</a>
+                            <br>
+                            <small><a class="cidLink" href="https://gateway.ipfs.io/ipfs/{{file['cid']}}">https://gateway.ipfs.io/ipfs/{{file['cid']}}</a></small>
+                            <br>
+                            <small class="cidUnderText">{{file['info']}}</small>
                         </li>
                     {% endfor %}
                 </ul> 
@@ -25,8 +27,6 @@
             <div class="col">
             </div>
         </div>
-
-
 
 {% endblock %}
 

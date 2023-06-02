@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>CaveFox</title>
+    <link rel="stylesheet" type="text/css" href="./assets/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#da532c">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div class="main-box">
+        <img class="logo" src="./assets/logo.png" alt="CaveFox Logo">
+        <hr>
+        <p>
+            <b><u>About Us</u></b>
+            <br><br>
+            We are a hardware and software development firm with a specialty in high security designs.
+            Our main focus is development for organizations needing high levels of confidentiality
+            and tools that can stand up to defense level challenges.
+            <br><br>
+            Our employees all have real-world experience when it comes to designing, deploying, and
+            maintaining defense-grade systems. Many of us have been employed with government agencies
+            within the United States.
+            <br><br>
+            We will provide you with high quality work, in situations where confidentiality is a requirement. We
+            do not need to know who you are, and we will never speak publicly about the work we do for you.
+            <br><br>
+            We operate our own autonomous system, AS210660.
+            <br><br>
+            <b><u>Services</u></b>
+            </p><ul>
+                <li>Targeted Digital Network Intelligence</li>
+                <li>Computer Implant Design</li>
+                <li>General Application Development</li>
+                <li>Computer Network Design, Implementation, Maintenance</li>
+                <li>Independent auditing of software security</li>
+            </ul>
+            <b><u>Contact</u></b>
+            <br><br>
+            Due to the sensitive nature of our work we currently accept clients by referral only.
+        <p></p>
+        <hr>
+        <a href="./kopimi">Kopimi</a> - CaveFox LLC.
+        <span class="AddressSpan">
+            4450 Arapahoe Ave. Box# 111 Boulder, CO 80303
+        </span>
+    </div>
+
+
+</body></html>

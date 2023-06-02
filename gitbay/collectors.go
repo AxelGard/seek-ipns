@@ -54,7 +54,7 @@ func (cc *CidCollector) GetDataFromCid(cid string) ([]byte, error) {
 }
 
 func (cc *CidCollector) ToStorage(data []byte, cid string) error {
-	filePath := "../data/" + cid
+	filePath := "../data/websites/" + cid
 	f, err := os.Create(filePath)
 	if err != nil {
 		return err

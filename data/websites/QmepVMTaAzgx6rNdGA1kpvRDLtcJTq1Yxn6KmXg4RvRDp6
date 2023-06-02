@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+        function show_msg(){
+            alert("this is a test message ")
+        }
+        </script>
+    </head>
+    <body>
+        <button onclick="show_msg()">press me</button>  
+        <p>some data </p>
+    </body>
+</html>

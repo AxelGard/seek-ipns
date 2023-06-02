@@ -1,4 +1,13 @@
 
+.cidTitle {
+   float: left; 
+}
 .cidLink {
-    
+    float: left; 
+    color: #248f24;
+}
+
+.cidUnderText {
+    float: left;
+    text-align: left;
 }

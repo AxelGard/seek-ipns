@@ -15,10 +15,9 @@ def query():
     r = requests.get(f"http://127.0.0.1:5000/api/query/{q}")
     if r.status_code != 200:
         return r.status_code
-    files = []
-    for data in r.json():
-        files.append(data["file"])
-    return render_template("results.html", files=files, search_query=q)
+    data = r.json()
+    print(data)
+    return render_template("results.html", data=data, search_query=q)
 
 
 @app.get("/data/<file>")

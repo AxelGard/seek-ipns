@@ -11,7 +11,8 @@ import (
 func isGitRepo(files []string) bool {
 	for _, name := range files {
 		//if name == ".git" || name == "README.md" {
-		if strings.Contains(name, "README") {
+		//if strings.Contains(name, "README") {
+		if strings.Contains(name, "index.html") {
 			return true
 		}
 	}
