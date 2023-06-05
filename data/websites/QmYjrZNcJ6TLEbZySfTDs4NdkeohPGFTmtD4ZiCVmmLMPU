@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Photo archive Tenckhoff</title>
+		<meta name="description" content="Photo projects and travel photography." />
+		<meta name="author" content="Dr. Juergen Tenckhoff." />
+		<meta name="original-source" content="Photo Archive Tenckhoff"/>
+		<meta name="rating" content="safe for kids"/>
+		<meta name="referrer" content="origin-when-cross-origin"/>
+		<meta name="rights" content="©Dr. Juergen Tenckhoff"/>
+		<meta name="abstract" content="Photo archive Tenckhoff: photo techniques and projects, holography and travel reports from all over the world."/>
+		<meta name="keywords" content="Photography, travel photography, travel reports, holography, infrared, non-fungible tokens, NFT, Tenckhoff, photo archive"/>
+		<meta property="og:site_name" content="Photo archive Tenckhoff | photo projects and travel photography"/>
+		<meta property="og:type" content="Photography"/>
+		<meta property="og:url" content="https://gateway.ipfs.io/ipns/k51qzi5uqu5dlswaf2027yocsm85og9k8160ma99ziejaemu76ea85m1ouh26u/"/>
+		<meta property="og:title" content="Photo projects and travel photography"/>
+		<meta property="og:description" content="Photo archive Tenckhoff: photo techniques and projects, holography and travel reports from all over the world and non-fungible tokens (NFT)."/>
+		<meta property="og:image" content="frontpage.webp"/>
+		<meta property="og:image:url" content="https://gateway.ipfs.io/ipns/k51qzi5uqu5dlswaf2027yocsm85og9k8160ma99ziejaemu76ea85m1ouh26u/frontpage.webp"/>
+		<meta property="og:image:secure_url" content="https://gateway.ipfs.io/ipns/k51qzi5uqu5dlswaf2027yocsm85og9k8160ma99ziejaemu76ea85m1ouh26u/frontpage.webp"/>
+		<meta property="og:image:width" content="1200px"/>
+		<meta property="og:image:height" content="630px"/>
+		<meta property="og:image:alt" content="Bird watching and photographing in Germany"/>
+		<meta property="og:locale" content="en_US"/>
+		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:site" content="@tenckhoffs"/>
+		<meta name="twitter:description" content="Photo archive Tenckhoff: photo and holographic recording techniques, travel reports and photo projects from all over the world as well as non-fungible tokens (NFT) from a sociological and engineering perspective."/>
+		<meta name="twitter:title" content="Photo Archive Tenckhoff | Photos, pictures, travel reports, NFT"/>
+		<meta name="twitter:site:id" content="1257335591085191173"/>
+		<meta name="twitter:creator" content="@tenckhoffs"/>
+		<meta name="twitter:creator:id" content="1257335591085191173"/>
+		<meta name="twitter:url" content="https://gateway.ipfs.io/ipns/k51qzi5uqu5dlswaf2027yocsm85og9k8160ma99ziejaemu76ea85m1ouh26u/"/>
+		<meta name="twitter:image:alt" content="Photo archive Tenckhoff: Bird watching and photographing "/>
+		<meta name="twitter:image:height" content="630px"/>
+		<meta name="twitter:image:width" content="1200px"/>
+		<meta name="twitter:image" content="https://gateway.ipfs.io/ipns/k51qzi5uqu5dlswaf2027yocsm85og9k8160ma99ziejaemu76ea85m1ouh26u/frontpage.webp"/>
+		<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">		
+		<link rel="stylesheet" href="fat.css">
+	</head>
+	<body>
+		<div class="a">
+			<h1>Photo archive Tenckhoff</h1>
+			<h2>An IPFS Web 3.0 Gate to photo projects and travel photography around the world</h2>
+			<img src="red-trori.webp" width="600" height="600"/>
+		</div>
+			<hr />
+		<div class="a"><a href="https://www.tenckhoff.de/en">Internet Web 2.0 access => Photo archive Tenckhoff</a></div>
+			<hr />	
+		<div class="box"><a href="about.html">About this website</a></div>
+		<div class="box"><a href="privacy.html">Privacy Policy</a></div>
+			<p></p>
+	</body>
+ </html>
