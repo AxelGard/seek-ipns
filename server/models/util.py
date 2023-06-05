@@ -1,9 +1,11 @@
 from os import listdir
 from os.path import isfile, join
 from html.parser import HTMLParser
+from bs4 import BeautifulSoup
+from . import config
 
 def load_data():
-    PATH = "../data/websites/"
+    PATH = config.DATA_STORE
     contents = []
     files = [f"{PATH}{f}" for f in listdir(PATH) if isfile(join(PATH, f))]
     for file_path in files:
@@ -20,26 +22,26 @@ def load_stop_words(path: str = "../stopwords.txt"):
     return words
 
 
-def clean_html(contents:list):
+def clean_html(contents:list) -> list:
     result = []
-    html_buff = []
-    class HtmlCleanParser(HTMLParser):
-        def handle_data(self, data: str):
-            html_buff.append(data)
-    
-    parser = HtmlCleanParser()
-    for con in contents:
-        parser.feed(con)
-        f_data = ""
-        for d in html_buff:
-            f_data += d
-        result.append(f_data)
-        html_buff = []
+    for html in contents:
+        soup = BeautifulSoup(html, 'html.parser')
+        result.append(soup.get_text())
+    return result
 
+def clean_md(contents:list) -> list: 
+    result = []
+    for doc in contents: 
+        filtered = ""
+        for word in doc.split(" "): 
+            if not "http" in word:
+                filtered += word + " "
+        result.append(filtered)
     return result
 
 def clean(contents: list, remove_stop_words=True):
-    contents = clean_html(contents)
+    if config.PARSE_HTML:
+        contents = clean_html(contents)
     ascii_char = [chr(i) for i in range(0, 255)]
     numbers = "0123456789"
     non_acc_char = "\n,.()[]{}`/:-_*=\\<>|&%@?!\"'#" + numbers

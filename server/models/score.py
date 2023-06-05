@@ -9,8 +9,11 @@ ALL = [TfIdf, CosineSimilarity, SupportVectorMachine, RandomForest]
 from sklearn.metrics import f1_score
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import average_precision_score
+from sklearn.metrics import ndcg_score
 from . import util
+from . import validation_qa
 import numpy as np
+import copy
 
 
 query_results_answer = {}
@@ -49,6 +52,16 @@ def get_average_precision_scores(model):
         scores[query] = acc
     return scores
 
+def get_ndcg_scores(model):
+    global query_results_answer
+    scores = {}
+    for query, expec_files in query_results_answer.items():
+        results = model.query_proba(query)
+        ndcg = ndcg_score([expec_files], [results])
+        scores[query] = ndcg
+    return scores
+    
+
 
 def files_to_vec(files):
     ans_q = [0] * len(FILES)
@@ -59,78 +72,39 @@ def files_to_vec(files):
     return ans_q
 
 
-def run_score_test():
+def get_scores(model):
+    scores = {}
+    model.train()
+    f1_scores = get_f1_scores(model)
+    acc_scores = get_accuracy_scores(model)
+    prec_scores = get_average_precision_scores(model)
+    ndcg_scores = get_ndcg_scores(model)
+    scores = {
+        "ndcg_mean": np.array(list(ndcg_scores.values())).mean(),
+        #"prec_scores":prec_scores,
+        "prec_mean": np.array(list(prec_scores.values())).mean(),
+        #"prec_scores":prec_scores,
+        "f1_mean": np.array(list(f1_scores.values())).mean(),
+        # "f1_scores":f1_scores,
+        "acc_mean": np.array(list(acc_scores.values())).mean(),
+        #"acc_scores":acc_scores,
+    }
+    return scores
+
+def setup():
+    global query_results_answer
+    query_results_answer = copy.deepcopy(validation_qa.GITHUB_README)
+    for query, expec_files in query_results_answer.items():
+        ans_q = files_to_vec(expec_files)
+        query_results_answer[query] = ans_q
+
+
+def main():
+    setup()
     scores = {}
     for Model in ALL:
         model = Model()
         model.train()
-        f1_scores = get_f1_scores(model)
-        acc_scores = get_accuracy_scores(model)
-        prec_scores = get_average_precision_scores(model)
-        scores[str(model)] = {
-            "prec_mean": np.array(list(prec_scores.values())).mean(),
-            "prec_scores":prec_scores,
-            "f1_mean": np.array(list(f1_scores.values())).mean(),
-            # "f1_scores":f1_scores,
-            "acc_mean": np.array(list(acc_scores.values())).mean(),
-            # "acc_scores":acc_scores,
-        }
-
+        scores[str(model)] = get_scores(model)
     return scores
-
-
-def main():
-    global query_results_answer
-
-    query_results_answer = {
-        "algorithmic trading": [
-            "../data/cira_README.md",
-        ],
-        "Buying a part of a company with code": [
-            "../data/cira_README.md",
-        ],
-        "JavaScript library for building user interfaces": [
-            "../data/svelte_README.md",
-            "../data/react_README.md",
-            "../data/vuejs_README.md",
-        ],
-        "A memory safe programming language": [
-            "../data/rust_README.md",
-        ],
-        "A compiler for my C program": [
-            "../data/gcc_README.txt",
-        ],
-        "make a low level language to machine code": [
-            "../data/gcc_README.txt",
-        ],
-        "framework or library for ML and AI": [
-            "../data/pytorch_README.md",
-            "../data/tensorflow_README.md",
-        ],
-        "framework or library for Machine learning and artificial intelligence": [
-            "../data/pytorch_README.md",
-            "../data/tensorflow_README.md",
-        ],
-        "programming languages": [
-            "../data/cpython_README.rst",
-            "../data/rust_README.md",
-        ],
-        "I need a operating system": [
-            "../data/linux_README.txt",
-        ],
-        "Program a websites": [
-            "../data/svelte_README.md",
-            "../data/react_README.md",
-            "../data/vuejs_README.md",
-        ],
-        "alternative for windows": [
-            "../data/linux_README.txt",
-        ],
-    }
-
-    for query, expec_files in query_results_answer.items():
-        ans_q = files_to_vec(expec_files)
-        query_results_answer[query] = ans_q
-    scores = run_score_test()
     # scores = sorted(scores, key=lambda x: x["prec_mean"], reverse=True)
-    return scores
