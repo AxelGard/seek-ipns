@@ -10,7 +10,11 @@ def load_data():
     files = [f"{PATH}{f}" for f in listdir(PATH) if isfile(join(PATH, f))]
     for file_path in files:
         with open(file_path, "r") as f:
-            contents.append(f.read())
+            try:
+                contents.append(f.read())
+            except: 
+                print("Problem reading:",f.name)
+                continue
     return files, contents
 
 
@@ -31,11 +35,17 @@ def clean_html(contents:list) -> list:
 
 def clean_md(contents:list) -> list: 
     result = []
+    numbers = "0123456789"
+    non_acc_char = "\n,.()[]{}`/:-_*=\\<>|&%@?!\"'#" + numbers
     for doc in contents: 
         filtered = ""
         for word in doc.split(" "): 
-            if not "http" in word:
-                filtered += word + " "
+            clean_word = ""
+            for char in word: 
+                if not char in non_acc_char:
+                    clean_word += char
+            if not "http" in clean_word:
+                filtered += clean_word + " "
         result.append(filtered)
     return result
 

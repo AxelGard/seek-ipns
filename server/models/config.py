@@ -1,4 +1,4 @@
 
-DATA_STORE = "../data/"
+DATA_STORE = "../data/websites/"
 
-PARSE_HTML = False
+PARSE_HTML = True
