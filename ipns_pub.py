@@ -18,6 +18,10 @@ def main():
         pub_cmd = f"ipfs name publish /ipfs/{cid} " + key
         ipns_pub = os.popen(pub_cmd).read()
         print(ipns_pub)
+        ipns_recod = ipns_pub.split(":")[0].split(" ")[-1]
+        print(f"Sharable link: https://ipfs.io/ipns/{ipns_recod}")
+        print("")
+
         return
     raise FileExistsError
         
