@@ -1,13 +1,12 @@
 import sys
 import os
 
-def is_online(): 
-    hello_world_test = os.popen("ipfs cat QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o").read()
-    assert hello_world_test == "hello world\n", "Could not access IPFS daemon"
-
 def main():
     args = sys.argv[1:]
     key = ""
+    if args[0] == "-h" or args[0] == "--help":
+        help()
+        return
     if len(args) > 1 and "--key=" in args[1]:
         key = args[1]
     path = args[0]
@@ -25,6 +24,21 @@ def main():
         return
     raise FileExistsError
         
+def is_online(): 
+    hello_world_test = os.popen("ipfs cat QmT78zSuBmuS4z925WZfrqQ1qHaJ56DQaTfyMUF7F8ff5o").read()
+    assert hello_world_test == "hello world\n", "Could not access IPFS daemon"
+
+def help():
+    help_msg = """Usage:
+    $python3 ipns_pub.py <path to dir or file>
+
+    If you want a other key then the default key then:
+    $python3 ipns_pub.py <path to dir or file> --key=<key name>
+
+    This will publish the given path to IPNS
+    """
+    print(help_msg)
+
 if __name__ == "__main__":
     is_online()
     main()
