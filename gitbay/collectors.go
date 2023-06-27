@@ -66,7 +66,7 @@ func (cc *CidCollector) ToStorage(data []byte, cid string) error {
 }
 
 func (cc *CidCollector) ToDiscovery(peer string, cid string, files []string) error {
-	filepath := "../found.csv"
+	filepath := "../store/found.csv"
 	filesAsStr := ""
 	for _, f := range files {
 		filesAsStr += f + ","
@@ -81,7 +81,7 @@ func (cc *CidCollector) ToDiscovery(peer string, cid string, files []string) err
 }
 
 func (cc *CidCollector) ToDiscoveryTime(peer string) error {
-	filepath := "../time.csv"
+	filepath := "../store/time.csv"
 	row := []string{
 		peer,
 		time.Now().Format("2006-01-02 15:04:05"),
@@ -91,7 +91,7 @@ func (cc *CidCollector) ToDiscoveryTime(peer string) error {
 }
 
 func (cc *CidCollector) ToStorageNumberOfHost(cid string, peer string, peers []string) error {
-	filepath := "../number_of_hosts.csv"
+	filepath := "../store/number_of_hosts.csv"
 	row := []string{
 		cid,
 		peer,
