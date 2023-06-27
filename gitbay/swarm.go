@@ -34,12 +34,22 @@ func SwarmCrawl() {
 	for _, row := range rows {
 		peerCache = append(peerCache, row[0])
 	}
+	row := []string{
+		time.Now().Format("2006-01-02 15:04:05"),
+		"started",
+	}
+	AddRowToCSV("../store/node_crash.csv", row)
 
 	for {
 		info, err := sh.SwarmPeers(ctx)
 		if err != nil {
 			log.Println("Swarm Peers failed!! will wait for 5 min and try again.")
 			time.Sleep(time.Minute * 5)
+			row = []string{
+				time.Now().Format("2006-01-02 15:04:05"),
+				"crashed",
+			}
+			AddRowToCSV("../store/node_crash.csv", row)
 			continue
 		}
 		fmt.Println("-------")

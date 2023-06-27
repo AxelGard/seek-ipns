@@ -80,11 +80,12 @@ func (cc *CidCollector) ToDiscovery(peer string, cid string, files []string) err
 	return err
 }
 
-func (cc *CidCollector) ToDiscoveryTime(peer string) error {
+func (cc *CidCollector) ToDiscoveryTime(peer string, cid string) error {
 	filepath := "../store/time.csv"
 	row := []string{
 		peer,
 		time.Now().Format("2006-01-02 15:04:05"),
+		cid,
 	}
 	err := AddRowToCSV(filepath, row)
 	return err
@@ -182,8 +183,11 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector, dc *DataCollecto
 	}
 	if cid == NO_CID {
 		cc.ToDiscovery(peer, NO_CID, NO_FILES)
+		cc.ToDiscoveryTime(peer, "NONE")
 		return nil
 	}
+
+	cc.ToDiscoveryTime(peer, cid)
 	if cid == EMPTY_CID {
 		cc.ToDiscovery(peer, EMPTY_CID, NO_FILES)
 	}
