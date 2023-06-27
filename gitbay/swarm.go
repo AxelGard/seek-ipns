@@ -13,6 +13,8 @@ func SwarmCrawl() {
 	ctx := context.Background()
 	sh := shell.NewShell("localhost:5001")
 
+	dht_crawler, _, err := SetupCrawler(ctx)
+
 	ic := IpnsCollector{}
 	ic.Init()
 
@@ -58,7 +60,7 @@ func SwarmCrawl() {
 				continue
 			}
 			foundPeers++
-			go Collecting(peer, ic, cc, &dc, ctx)
+			go Collecting(peer, ic, cc, &dc, dht_crawler, ctx)
 
 		}
 

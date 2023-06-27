@@ -16,7 +16,7 @@ import (
 	"github.com/multiformats/go-multiaddr"
 )
 
-func CrawlingEachNode() {
+func SetupCrawler(ctx context.Context) (*Crawler, chan string, error) {
 
 	bootstrapNodes := []string{
 		"/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
@@ -26,16 +26,27 @@ func CrawlingEachNode() {
 		"/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
 		"/ip4/104.131.131.82/udp/4001/quic/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
 	} // NOTE: found nodes used ipfs deamon cmd $ipfs bootstrap list
-	ctx := context.Background()
 
 	peerChan := make(chan string)
 
 	crawler := Crawler{}
 	err := crawler.Init(bootstrapNodes, ctx, peerChan)
 	if err != nil {
-		panic(err)
+		return nil, nil, err
 	}
 	fmt.Println("DHT bootstrap successful")
+
+	return &crawler, peerChan, nil
+}
+
+func CrawlingEachNode() {
+
+	ctx := context.Background()
+
+	crawler, peerChan, err := SetupCrawler(ctx)
+	if err != nil {
+		panic(err)
+	}
 
 	ic := IpnsCollector{}
 	ic.Init()
@@ -47,7 +58,7 @@ func CrawlingEachNode() {
 	dc.Init()
 
 	var peerCache []string
-	fmt.Println(Collecting("12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi", ic, cc, &dc, ctx))
+	fmt.Println(Collecting("12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi", ic, cc, &dc, crawler, ctx))
 
 	go crawler.Run()
 
@@ -67,7 +78,7 @@ func CrawlingEachNode() {
 		}
 		foundPeers++
 		log.Println("found peers", foundPeers, "/", count)
-		Collecting(peer, ic, cc, &dc, ctx)
+		Collecting(peer, ic, cc, &dc, crawler, ctx)
 	}
 
 }

@@ -7,8 +7,10 @@ import (
 	"log"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/ipfs/boxo/ipns"
+	_cid "github.com/ipfs/go-cid"
 	shell "github.com/ipfs/go-ipfs-api"
 	"github.com/libp2p/go-libp2p/core/peer"
 )
@@ -73,6 +75,27 @@ func (cc *CidCollector) ToDiscovery(peer string, cid string, files []string) err
 		peer,
 		cid,
 		filesAsStr,
+	}
+	err := AddRowToCSV(filepath, row)
+	return err
+}
+
+func (cc *CidCollector) ToDiscoveryTime(peer string) error {
+	filepath := "../time.csv"
+	row := []string{
+		peer,
+		time.Now().Format("2006-01-02 15:04:05"),
+	}
+	err := AddRowToCSV(filepath, row)
+	return err
+}
+
+func (cc *CidCollector) ToStorageNumberOfHost(cid string, peer string, peers []string) error {
+	filepath := "../number_of_hosts.csv"
+	row := []string{
+		cid,
+		peer,
+		strings.Join(peers, ","),
 	}
 	err := AddRowToCSV(filepath, row)
 	return err
@@ -146,7 +169,7 @@ func test_GetFileNamesFromCid() {
 	}
 }
 
-func Collecting(peer string, ic IpnsCollector, cc CidCollector, dc *DataCollector, ctx context.Context) error {
+func Collecting(peer string, ic IpnsCollector, cc CidCollector, dc *DataCollector, dht_crawler *Crawler, ctx context.Context) error {
 	EMPTY_CID := "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn"
 	NO_FILES := []string{}
 	NO_CID := ""
@@ -168,6 +191,22 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector, dc *DataCollecto
 	if err != nil {
 		return err
 	}
+
+	casted_cid, err := _cid.Decode(cid)
+	if err != nil {
+		return err
+	}
+	peers_hosting_cid_info, err := dht_crawler.ipfs_DHT.FindProviders(ctx, casted_cid)
+	if err != nil {
+		return err
+	}
+
+	peers_hosting_cid := []string{}
+	for _, p := range peers_hosting_cid_info {
+		peers_hosting_cid = append(peers_hosting_cid, p.ID.String())
+	}
+	cc.ToStorageNumberOfHost(cid, peer, peers_hosting_cid)
+
 	if len(files) == 0 {
 		cid_data, err := cc.GetDataFromCid(cid)
 		if err != nil {
