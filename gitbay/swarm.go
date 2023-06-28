@@ -62,7 +62,7 @@ func SwarmCrawl() {
 			if Contains(peerCache, peer) {
 				continue
 			}
-			peerCache = append(peerCache, peer)
+			peerCache = append(peerCache, peer) // might be good to move to after check if the node is upp, will slow down a bit but some nodes might be upp
 
 			_, err := sh.FindPeer(peer)
 			time.Sleep(time.Second * 1) // sleep so that we don"t spam the network with requests
