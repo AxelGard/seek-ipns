@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/csv"
 	"os"
+	"time"
 
 	"github.com/gabriel-vasile/mimetype"
 )
@@ -51,4 +52,20 @@ func Contains(seq []string, target string) bool {
 func GetContentType(data []byte) (string, error) {
 	mime := mimetype.Detect(data)
 	return mime.String(), nil
+}
+
+func LogCrash(log ...string) error {
+	msg := "crashed"
+	if len(log) > 0 {
+		msg = log[0]
+	}
+	row := []string{
+		time.Now().Format("2006-01-02 15:04:05"),
+		msg,
+	}
+	err := AddRowToCSV(DATA_STORE_PATH+"node_crash.csv", row)
+	if err != nil {
+		return err
+	}
+	return nil
 }
