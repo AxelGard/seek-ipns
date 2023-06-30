@@ -30,7 +30,7 @@ func (cd *CidData) String() string {
 }
 
 func (cd *CidData) ToDiscovery() {
-	filepath := "../store/cid_data.csv"
+	filepath := DATA_STORE_PATH + "cid_data.csv"
 	row := cd.Slice()
 	AddRowToCSV(filepath, row)
 }

@@ -27,7 +27,7 @@ func SwarmCrawl() {
 	foundPeers := 0
 	var peerCache []string
 
-	rows, err := ReadCSV("../store/cid_data.csv")
+	rows, err := ReadCSV(DATA_STORE_PATH + "cid_data.csv")
 	if err != nil {
 		panic(err)
 	}
@@ -38,7 +38,7 @@ func SwarmCrawl() {
 		time.Now().Format("2006-01-02 15:04:05"),
 		"started",
 	}
-	AddRowToCSV("../store/node_crash.csv", row)
+	AddRowToCSV(DATA_STORE_PATH+"node_crash.csv", row)
 
 	for {
 		info, err := sh.SwarmPeers(ctx)
@@ -49,7 +49,7 @@ func SwarmCrawl() {
 				time.Now().Format("2006-01-02 15:04:05"),
 				"crashed",
 			}
-			AddRowToCSV("../store/node_crash.csv", row)
+			AddRowToCSV(DATA_STORE_PATH+"node_crash.csv", row)
 			continue
 		}
 		fmt.Println("-------")
