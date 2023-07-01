@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	//SwarmCrawl()
+	SwarmCrawl()
 	RunCompare()
 	//recollectData()
 	//CrawlingEachNode()

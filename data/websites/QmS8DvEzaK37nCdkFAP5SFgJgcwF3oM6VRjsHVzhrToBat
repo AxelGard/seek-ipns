@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.106.0">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>push32dup2</title>
+	<title>blockchain - push32dup2</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="privacy, anonymity, internet freedom">
-	<meta property="og:title" content="push32dup2" />
+	<meta name="description" content="">
+	<meta property="og:title" content="blockchain" />
 <meta property="og:description" content="privacy, anonymity, internet freedom" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+<meta property="og:url" content="/categories/blockchain/" />
 
 
 	
-	<link rel="alternate" type="application/rss+xml" href="./index.xml" title="push32dup2">
-	<link rel="stylesheet" href="./css/style.css">
+	<link rel="alternate" type="application/rss+xml" href="../../categories/blockchain/index.xml" title="push32dup2">
+	<link rel="stylesheet" href="../../css/style.css">
 	
-	<link rel="shortcut icon" href="./favicon.ico">
+	<link rel="shortcut icon" href="../../favicon.ico">
 		
 </head>
 <body class="body">
@@ -26,7 +25,7 @@
 		<header class="header">
 	<div class="container">
 		<div class="logo">
-			<a class="logo__link" href="./" title="push32dup2" rel="home">
+			<a class="logo__link" href="../../" title="push32dup2" rel="home">
 				<div class="logo__title">push32dup2</div>
 				<div class="logo__tagline">privacy, anonymity, internet freedom</div>
 			</a>
@@ -38,28 +37,28 @@
 	</button>
 	<ul class="menu__list">
 		<li class="menu__item">
-			<a class="menu__link" href="./post/">
+			<a class="menu__link" href="../../post/">
 				
 				<span class="menu__text">Posts</span>
 				
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="./categories/">
+			<a class="menu__link" href="../../categories/">
 				
 				<span class="menu__text">Categories</span>
 				
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="./page/papers/">
+			<a class="menu__link" href="../../page/papers/">
 				
 				<span class="menu__text">Papers</span>
 				
 			</a>
 		</li>
 		<li class="menu__item">
-			<a class="menu__link" href="./page/about/">
+			<a class="menu__link" href="../../page/about/">
 				
 				<span class="menu__text">About</span>
 				
@@ -74,77 +73,12 @@
 			<div class="primary">
 			
 <main class="main list" role="main">
-	<article class="list__item post">
+	<header class="main__header">
+		<h1 class="main__title">blockchain</h1>
+	</header><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
-			<a href="./post/dating-app-fail/" rel="bookmark">
-			So I reverse engineered two dating apps...
-			</a>
-		</h3>
-		<p class="list__lead post__lead">And I got a zero-click session hijacking and other fun vulnerabilities</p>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-02T12:00:00-04:00">May 02, 2020</time>
-	<time class="meta__text" datetime="2020-05-05T06:00:00-04:00">(Last Modified: May 05, 2020)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="./categories/security/" rel="category">security</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		In this post I show some of my findings during the reverse engineering of the apps Coffee Meets Bagel and The League. I have identified several critical vulnerabilities during the research, all of which have been reported to the affected vendors.
-Introduction In these unprecedented times, more and more people are escaping into the digital world to cope with social distancing. During these times cyber-security is more important than ever. From my limited experience, very few startups are mindful of security best practices.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="./post/dating-app-fail/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="./post/privomega-sketch/" rel="bookmark">
-			Privomega: A Privacy-Preserving Random Stranger Chat Protocol (Sketch)
-			</a>
-		</h3>
-		<p class="list__lead post__lead">Like Omegle, but with more privacy, with provable randomness, E2EE, and more</p>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-11-22T22:00:00-05:00">November 22, 2018</time>
-	<time class="meta__text" datetime="2018-11-26T13:00:00-05:00">(Last Modified: November 26, 2018)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="./categories/cryptography/" rel="category">cryptography</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		⚠️ This is a work-in-progress sketch.
-Introduction Omegle is the one of the first stranger chat services. To quote from their website:
-Omegle (oh·meg·ull) is a great way to meet new friends. When you use Omegle, we pick someone else at random and let you talk one-on-one. To help you stay safe, chats are anonymous unless you tell someone who you are, and you can stop a chat at any time.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="./post/privomega-sketch/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="./post/cross-ipfs-site-scripting/" rel="bookmark">
-			Cross-IPFS-site scripting
-			</a>
-		</h3>
-		<p class="list__lead post__lead">IPFS vs same-origin policy</p>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-11-09T01:12:16-05:00">November 09, 2018</time>
-	<time class="meta__text" datetime="2018-11-11T07:00:00-05:00">(Last Modified: November 11, 2018)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="./categories/security/" rel="category">security</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Introduction These days, browsers are pretty secure, and some are even privacy conscious (Firefox, Brave) that block third party trackers by default. But today&rsquo;s browsers are ultimately designed for HTTP, not IPFS. And they have a different threat model in mind. All the sites on IPFS are served from the same origin as the gateway, which has some interesting implications for privacy and security.
-How IPFS gateway works IPFS gateway is a web server that connects to some IPFS node daemon.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="./post/cross-ipfs-site-scripting/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="./post/privacy-issues-and-concerns-on-ethereum-network-layer/" rel="bookmark">
+			<a href="../../post/privacy-issues-and-concerns-on-ethereum-network-layer/" rel="bookmark">
 			Privacy Issues and Concerns on Ethereum Network Layer
 			</a>
 		</h3>
@@ -152,7 +86,7 @@ How IPFS gateway works IPFS gateway is a web server that connects to some IPFS n
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
 	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-09-29T14:30:00-04:00">September 29, 2018</time>
-	<time class="meta__text" datetime="2018-11-05T15:26:00-05:00">(Last Modified: November 05, 2018)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="./categories/blockchain/" rel="category">blockchain</a>
+	<time class="meta__text" datetime="2018-11-05T15:26:00-05:00">(Last Modified: November 05, 2018)</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="../../categories/blockchain/" rel="category">blockchain</a>
 	</span>
 </div></div>
 	</header>
@@ -161,40 +95,19 @@ How IPFS gateway works IPFS gateway is a web server that connects to some IPFS n
 For simplicity we do not consider anonymity networks during attack like Tor or I2P, although they will be discussed in the Mitigation section.
 	</div>
 	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="./post/privacy-issues-and-concerns-on-ethereum-network-layer/">Read more…</a>
+		<a class="list__footer-readmore btn" href="../../post/privacy-issues-and-concerns-on-ethereum-network-layer/">Read more…</a>
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
 		<h3 class="list__title post__title ">
-			<a href="./post/blogging-on-ipfs/" rel="bookmark">
-			Blogging on IPFS
-			</a>
-		</h3>
-		<p class="list__lead post__lead">With Hugo, IPNS, dnslink, and Cloudflare IPFS gateway</p>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-09-19T01:18:54-04:00">September 19, 2018</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="./categories/misc/" rel="category">misc</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		A little fun fact about this site This blog is a static site generated by Hugo, hosted on IPFS. I personally run an IPFS node, and the files are pinned on my node. If you came here though your own IPFS gateway, then congrats! You already know where this is going. Otherwise, keep reading and I&rsquo;ll explain the entire setup of the site.
-The site lives permanently by the IPNS name /ipns/QmTctHYiuy3LXguP5jBP4DJAmnCD22gQbBAV24wH394vSs https://push32.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="./post/blogging-on-ipfs/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="./post/ethereum-state-channel-games-part-1/" rel="bookmark">
+			<a href="../../post/ethereum-state-channel-games-part-1/" rel="bookmark">
 			Ethereum State Channel Games - Part 1
 			</a>
 		</h3>
 		<p class="list__lead post__lead">State Serialization and Fastforward Consensus</p>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-08-18T00:00:00-05:00">August 18, 2018</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="./categories/blockchain/" rel="category">blockchain</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-08-18T00:00:00-05:00">August 18, 2018</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="../../categories/blockchain/" rel="category">blockchain</a>
 	</span>
 </div></div>
 	</header>
@@ -205,23 +118,24 @@ Furthermore, this article aims to be a conceptual guide on implementing state ch
 If you are looking for an easy-to-use state channel framework, I am shamelessly self promoting my OpenArcade game engine which comes with state channel support without requiring much effort from game developers.
 	</div>
 	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="./post/ethereum-state-channel-games-part-1/">Read more…</a>
+		<a class="list__footer-readmore btn" href="../../post/ethereum-state-channel-games-part-1/">Read more…</a>
 	</div>
 </article>
 </main>
 
 
 			</div>
-			<aside class="sidebar">
+			
+<aside class="sidebar">
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="./post/dating-app-fail/">So I reverse engineered two dating apps...</a></li>
-			<li class="widget__item"><a class="widget__link" href="./post/privomega-sketch/">Privomega: A Privacy-Preserving Random Stranger Chat Protocol (Sketch)</a></li>
-			<li class="widget__item"><a class="widget__link" href="./post/cross-ipfs-site-scripting/">Cross-IPFS-site scripting</a></li>
-			<li class="widget__item"><a class="widget__link" href="./post/privacy-issues-and-concerns-on-ethereum-network-layer/">Privacy Issues and Concerns on Ethereum Network Layer</a></li>
-			<li class="widget__item"><a class="widget__link" href="./post/blogging-on-ipfs/">Blogging on IPFS</a></li>
+			<li class="widget__item"><a class="widget__link" href="../../post/dating-app-fail/">So I reverse engineered two dating apps...</a></li>
+			<li class="widget__item"><a class="widget__link" href="../../post/privomega-sketch/">Privomega: A Privacy-Preserving Random Stranger Chat Protocol (Sketch)</a></li>
+			<li class="widget__item"><a class="widget__link" href="../../post/cross-ipfs-site-scripting/">Cross-IPFS-site scripting</a></li>
+			<li class="widget__item"><a class="widget__link" href="../../post/privacy-issues-and-concerns-on-ethereum-network-layer/">Privacy Issues and Concerns on Ethereum Network Layer</a></li>
+			<li class="widget__item"><a class="widget__link" href="../../post/blogging-on-ipfs/">Blogging on IPFS</a></li>
 		</ul>
 	</div>
 </div>
@@ -230,16 +144,16 @@ If you are looking for an easy-to-use state channel framework, I am shamelessly 
 	<div class="widget__content">
 		<ul class="widget__list">
 			<li class="widget__item">
-				<a class="widget__link" href="./categories/blockchain/">blockchain</a>
+				<a class="widget__link" href="../../categories/blockchain/">blockchain</a>
 			</li>
 			<li class="widget__item">
-				<a class="widget__link" href="./categories/cryptography/">cryptography</a>
+				<a class="widget__link" href="../../categories/cryptography/">cryptography</a>
 			</li>
 			<li class="widget__item">
-				<a class="widget__link" href="./categories/misc/">misc</a>
+				<a class="widget__link" href="../../categories/misc/">misc</a>
 			</li>
 			<li class="widget__item">
-				<a class="widget__link" href="./categories/security/">security</a>
+				<a class="widget__link" href="../../categories/security/">security</a>
 			</li>
 		</ul>
 	</div>
@@ -247,13 +161,13 @@ If you are looking for an easy-to-use state channel framework, I am shamelessly 
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
-		<a class="widget-taglist__link widget__link btn" href="./tags/apps/" title="apps">apps (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="./tags/e2ee/" title="e2ee">e2ee (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="./tags/ethereum/" title="ethereum">ethereum (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="./tags/ipfs/" title="ipfs">ipfs (3)</a>
-		<a class="widget-taglist__link widget__link btn" href="./tags/p2p/" title="p2p">p2p (2)</a>
-		<a class="widget-taglist__link widget__link btn" href="./tags/privacy/" title="privacy">privacy (3)</a>
-		<a class="widget-taglist__link widget__link btn" href="./tags/re/" title="re">re (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="../../tags/apps/" title="apps">apps (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="../../tags/e2ee/" title="e2ee">e2ee (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="../../tags/ethereum/" title="ethereum">ethereum (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="../../tags/ipfs/" title="ipfs">ipfs (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="../../tags/p2p/" title="p2p">p2p (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="../../tags/privacy/" title="privacy">privacy (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="../../tags/re/" title="re">re (1)</a>
 	</div>
 </div>
 <div class="widget-taglist widget">
@@ -285,7 +199,7 @@ If you are looking for an easy-to-use state channel framework, I am shamelessly 
 </footer>
 
 	</div>
-<script async defer src="./js/menu.js"></script>
+<script async defer src="../../js/menu.js"></script>
 
 </body>
 </html>
