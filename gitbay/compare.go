@@ -84,8 +84,8 @@ func Compare(peers []string) error {
 			LogCrash("StoppedTrying")
 			return nil
 		}
-		log.Println("Tried all peers will wait 30 min and try again.")
-		time.Sleep(time.Minute * 30)
+		log.Println("Tried all peers will wait 1 hour and automatically try again.")
+		time.Sleep(time.Hour * 1)
 	}
 
 	log.Println("ALL CHECKED, ALL DONE!")
