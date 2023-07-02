@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"log"
 	"time"
 
@@ -10,7 +11,7 @@ import (
 
 func RunCompare() {
 
-	peers, err := LoadPeers(DATA_SET_OF_PEERS_TO_COMPARE_PATH)
+	peers, err := LoadPeers(DATA_SET_OF_PEERS_TO_COMPARE_PATH_AGAINST)
 
 	err = Compare(peers)
 	if err != nil {
@@ -20,18 +21,27 @@ func RunCompare() {
 }
 
 func LoadPeers(filePath string) ([]string, error) {
+	const EMPTY_CID = "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn"
 	rows, err := ReadCSV(filePath)
 	if err != nil {
 		return nil, err
 	}
 	peers := []string{}
+	empty_peers := []string{}
 	for i, row := range rows {
 		if i == 0 {
 			continue
 		}
-		peers = append(peers, row[0])
+		cid := row[2]
+		if cid != EMPTY_CID && cid != "NONE" {
+			peers = append(peers, row[0])
+		} else {
+			empty_peers = append(empty_peers, row[0])
+		}
 	}
-	return peers, nil
+	fmt.Println(len(peers))
+	all_peers := append(peers, empty_peers...)
+	return all_peers, nil
 }
 
 func Compare(peers []string) error {
@@ -59,22 +69,12 @@ func Compare(peers []string) error {
 				continue
 			}
 			_, err := sh.FindPeer(peer)
-			time.Sleep(time.Second * 5) // sleep so that we don"t spam the network with requests
+			time.Sleep(time.Second * 1) // sleep so that we don"t spam the network with requests
 			if err != nil {
 				continue
 			}
 			log.Println("Have checked ", len(checkedPeers), "/", len(peers))
-			cid, err := ic.GetIpnsCid(peer)
-
-			row := []string{
-				peer,
-				time.Now().Format("2006-01-02 15:04:05"),
-				cid,
-			}
-			err = AddRowToCSV(DATA_STORE_PATH_WEEK+WEEK_FILE, row)
-			if err != nil {
-				return nil
-			}
+			go ArchivePeer(peer, ic)
 			checkedPeers = append(checkedPeers, peer)
 		}
 		timesIter++
@@ -89,6 +89,21 @@ func Compare(peers []string) error {
 	}
 
 	log.Println("ALL CHECKED, ALL DONE!")
+
+	return nil
+}
+
+func ArchivePeer(peer string, ic IpnsCollector) error {
+	cid, err := ic.GetIpnsCid(peer)
+	row := []string{
+		peer,
+		time.Now().Format("2006-01-02 15:04:05"),
+		cid,
+	}
+	err = AddRowToCSV(DATA_STORE_PATH_WEEK+WEEK_FILE, row)
+	if err != nil {
+		return err
+	}
 
 	return nil
 }

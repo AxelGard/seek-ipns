@@ -8,6 +8,6 @@ const DATA_STORE_PATH_WEEK = "../store/week2/"
 
 const WEEK_FILE = "time.csv"
 
-const DATA_SET_OF_PEERS_TO_COMPARE_PATH = "../store/week2/" + WEEK_FILE
+const DATA_SET_OF_PEERS_TO_COMPARE_PATH_AGAINST = "../store/week1/" + WEEK_FILE
 
-const TIMES_TRY_TO_CHECK_COMPARE = 10
+const TIMES_TRY_TO_CHECK_COMPARE = 3
