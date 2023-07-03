@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"io/ioutil"
+	"log"
 	"strconv"
 
 	shell "github.com/ipfs/go-ipfs-api"
@@ -32,7 +33,10 @@ func (cd *CidData) String() string {
 func (cd *CidData) ToDiscovery() {
 	filepath := DATA_STORE_PATH + "cid_data.csv"
 	row := cd.Slice()
-	AddRowToCSV(filepath, row)
+	err := AddRowToCSV(filepath, row)
+	if err != nil {
+		log.Println("failed to append to cid data, ", err)
+	}
 }
 
 type DataCollector struct {
@@ -48,6 +52,7 @@ func (dc *DataCollector) Init() error {
 
 func (dc *DataCollector) ToDiscovery() {
 	for _, d := range dc.CurrentFiles {
+		//fmt.Println("DEBUG - to discovery Data collector: ", d)
 		d.ToDiscovery()
 	}
 }

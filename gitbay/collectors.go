@@ -200,17 +200,18 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector, dc *DataCollecto
 	if err != nil {
 		return err
 	}
-	peers_hosting_cid_info, err := dht_crawler.ipfs_DHT.FindProviders(ctx, casted_cid)
-	if err != nil {
-		return err
-	}
+	if cid != EMPTY_CID {
+		peers_hosting_cid_info, err := dht_crawler.ipfs_DHT.FindProviders(ctx, casted_cid)
+		if err != nil {
+			return err
+		}
 
-	peers_hosting_cid := []string{}
-	for _, p := range peers_hosting_cid_info {
-		peers_hosting_cid = append(peers_hosting_cid, p.ID.String())
+		peers_hosting_cid := []string{}
+		for _, p := range peers_hosting_cid_info {
+			peers_hosting_cid = append(peers_hosting_cid, p.ID.String())
+		}
+		cc.ToStorageNumberOfHost(cid, peer, peers_hosting_cid)
 	}
-	cc.ToStorageNumberOfHost(cid, peer, peers_hosting_cid)
-
 	if len(files) == 0 {
 		cid_data, err := cc.GetDataFromCid(cid)
 		if err != nil {

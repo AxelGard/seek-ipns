@@ -1,0 +1,631 @@
+<!-- Time-stamp: 2018-12-17 18:38:25 (tslil) -->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>tslil clingman</title>
+    <meta name="author" content="tslil clingman" />
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script type="text/javascript" src="js/underscore.js"></script>
+  </head>
+
+  <body ONLOAD="init()">  <a id=top></a>
+
+    <div class="nav">
+      <ul>
+	<li><a href="#top">Top</a></li>
+	<li><a href="#papers">Papers</a></li>
+	<li><a href="#formalisations">Formalisations</a></li>
+	<li><a href="#notes">Notes</a></li>
+	<li><a href="#teaching">Teaching</a></li>
+	<li><a href="#serve">Notable Service</a></li>
+	<li><a href="#hobbies">Hobbies</a></li>
+	<li><a href="#talks">Talks</a></li>
+	<li><a href="#conferences">Conferences</a></li>
+      </ul>
+    </div>
+
+    <div style="margin-bottom:100px">
+
+      <div class="HTML">
+	<h1 style="text-align:left;" id="unds">tslil clingman</h1>
+      </div>
+
+      <p>
+	How does one begin a website? What should be the first sentence to
+	meet the reader's eyes? I have elected to circumvent this
+	predicament by, careful readers may note, omitting the first sentence of this
+	website entirely.
+      </p>
+
+      <div class="image">
+	<img width=150
+	     src="images/me.jpg"
+	     alt="me.jpg"
+	     title="Not machine washable."/>
+	<div style="text-align: center;">
+	  <img width=32
+	       alt="Handwash"
+	       src="images/240px-Handw%C3%A4sche.svg.png"/>
+	  <img width=32
+	       alt="Do not tumble dry"
+	       src="images/240px-Nicht_trommeltrocknen.svg.png"/>
+	  <img width=32
+	       alt="Do not iron"
+	       src="images/240px-Nicht_b%C3%BCgeln.svg.png"/>
+	  <br/><br/><a href="https://git.sr.ht/~tslil/cv/blob/master/cv.pdf"><b>my CV</b></a>
+	</div>
+      </div>
+
+      <blockquote>
+	<p> I am a PhD candidate, expected graduation 2022, my
+	  supervisor
+	  is <a href="http://www.math.jhu.edu/~eriehl/">Emily
+	    Riehl</a>. </p>
+
+	<p>My interests are: <i>formal category theory</i>, <i>higher categories</i>,
+	  <i>homotopy type theory</i>, and <i>computer programming</i> including formalisation.</p>
+
+	<p>Today's day of the day is <span id="day"> -- well, this joke requires
+	    javascript :(</span>.</p>
+      </blockquote>
+
+      <blockquote>
+	&#128231; <a href="mailto:tslil@jhu.edu">tslil@jhu.edu</a><br/>
+	200 Krieger Hall, 3400 N. Charles Street, Baltimore, MD 21218
+      </blockquote>
+
+      <h2><a id=papers></a>Papers</h2>
+      <ul>
+	<li>(In preparation) <i>Towards witnessed category
+	    theory</i>, an exposition of some of the early theory and
+	  notions.</li>
+
+	<li><a href="https://arxiv.org/abs/2109.14123">Regular Calculi I: Graphical Regular
+	    Logic</a>, joint with B. Fong and D. I. Spivak, on
+	  the novel structure of regular calculi, and their use as an
+	  ergonomic and graphical syntax for regular logic and
+	  relations. In preparation is the companion,
+	  <i>Regular Calculi II: Further Theory</i></li>
+
+	<li><a href="http://arxiv.org/abs/2106.03652">A misunderstanding
+	    of Isbell&lsquo;s obstruction to monoidal strictification</a>, a
+	  careful look at the now widely disseminated argument about an
+	  obstruction to strictifying the associator which shows that, as
+	  stated, the argument is not obviously correct and that the truth
+	  is more subtle.</li>
+
+	<li><a href="https://arxiv.org/abs/2009.05545">Bi-representations
+	    and bi-initial objects are not so different</a>, joint with
+	  L. Moser, on 2-categorical and double-categorical theorems
+	  characterising when pseudo-functors into Cat are
+	  representable, with applications to bi-adjunctions and
+	  2-dimensional limits.</li>
+
+	<li><a href="https://arxiv.org/abs/2004.01313">2-limits and
+	    2-terminal objects are too different</a>, joint with L. Moser,
+	  on the failure of all theorems of the form &ldquo;a
+	  2-dimensional limit is a 2-dimensional terminal object in a
+	  2-dimensional slice category of cones&rdquo;. </li>
+      </ul>
+
+      <h2><a id=formalisations></a>Formalisations</h2>
+
+      <p>A sample of some of the formalisation work i have done in
+	Homotopy Type Theory.</p>
+
+      <ul>
+	<li>(In preparation)<i>Wild globular type theory and globular
+	    T-categories</i>, work towards formalising enough of general
+	  globular types, dependent globular types, and operations
+	  thereupon to state the definition of wild globular
+	  T-categories.</li>
+
+	<li><a href="https://github.com/HoTT/HoTT/commit/77f428547401621dc6bed16cc1b0115a7dd8e43b">WildCat
+	    in HoTT</a>, joint with Ali Caglayan, Morgan Opie, Emily
+	  Riehl, Mike Shulman, on formalising the definitions and
+	  early theory of &ldquo;wild&rdquo; higher categories &ndash;
+	  those higher categories whose operations are only coherent
+	  to a certain level &ndash; in Coq-HoTT.</li>
+
+	<li><a href="https://git.sr.ht/~tslil/y_and_j">The Yoneda lemma
+	    and dependent path induction are logically equivalent</a>, a
+	  formalised proof in UniMath.</li>
+
+	<li><a href="https://git.sr.ht/~tslil/univalence-to-funext">Univalence
+	    implies function extensionality</a>, a formalised proof in
+	  Agda-HoTT, using Voevodsky's trick but otherwise a novel
+	  approach via graphs of functions.</li>
+      </ul>
+
+      <h2><a id=notes></a>Notes</h2>
+
+      <p>Here you can find some of the other things i have written up.
+	Usually this is because i thought they were interesting,
+	sometimes the notes were intended to help me better understand
+	things, and sometimes they represent a transcript of my
+	explorations or talks. In no particular order,</p>
+
+      <ul>
+	<li><a href="store/cocategories.pdf">Cocategories</a>, an
+	  expository note on and the means through which cocategories give rise
+	  to enrichment.</li>
+
+	<li><a href="store/polynomials.pdf">Polynomials, a degree of
+	    generality</a>, an expository note designed as an introduction
+	  and motivation for the early theory of polynomial
+	  functors.</li>
+
+	<li><a href="store/thoughts.pdf">enriched base change, mates,
+	    and universal algebra</a>, an exploration i did in my first
+	  summer before JHU (before i knew about Lawvere theories and
+	  really much else).</li>
+
+	<li><a href="store/handout.pdf">there are countably infinitely
+	    many one-combinator bases</a>, a hand-out i wrote for an
+	  oral presentation as part of my honours degree in
+	  mathematics at UCT, in 2014.</li>
+
+	<li>(incomplete) <a href="store/cats.pdf">Working notes i
+	    compiled</a> as i learnt category theory, beginning from
+	  elementary definitions working up to a statement of homology
+	  at the level of Ab-categories, and many things besides.</li>
+
+	<li>(more coming soon)</li>
+      </ul>
+
+      <h2><a id=teaching></a>Teaching</h2>
+
+      <h3>William Kelso Morrill Award</h3>
+      <p>
+	In April of 2021 i was honoured to receive from my department
+	the William Kelso Morill Award for Excellence in Mathematics.
+	This award is given to the PhD candidate who &ldquo;best
+	displays the traits of William Kelso Morrill in his teaching,
+	love of teaching, love of mathematics, and concern for
+	students&rdquo;.
+      </p>
+
+      <p>I was nominated for this award by my students, one of whom
+	wrote &ldquo;Teaches and simplifies material very well. Takes the
+	time to work with students and gives a lot of feedback on homework
+	and portfolio. Grades within a reasonable timeframe and is easy to
+	reach out to. Reaches out to struggling students. Overall caring
+	person.&rdquo;
+      </p>
+
+      <h3>Introduction to Proofs: Course development assistant</h3>
+      <p>
+	In Spring of 2019 Prof. Riehl and i designed and ran an introductory course
+	for mathematics. The course was split into three components: a
+	&lsquo;standard&rsquo; introduction to proofs, an enquiry-based learning
+	approach to metric spaces, and a discussion-format section on the notion of
+	proof in mathematics.
+      </p>
+
+      <p>
+	The first third of the course used the structure of the book &ldquo;How to
+	Prove It&rdquo; by Velleman, and had homework generated by Prof. Riehl and
+	i, as well as some extracted from the book.
+      </p>
+
+      <p>
+	During the first third, for a change of perspective and so as to
+	introduce notions of constructive mathematics, i lectured for a week
+	on computer proof assistants. The class re-learnt propositional
+	calculus through the use of
+	the <a href="https://coq.inria.fr/">Coq</a> computer proof assistant,
+	as available online
+	at <a href="https://x80.org/collacoq/">Collacoq</a>, and the goal was
+	a modest reading comprehension of Coq code.
+      </p>
+
+      <p>
+	The script for these lectures, containing an introduction to type
+	theory, Coq, and Collacoq &ndash; to the extent necessary for, and phrased
+	within the broader of the course &ndash; as well as reading exercises, is
+	available here.
+      </p>
+	<ul>
+	  <li><a href="301/coq_lecture1.html">Lectures</a> as HTML file</li>
+	  <li><a href="301/coq_lecture1.txt">Source code</a> for
+	    lectures (processed by coqdoc to create the above)</li>
+	</ul>
+      <p>
+	In addition i created a written homework sheet, with feedback from
+	Prof. Riehl, on constructive mathematics,
+	available <a href="301/301pset6.pdf">here</a>.
+      </p>
+
+      <p>
+	In the second third of the course we switched to an IBL
+	(enquiry-based learning) format and explored some of the early
+	theory of metric spaces. Students completed the appropriate
+	(portion of) the appropriate script before class and took it in
+	turns to present their difficulties or successes with the
+	material to one another. Here are the scripts i designed, with
+	editing and input from Prof. Riehl. These are all made available
+	under the terms of theef
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+	<ul>
+	  <li><a href="301/script1.pdf">Script 1 (PDF)</a></li>
+	  <li><a href="301/script2.pdf">Script 2 (PDF)</a></li>
+	  <li><a href="301/script3.pdf">Script 3 (PDF)</a></li>
+	  <li><a href="301/script4.pdf">Script 4 (PDF)</a></li>
+	  <li><a href="301/script5.pdf">Script 5 (PDF)</a></li>
+	  <li><a href="301/script6.pdf">Script 6 (PDF)</a></li>
+	  <li><a href="301/script7.pdf">Script 7 (PDF)</a></li>
+	</ul>
+
+      <h3>Mentor in and organiser for the JHU Directed Reading Programme</h3>
+      <p>
+	I have been a mentor in
+	the <a href="http://www.math.jhu.edu/drp.html">JHU Directed
+	  Reading Programme</a> since its inception. The programme pairs
+	undergraduate students with graduate students for one-on-one
+	independent studies over the course of a semester.
+      </p>
+
+      <p>
+	Out of a desire to see the budding programme succeed, through 2018-2019 i
+	helped organise the programme, and represented our then
+	fledgling chapter at the 2018 Directed Reading Programme Network
+	and Workshop at MIT.
+      </p>
+
+      <p>
+	I have mentored projects on the following topics: Fundamentals of
+	General Topology, Braid Group Representations and Knot Invariants,
+	Category Theory, and Homotopy Type Theory.
+      </p>
+
+      <p>
+	Abstracts of the projects may be found on
+	the <a href="http://www.math.jhu.edu/drp.html">programme website</a>.
+      </p>
+
+      <h3>ODE Autumn 2019/Spring 2021: Portfolios experiment</h3>
+
+      <p>
+	As head teaching assistant
+	to <a href="http://math.jhu.edu/~brown/">Prof. Richard Brown</a>
+	&ndash; director of undergraduate studies &ndash;, in the
+	usually calculation-homework-centric differential equations
+	&ldquo;service course&rdquo;, i helped construct and orchestrate
+	an experiment in student evaluation. Despite a class size of
+	175, we designed the course around semester-long digital
+	portfolios: every week students were charged with creating
+	&lsquo;artefacts&rsquo; covering some minimum amount of content,
+	and we were careful to leave this task open-ended.
+      </p>
+
+      <p>
+	The goal was to afford students the freedom to express,
+	challenge, and reinforce their understanding in their terms, and
+	in doing so emphasise a fundamental facet of mathematics:
+	creativity. Initially most students produced text-based
+	documents closely matching some of the example artefacts.
+	However, with weekly small-group TA meetings focused solely on
+	crafting these portfolio entries, students gained in confidence
+	throughout the semester. They regularly created artefacts
+	exceeding the minimum requirements, about topics they enjoyed,
+	connections to other courses they had noticed, and work they
+	were proud of. Moreover, the diversity in the style and medium
+	of entries grew noticeably too.
+      </p>
+
+      <p>
+	Most importantly, we the TAs spent the semester emphasising the
+	room and need for creativity in engaging with and doing
+	mathematics. Ultimately the course was ranked the highest among
+	all service courses by the students.
+      </p>
+
+      <h3>Calculus III &amp; ODE: Head T.A. and WeBWorK admin.</h3>
+      <p>
+	In the Autumn of 2018 i was offered the role of Head Teaching
+	Assistant for the Calculus III course at JHU. The instructor,
+	Prof. Riehl, decided that the course should have an online
+	homework component and so we settled on
+	the <a href="http://webwork.maa.org/">WeBWorK</a> platform.
+      </p>
+      <p>
+	During the course i was responsible for managing the online
+	platform, exporting grades, and at times, programming new
+	exercises for the students.
+      </p>
+
+      <p>
+	Owing to my experience in this position and my desire to see an
+	online homework platform succeed, i was offered the same role
+	for the course in the Autumn of 2019, though this time the
+	instructor was <a href="http://math.jhu.edu/~brown/">Prof.
+	  Richard Brown</a>, the director of undergraduate studies. I was
+	offered the same role in Autumn of 2020 and Spring 2021, again
+	with Prof. Richard Brown, but this time for the ODE course.
+      </p>
+
+      <h3>Introduction to Calculus: Sole instructor</h3>
+      <p>
+	In Autumn of 2017 i was offered the chance to run the introductory
+	mathematics course designed to bridge high-school and university
+	level mathematics. Although there was an assigned course text, the
+	syllabus, homework, tests and exams, teaching, and marking were
+	left entirely to me. Thus, i designed and ran the course.
+      </p>
+
+      <h3>Intersession Course: Primary Instructor</h3>
+      <p>
+	In January of 2017 several colleagues and i applied for, and were
+	granted permission by the university to run an intersession course
+	on recreational mathematics entitled &ldquo;Recreational Mathematics
+	for All&rdquo;. We divided up the course into several, related topics
+	and each co-organiser was given a few lectures to develop their
+	topic. I lectured on secret sharing, building on the number theory
+	that had gone before, and paving the way to the group theory that
+	would come after. For evaluation the students submitted an
+	elaboration of a topic that they had met during the course.
+      </p>
+
+      <h3>Cumulative experience as a teaching assistant</h3>
+      <p>
+	I have served as a Teaching Assistant in courses concerning: Real
+	Analysis, Introductory Abstract Algebra, Linear Algebra, Differential
+	Equations, The Calculus Sequence, and String Theory.
+      </p>
+
+      <h2><a id=serve></a>Notable Service</h2>
+      <ul>
+	<li>
+	  Primary organiser of the <a href="https://ct-octoberfest.github.io">2019 Category Theory Octoberfest at
+	    JHU</a>.
+	</li>
+	<li>
+	  Co-organiser of the JHU chapter of
+	  the <a href="http://www.math.jhu.edu/drp.html">Directed Reading
+	    Programme</a> (Autumn &amp; Spring 2018, 2019).
+	</li>
+	<li>
+	  Organiser of Slideshow Karaoke for the Graduate Lunch Seminar
+	  at JHU.
+	</li>
+	<li>
+	  Founder of the Maths Postgraduate Tea Party, Univ. of Cape Town
+	  &ndash; a biweekly meeting of graduates, comprising peer lectures and
+	  discussions over tea.
+	</li>
+	<li>
+	  Various roles in &ldquo;Algorithm Circle&rdquo;, a theoretical comp. sci.
+	  club, Univ. of Cape Town, holding free and open lectures, as
+	  well as competition preparation. Lecturer (2011-2015),
+	  Vice-chairman (2012, 2014), Chairman (2013).
+	</li>
+	<li>
+	  Organiser of a Haskell programming course, Univ. of Cape Town,
+	  2011 &amp; 2012 &ndash; a free and open Haskell language programming
+	  course.
+	</li>
+      </ul>
+
+      <h2><a id=hobbies></a>Hobbies</h2>
+      <p>What do i do when i'm not doing maths? A small catalogue of some
+	of my endeavours</p>
+
+      <ul>
+	<li><a href="electronics.html">3D printing &amp;
+	    electronics</a></li>
+	<li><a href="ca.html">Exploring cellular automata</a></li>
+	<li><a href="hobbies.html">Coding, computer generated art, and
+	playing and creating music</a></li>
+      </ul>
+
+
+      <p>I maintain
+	a <a href="https://en.wikipedia.org/wiki/Gemini_(protocol)">Gemini</a>
+	capsule with various entries about computing and my hobbies.
+	Of particular interest is the ability to play the game
+	of <a href="https://en.wikipedia.org/wiki/Tak_(game)">Tak</a>
+	against a <a href="https://git.sr.ht/~tslil/ctak">bot</a> of
+	mine served over CGI over
+	Gemini.</p>
+
+      <p>
+	<a href="gemini://l-3.space">gemini://l-3.space</a>
+      </p>
+
+      <p>
+	It's quite possible that your browser doesn't (yet!) support
+	the Gemini protocol; <code>l-3.space</code> is compiled to
+	bare-bones HTML automatically and available
+	at <a href="https://l-3.space">https://l-3.space</a>.
+      </p>
+
+      <h2><a id=talks></a>Talks</h2>
+      <ul>
+
+	<li>September 2021<br/>
+	  <i>Representation presentation: to present a representative,
+	    2-representative theorem</i><br/>
+	  <a href="https://sites.google.com/view/ct2021">CT
+	    20&rarr;21</a>, video talk.
+	</li>
+
+
+	<li>2021/08/10<br/>
+	  <i>Invitation to the next dimension: 2D doesn't mean double
+	    the work, only twice as much</i><br/>
+	  <a href="https://topos.site/berkeley-seminar/">Topos
+	    Institute</a>, Berkeley.
+	</li>
+
+	<li>2021/07/16<br/>
+	  <i>Graphical Regular Logic: the complete 2D picture</i><br/>
+	  (<a href="store/act21.pdf">slides</a>)<br/>
+	  <a href="https://www.cl.cam.ac.uk/events/act2021/">Applied
+	    Category Theory 2021</a>, University of Cambridge. </li>
+
+	<li>2020/11/20<br/>
+	  <i>More than merely composition: towards the theory of
+	    proof-relevant categories &amp; algebras</i><br/>
+	  <a href="http://mathieu.anel.free.fr/seminar.html">Carnegie Mellon
+	    University HoTT Seminar</a></li>
+
+	<li>2020/10/14<br/>
+	  <i>2-lessons from Australian Category Theory: Mates and
+	    Doctrinal Adjunction</i><br/>
+	  (<a href="store/mates.pdf">slides</a> - warning, large
+	  file!)<br/>
+	  <a href="http://www.math.jhu.edu/~eriehl/ct/">Johns
+	    Hopkins Category Theory Seminar</a></li>
+
+	<li>2020/09/16<br/>
+	  <i>BI DOUBLing categories we'll see<br/>MULTIple morphisms acting
+	  weakly<br/>Two out of the four<br/>Have laws rather poor<br/>But the
+	  last is coherent VIRTUALLY!</i><br/>
+	  (<a href="store/bidoublemultivirtual.pdf">slides</a> - warning, large
+	  file!)<br/> <a href="http://www.math.jhu.edu/~eriehl/ct/">Johns
+	  Hopkins Category Theory Seminar</a></li>
+
+	<li>2019/11/05 &amp; 2019/11/12<br/> <i>Within and not without: an
+	apology for internal
+	languages</i><br/> <a href="http://www.math.jhu.edu/~eriehl/ct/">Johns
+	Hopkins Category Theory Seminar</a> </li>
+
+	<li>2019/09/17<br/>
+	  <i>Induction and construction: the pointless theory of localic
+	    topox</i><br/>
+	  <a href="http://www.math.jhu.edu/~eriehl/ct/">Johns Hopkins
+	    Category Theory Seminar</a>
+	</li>
+
+	<li>2019/06/15<br/>
+	  <i>Towards proof relevant category theory, as modelled by
+	    globular T-categories</i><br/>
+	  <a href="https://cas.oslo.no/hott-uf/">HoTT-UF workshop</a> at
+	  Types 2019,<br/> Oslo</li>
+
+	<li>2019/06/06<br/>
+	  <i>What is proof relevant category theory?</i><br/>
+	  <a href="https://cas.oslo.no/research-groups/homotopy-type-theory-and-univalent-foundations-article2083-827.html">
+	    HoTT-UF project</a>,<br/> CAS, Oslo</li>
+
+	<li>2019/04/02<br/>
+	  <i>The univalence axiom, a brief &amp; incomplete tour</i><br/>
+	  (<a href="store/bham19_talk.pdf">slides</a>)<br/>
+	  <a href="https://unimath.github.io/bham2019/">School and
+	    Workshop on Univalent Mathematics</a>,
+	  <br/> University of Birmingham</li>
+
+	<li>2019/02/19<br/>
+	  <i>Polynomial functors, a degree of generality</i><br/>
+	  <a href="http://www.math.jhu.edu/~eriehl/ct/">Johns Hopkins
+	    Category Theory Seminar</a> </li>
+
+	<li>2019/02/10<br/>
+	  Audience of high-school students,
+	  <i>Fractions: ratio of two integers or universal
+	    machine?</i><br/>
+	  Johns Hopkins Mathematics Tournament </li>
+
+	<li>2018/11/30<br/>
+	  <i>Homotopy Type Theory, the confluence of logic<br/>
+	    and space</i> (<a href="store/gwu_hott.pdf">slides</a>)<br/>
+	  <a href="https://home.gwu.edu/~harizanv/LogicSeminar1819.pdf">
+	    University Seminar: Logic Across Disciplines</a>,<br/>
+	  George Washington University
+	</li>
+
+	<li>2018/11/08<br/>
+	  <i>What is an LCC?</i><br/>
+	  <a href="http://www.math.jhu.edu/~eriehl/ct/">Johns Hopkins
+	    Category Theory Seminar</a>
+	</li>
+
+	<li>2018/09/20<br/>
+	  <i>Type Theory and Categories, the unbearable likeness of
+	    being</i><br/> (<a href="store/oral.pdf">slides</a>)<br/>
+	  Oral Speciality Exam,<br/> Johns Hopkins University
+	</li>
+
+	<li>2017/11/15 and 2017/12/05<br/>
+	  <i>What do we mean when we say spectra?</i> &emsp; and<br/>
+	  <i>&lsquo;Rings, Modules and Algebras in Infinite Loop Space Theory&rsquo;
+	    at a glance</i><br/>
+	  Graduate Course: Topics in Algebraic Topology,<br/>
+	  Johns Hopkins University
+	</li>
+
+	<li>2017/11/30<br/>
+	  <i>An Intuitive Description of Toposes, Toposes as a
+	    Description of Intuitionism</i><br/>
+	  <a href="https://home.gwu.edu/~harizanv/LogicSeminar1718.pdf">
+	    University Seminar: Logic Across Disciplines</a>,<br/>
+	  George Washington University
+	</li>
+
+	<li>2017/10/12<br/>
+	  <i>All good things must come to an end</i><br/>
+	  <a href="http://www.math.jhu.edu/~eriehl/ct/">Johns Hopkins
+	    Category Theory Seminar</a>
+	</li>
+
+	<li>2017/04/09<br/>
+	  <i>The calculus of fractions and homotopy theory</i><br/>
+	  Graduate Course: Algebraic Topology II,<br/>
+	  Johns Hopkins University
+	</li>
+
+	<li>2016/12/12<br/>
+	  <i>A monad is just &#8230; (with an eye to universal
+	    algebra)</i><br/>
+	  <a href="http://www.math.jhu.edu/~eriehl/ct/">Johns Hopkins Category Theory Seminar</a>
+	</li>
+      </ul>
+
+      <h2><a id=conferences></a>Conferences</h2>
+      <ul>
+	<li>Programme Associate, Higher Categories &amp;
+	  Categorification, Spring 2020, MSRI, USA</li>
+	<li>Category Theory Octoberfest 2019, JHU, USA</li>
+	<li>Homotopy Type Theory 2019, CMU, USA</li>
+	<li>Category Theory 2019, University of Edinburgh, UK</li>
+	<li>Types 2019, Oslo, Norway</li>
+	<li>HoTT-UF Project, CAS Oslo, Norway</li>
+	<li>Summer School on Higher Topos Theory and Univalent
+	  Foundations, 2019, University of Leeds, UK</li>
+	<li>School and Workshop on Univalent Mathematics, 2019,
+	  University of Birmingham, UK</li>
+	<li>Vladimir Voevodsky Memorial Conference, IAS, USA</li>
+	<li>Category Theory Octoberfest 2018, CUNY, USA</li>
+	<li>Directed Reading Programme Network and Workshop 2018, MIT, USA</li>
+	<li>Category Theory Octoberfest 2017, CMU, USA</li>
+	<li>Category Theory 2017, UBC, Canada</li>
+      </ul>
+
+      <h2>License</h2>
+      <p>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+	  <img alt="Creative Commons License" style="border-width:0"
+	       src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/></a>
+
+	<br/>Except where otherwise noted, content on this website is licensed under
+	a <a rel="license"
+	     href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+	  Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+
+      <blockquote>
+	This website and its content is also available
+	through <a href="https://ipfs.io/">IPFS</a>
+	via <a href="https://dnslink.io/">DNSLink</a>
+	at <code>/ipns/tslil.xyz</code>, or directly
+	at <code>/ipns/QmeGwomQyT5TtBfYAuA5KHr5XJEuiEvWAdhcapppUftVU5</code>.
+      </blockquote>
+    </div>
+
+  </body>
+</html>
