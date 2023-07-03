@@ -52,7 +52,7 @@ func (dc *DataCollector) Init() error {
 
 func (dc *DataCollector) ToDiscovery() {
 	for _, d := range dc.CurrentFiles {
-		//fmt.Println("DEBUG - to discovery Data collector: ", d)
+		//fmt.Println("Discovered: ", d)
 		d.ToDiscovery()
 	}
 }

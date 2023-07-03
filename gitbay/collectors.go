@@ -170,10 +170,12 @@ func test_GetFileNamesFromCid() {
 	}
 }
 
-func Collecting(peer string, ic IpnsCollector, cc CidCollector, dc *DataCollector, dht_crawler *Crawler, ctx context.Context) error {
+func Collecting(peer string, ic IpnsCollector, cc CidCollector, sh *shell.Shell, dht_crawler *Crawler, ctx context.Context) error {
 	EMPTY_CID := "QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn"
 	NO_FILES := []string{}
 	NO_CID := ""
+	dc := DataCollector{}
+	dc.sh = sh
 	dc.CurrentFiles = []CidData{}
 	dc.CurrentPeer = peer
 	cid, err := ic.GetIpnsCid(peer)
@@ -191,7 +193,7 @@ func Collecting(peer string, ic IpnsCollector, cc CidCollector, dc *DataCollecto
 	if cid == EMPTY_CID {
 		cc.ToDiscovery(peer, EMPTY_CID, NO_FILES)
 	}
-	files, err := cc.GetAllFilesNamesFromCid(cid, dc, ctx)
+	files, err := cc.GetAllFilesNamesFromCid(cid, &dc, ctx)
 	if err != nil {
 		return err
 	}

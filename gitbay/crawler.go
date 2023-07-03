@@ -48,6 +48,7 @@ func CrawlingEachNode() {
 		panic(err)
 	}
 
+	sh := shell.NewShell("localhost:5001")
 	ic := IpnsCollector{}
 	ic.Init()
 
@@ -58,11 +59,9 @@ func CrawlingEachNode() {
 	dc.Init()
 
 	var peerCache []string
-	fmt.Println(Collecting("12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi", ic, cc, &dc, crawler, ctx))
+	fmt.Println(Collecting("12D3KooWBA3FLioUQPqtj3RT4fxbquGNyb2hfQwXq8UTt5xmxuCi", ic, cc, sh, crawler, ctx))
 
 	go crawler.Run()
-
-	sh := shell.NewShell("localhost:5001")
 
 	count := 0
 	foundPeers := 0
@@ -78,7 +77,7 @@ func CrawlingEachNode() {
 		}
 		foundPeers++
 		log.Println("found peers", foundPeers, "/", count)
-		Collecting(peer, ic, cc, &dc, crawler, ctx)
+		Collecting(peer, ic, cc, sh, crawler, ctx)
 	}
 
 }

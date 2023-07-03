@@ -27,7 +27,7 @@ func SwarmCrawl() {
 	foundPeers := 0
 	var peerCache []string
 
-	rows, err := ReadCSV(DATA_STORE_PATH + "cid_data.csv")
+	rows, err := ReadCSV(DATA_STORE_PATH + "found.csv")
 	if err != nil {
 		panic(err)
 	}
@@ -61,8 +61,7 @@ func SwarmCrawl() {
 				continue
 			}
 			foundPeers++
-			go Collecting(peer, ic, cc, &dc, dht_crawler, ctx)
-
+			go Collecting(peer, ic, cc, sh, dht_crawler, ctx)
 		}
 
 	}
