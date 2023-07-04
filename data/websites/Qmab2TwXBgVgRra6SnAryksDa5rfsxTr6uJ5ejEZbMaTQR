@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale:1">
+  <title>Verity Baptist Church</title>
+</head>
+<body>
+    <div id="navbar">
+    <img src="https://w3s.link/ipfs/QmaCKBCFv8JAA1p1xcdHJ34s7n6qvhzGBCvG3kbm3PDmfW" alt="">
+    <p>Verity Baptist Church</p>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mp3.html">MP3 Sermons</a></li>
+        <li><a href="video.html">Videos</a></li>
+        <li><a href="about.html">VBC Info</a></li>
+        <li><a href="swtraining.html">Soul Winning Seminar</a></li>
+    </ul>
+    </div>
+
+    <div id="showcase">
+        <img src="https://w3s.link/ipfs/QmaHDMYuruVmcviMuWJk1vjqPjnzqs1D5LyFcZ9Cmu7XUT" alt="">
+
+    <br>
+    <br> 
+    <br>
+    <br> 
+    <br>
+    <br>  
+    <font size=3><p>Verity Baptist Church videos are available here:</p>
+    <br>
+    <font size=3><p><a href="https://bannedbutnotbound.com/livestream">Livestream Sermons</a></p>
+    <font size=3><p><a href="https://rumble.com/user/VerityBaptistChurch">Rumble</a></p>
+    <font size=3><p><a href="https://www.bitchute.com/channel/fzySt0Vnw7Gq">BitChute</a></p> 
+    <font size=3><p><a href="https://gab.com/VerityBaptistChurch">Gab.com</a></p>   
+    <br>
+    <br>
+    <font size=3><p><a href="mp3.html">Click here for MP3 sermons</a></p>
+    <br>
+     <p><a href="video.html">Click here for videos of sermons and documentaries</a></p>
+    <br>
+     <p><a href="https://bannedbutnotbound.com">Click here to sign up for the Banned, But Not Bound email list</a></p>
+    <br>  
+    <font size=3><p><a href="https://w3s.link/ipfs/QmXjwAbaLVBh17E53h8yXr14kwhWtBUw5u9utSBXD8Uuki">Click here to download the King James Bible in PDF</a></p>
+    <br>
+    <font size=3><p><a href="https://veritybaptist.com/donate/">Click Here to Donate With a Debit or Credit Card</a></p>
+    <br>
+  </font>
+    <br>
+    <br>
+    
+    
+  </div>
+
+  
+</body>
+</html>
