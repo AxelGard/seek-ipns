@@ -1,0 +1,705 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/>
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <!-- Site Metas -->
+  <meta name="keywords" content="atomsoft.nft,blockchain,web3,defi"/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+
+  <title>ATOMSOFT software development</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="owl.carousel.min.css"/>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet"/>
+  <!-- responsive style -->
+  <link href="responsive.css" rel="stylesheet"/>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+              <a class="navbar-brand" href="index.html">
+                <span>
+                  aTomSoft.NFT
+                </span>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex  flex-column flex-lg-row align-items-center">
+                  <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#about">About </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#service">Services </a>
+                    </li>
+   		    <li class="nav-item">
+                      <a class="nav-link" href="#showcase">Showcases </a>
+                    </li>
+                  </ul>
+
+                  <button id="connectButton" onclick="connect()">Connect</button>
+
+                  <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                    <div class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></div>
+                    <span style="color: #ffffff" id="accountDetails" > </span>
+                  </form>
+                </div>
+              </div>
+            </nav>
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </header>
+
+<!-- dialog -->
+<dialog id="dialog">
+ <img src="location-service.png" alt="Software Services" />
+  <form method="dialog">
+    <p>If you want to book a demo , product support , partnerships , feedback and general inquiries please send us an email to --> atomsoft.nft@gmail.com</p>
+    <button>OK</button>
+  </form>
+</dialog>
+
+    <!-- end header section -->
+
+     <!-- slider section -->
+    <section class=" slider_section ">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3">04</li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-5 col-md-6">
+                  <div class="slider_detail-box">
+                    <h1>
+                      We <br/>
+                      Build the software <br/>
+                      You need
+                    </h1>
+                    <p>
+                      We engage in high level development keeping in mind the business complexities and objectives which needs to be accomplished.
+                    </p>
+                    <div class="btn-box">
+                       <a  class="btn-1"  style="cursor:pointer;"  onclick="dialog.showModal()">
+                        Contact us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box">
+                    <img src="slider-img.png" alt=""/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-5 col-md-6">
+                  <div class="slider_detail-box">
+                    <h1>
+                      Web <br/>
+                      Development<br/>
+                      Services
+                    </h1>
+                    <p>
+                       DB driven web-based software which ensure great experience for web users.
+                    </p>
+                    <div class="btn-box">
+                      <a  class="btn-1"  style="cursor:pointer;"  onclick="dialog.showModal()">
+                        Contact us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box">
+                    <img src="slider-img2.png" alt=""/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-5 col-md-6">
+                  <div class="slider_detail-box">
+                    <h1>
+                      Blockchain<br/>
+                      Web3 <br/>
+                      Smart contracts
+                    </h1>
+                    <p>
+                      DEFI decentralized software with full security of data and transactions on ETH compatible networks.
+                    </p>
+                    <div class="btn-box">
+                      <a  class="btn-1"  style="cursor:pointer;"  onclick="dialog.showModal()">
+                        Contact us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box">
+                    <img src="slider-img3.png" alt=""/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-5 col-md-6">
+                  <div class="slider_detail-box">
+                    <h1>
+                      Start accepting <br/>
+                      crypto<br/>
+                      as payment
+                    </h1>
+                    <p>
+                      Start accepting crypto payments in your business today and benefits from descentralized finance.
+                      Unique secure escrow smart contract from ATOMSOFT
+                      Ask for FREE demo and more info!
+                    </p>
+                    <div class="btn-box">
+                      <a  class="btn-1"  style="cursor:pointer;"  onclick="dialog.showModal()">
+                        Ask free demo
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box">
+                    <img src="slider-img4.png" alt=""/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-5 col-md-6">
+                  <div class="slider_detail-box">
+                    <h1>
+                     Hosting for every website. <br/>
+                     Unlimited storage <br/>
+                     with lowest market cost. 
+                    </h1>
+                    <p>
+                     descentralized hosting 99.9% uptime.
+                    </p>
+                    <div class="btn-box">
+                      <a  class="btn-1"  style="cursor:pointer;" href="./hosting.html" >
+                        P2P hosting
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box">
+                    <img src="slider-img5.jpg" alt=""/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="carousel_btn-container">
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- welcome section -->
+  <section class="welcome_section layout_padding">
+    <div class="container" id="about">
+      <div class="custom_heading-container">
+        <h2>
+          Make your business highly secure with our blockchain app development services
+        </h2>
+      </div>
+      <div class="layout_padding2">
+        <div class="img-box">
+          <img src="welcome.png" alt=""/>
+        </div>
+        <div class="detail-box">
+          <p>
+            Blockchain technology has come out as the new door for various industries to enter a new age of tech-driven transactions where every asset is decentralized.
+            By crafting over the potential while addressing every demand and needs of our customers, we build efficient Blockchain services that help businesses grow and stand out from the crowd.
+            From Smart Contract development to Cryptocurrencies and Blockchain app development, our expertise lies everywhere. Right from auditing the processes before they go live on the unaltered system and helping startups and enterprises raise an ICO, we have done it all.
+          </p>
+          <div>
+            <a  style="cursor:pointer;"  href="./hosting.html">
+              See P2P hosting & web DAPP plans
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- end welcome section -->
+
+  <!-- service section -->
+
+  <section class="service_section">
+    <div class="container" id="service">
+      <div class="custom_heading-container">
+        <h2>
+          Our Services
+        </h2>
+      </div>
+      <div class="service_container layout_padding2">
+        <div class="service_box">
+          <div class="img-box">
+            <img src="s-1.jpg" alt=""/>
+          </div>
+          <div class="detail-box">
+            <h4  style="color: #c99900;">
+              Software <br/>
+              Consultant
+            </h4>
+            <p style="color: #000000;">
+             Our company provides deep expertise and knowledge regarding software development projects that satisfy an organization's specific needs.
+             We bring a vast skill set, knowledge, experience, and IT acumen to provide services designed specifically to improve workflows that result in better business decisions.             </p>
+          </div>
+        </div>
+        <div class="service_box">
+          <div class="img-box">
+            <img src="s-2.jpg" alt=""/>
+          </div>
+          <div class="detail-box">
+            <h4  style="color: #c99900;">
+              Software <br/>
+              Web Services
+            </h4>
+            <p style="color: #000000;">
+              Turn Your Projects into a Reality with One of the Top Software Consulting Companies.
+              ATOMSOFT is a leading software development consulting company that hires only the top 1% of tech talent.
+              We help you design custom technology solutions tailored to your business needs.
+             </p>
+          </div>
+        </div>
+        <div class="service_box">
+          <div class="img-box">
+            <img src="s-3.jpg" alt=""/>
+          </div>
+          <div class="detail-box">
+            <h4  style="color: #c99900;">
+              Agile methodology <br/>
+              Planning
+            </h4>
+            <p  style="color: #000000;" >
+              Ready to build your Software?
+              develop your product from start to finish, or handle individual segments of the process for you.
+              We offer world-class software product development services from requirements and systems analysis, architecture and design to development, testing, migration, and deployment.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+         <a  style="cursor:pointer;"  onclick="dialog.showModal()">
+          Request a proposal
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+
+  <!-- showcase section -->
+
+  <section class="service_section">
+    <div class="container" id="showcase">
+      <div class="custom_heading-container">
+        <h2>
+          Showcases
+        </h2>
+      </div>
+      <div class="service_container layout_padding2">
+        <div class="service_box">
+          <div class="img-box" style="height:240px;">
+            <img src="nft-mobile.png" alt=""/>
+          </div>
+
+          <div class="detail-box" style=" color: #f9fcfb;">
+            <h4  style="color: #c99900;">
+              NFTart<br/>
+              nft marketplace
+            </h4>
+          <table>
+            <tr>
+             <td>  
+            <div class="img-box" style="width:120px; height:120px;">
+              <img src="nft-art.png" alt=""/>
+            </div>
+             </td>
+             <td>
+            <p style="color: #000000;font-size:12px;">
+            Experience the power of decentralized ownership with our NFT marketplace mobile app, connecting artists and collectors in a unique digital ecosystem.
+            </p>
+             </td>
+            </tr>
+           </table>
+          </div>
+          
+        </div>
+        <div class="service_box">
+          <div class="img-box"  style="height:240px;">
+            <img src="wallet-mobile.png" alt=""/>
+          </div>
+          <div class="detail-box">
+            <h4  style="color: #c99900;">
+              SolWallet <br/>
+              fully testnet wallet!
+            </h4>
+         <table>
+            <tr>
+             <td>  
+            <div class="img-box" style="width:120px; height:120px;">
+              <img src="sol-wallet2.png" alt=""/>
+            </div>
+             </td>
+             <td>
+            <p style="color: #000000;font-size:12px;">
+            Our crypto wallet mobile app provides a secure and user-friendly way to store, manage, and trade digital assets from anywhere, anytime.
+            </p>
+             </td>
+            </tr>
+           </table>
+          </div>
+        </div>
+        <div class="service_box">
+          <div class="img-box"  style="height:240px;">
+            <img src="payec-banner.png" alt=""/>
+          </div>
+          <div class="detail-box">
+            <h4 style="color: #c99900;">
+              PayEC <br/>
+              use crypto as payment
+            </h4>
+         <table>
+            <tr>
+             <td>  
+            <div class="img-box" style="width:120px; height:120px;">
+              <img src="payEC-QR1.png" alt=""/>
+            </div>
+             </td>
+             <td>
+            <p style="color: #000000;font-size:12px;">
+            Experience the benefits of decentralized payment with our payment mobile app, providing fast and low-cost transactions without intermediaries or borders. 
+            <a  style="padding: 1px 10px;font-size:10px;background-color: #000000;" href="./payEC.html">READ MORE</a>
+            </p>
+             </td>
+            </tr>
+           </table>
+
+          </div>
+        </div>
+      </div>
+      <div>
+         <a  style="cursor:pointer;"  onclick="dialog.showModal()">
+          Request a demo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end showcase section -->
+
+
+  <!--problem section -->
+  <section class="problem_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
+          End-to-End Software Development Solutions
+        </h2>
+      </div>
+      <div class="layout_padding2">
+        <div class="img-box">
+          <img src="problem.jpg" alt=""/>
+        </div>
+        <div class="detail-box">
+          <p>
+            Simply put, End-to-End software solutions allows organizations to develop high-quality software products in a cost-efficient way.
+            From simple mobile app development to smart customization of pre-developed platforms to full-cycle custom solutions.
+            Build based on strong technology infrastructure and pipeline.
+            It's a means of modernizing and digitizing your business ushering it into the modern age.
+          </p>
+          <div>
+             <a  style="cursor:pointer;"  onclick="dialog.showModal()">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- end problem section -->
+  <!-- why section -->
+
+  <section class="why_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
+          Why Choose Us
+        </h2>
+      </div>
+      <div class="content-container">
+        <p>
+          We are in software development since more than 20 years, for regional and global solutions based on LATAM and Europe.
+          These key areas of implementation guarantee our delivery of unparalleled technology solutions.
+          Custom Software Development.
+          Cloud Computing.
+          Mobile and Web Development.
+          Maintenance and Support.
+          Blockchain Consulting DAPP.
+          ERC20 and NFT ERC721 standars.
+        </p>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="img-box">
+              <img src="smiley.png" alt=""/>
+            </div>
+            <div class="detail-box">
+              <h3>
+                99%
+              </h3>
+              <h6>
+                SATISFIED CLIENTS
+              </h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="img-box">
+              <img src="monitor.png" alt=""/>
+            </div>
+            <div class="detail-box">
+              <h3>
+                1200+
+              </h3>
+              <h6>
+                USERS registered
+              </h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="img-box">
+              <img src="multiple-users-silhouette.png" alt=""/>
+            </div>
+            <div class="detail-box">
+              <h3>
+                40+
+              </h3>
+              <h6>
+                CLIENTS
+              </h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="img-box">
+              <img src="bar-chart.png" alt=""/>
+            </div>
+            <div class="detail-box">
+              <h3>
+                900+
+              </h3>
+              <h6>
+                DAILY request
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- end why section -->
+
+  <!-- client section -->
+  <section class="client_section layout_padding">
+    <div class="container">
+      <h2>
+        What Our Clients Says
+      </h2>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="client_container layout_padding2">
+              <div class="client_text">
+                <p>
+                  Quality project was delivered in time and according technical expectations were fulfilled.
+                  Very glad found ATOMSOFT software development services, expertise and commitment.
+                </p>
+              </div>
+              <div class="detail-box">
+                <div class="img-box">
+                  <img src="client0.png" alt=""/>
+                </div>
+                <div class="name">
+                  <h5>
+                    
+                  </h5>
+                  <p>
+                    FECLIBA federacion clinicas
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="client_container layout_padding2">
+              <div class="client_text">
+                <p>
+                  Best of all was quality of software and functionality requested worked from first deployment.
+                  really appreciate and thanks to the professional team behind ATOMSOFT and their expertise.
+                  in a few words plug and play software solution that works!
+                </p>
+              </div>
+              <div class="detail-box">
+                <div class="img-box">
+                  <img src="client1.png" alt=""/>
+                </div>
+                <div class="name">
+                  <h5>
+                    
+                  </h5>
+                  <p>
+                    OLIMPIA mutal
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="client_container layout_padding2">
+              <div class="client_text">
+                <p>
+                  We hired ATOMSOFT as 3rd party software consulting for attaching web module algorithm needed.
+                  the functionality was included with main modules with no issues at all and working 100%.
+                  delighted to work with such amazing team
+                </p>
+              </div>
+              <div class="detail-box">
+                <div class="img-box">
+                  <img src="client2.png" alt=""/>
+                </div>
+                <div class="name">
+                  <h5>
+                    
+                  </h5>
+                  <p>
+                    MEDTECH
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+  <!-- end client section -->
+
+
+  <div class="footer_bg">
+    <!-- info section -->
+    <section class="info_section layout_padding2-bottom">
+      <div class="container">
+        <h3 class="">
+          ATOMSOFT.NFT
+        </h3>
+      </div>
+      <div class="container info_content">
+
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-baseline">
+          <div class="social-box">
+            <a href="Business-Card.png"  target="_blank">
+              <img src="instagram1.png" alt=""/>
+            </a>
+          </div>
+       </div>
+
+    </section>
+
+    <!-- end info_section -->
+
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+      <p>
+         2023 All Rights Reserved
+      </p>
+    </section>
+    <!-- footer section -->
+  </div>
+
+
+  <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="bootstrap.js"></script>
+  <script type="text/javascript" src="web3.min.js"></script>
+  <script src="blockchain.js" type="text/javascript"></script>
+
+
+</body></html>

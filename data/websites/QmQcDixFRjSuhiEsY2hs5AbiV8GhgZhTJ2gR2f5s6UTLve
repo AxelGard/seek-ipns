@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Kotik.nl voorpagina</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <article id="main">
+        <div id="filler-box">
+            <img src="./kat-800px.jpg" class="fullsize-image center" alt="Felis catus" />
+            <!-- CC by-sa, source: https://commons.wikimedia.org/wiki/File:Felis_silvestris_catus_-_Rapperswil_Duftrosengarten_2010-10-02_16-44-24.JPG -->
+        </div>
+        <h1 class="center">Kotik.nl</h1>
+    </article>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+    
+<html lang="en">
+    <head>
+        <script src="index.js"></script>
+        <script src="menu.js"></script>
+
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="responsive.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="IPAssets Technology | Empowering Blockchain Integration">
+        <!--OG Tags-->
+        <meta property="og:title" content="IPAssets Technology">
+        <meta property="og:description" content="Empowering Blockchain Integration">
+        <meta property="og:image" content=”https://ravencoinipfs-gateway.com/ipfs/QmXmaUhk3ndjRWccbEVDVkG2jFedzjeKJSEBebXNhtH9gp/logo-recolor.png” >
+        <!--Twitter Meta Tags-->
+        <meta name="twitter:title" content="IPAssets Technology">
+        <meta name="twitter:description" content="Empowering Blockchain Integration">
+        <title>IPAssets Technology | Empowering Blockchain Transfer</title>
+
+        <link rel="icon" type="image/png" href="logo-recolor.png">
+        <link rel="icon" type="image/png" href="logo-recolor.png">
+    </head>
+
+    <body>
+        <div id="home_container">
+            <div id="header">
+                <a href="index.html"><img src="logo-recolor.png"></a>
+                <div id="desktop_nav_container">
+                    <nav id="main_links">
+                      <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li>
+                          <a href="#">Platforms</a>
+                          <ul>
+                            <li><a href="art.html">Art</a></li>
+                            <li><a href="https://ravencoinipfs.com/" target="_blank">RavencoinIPFS</a></li>
+                            <li><a href="https://theassetmarketplace.com/" target="_blank">Asset Marketplace</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Wallets</a>
+                          <ul>
+                            <li><a href="https://mangofarmassets.com/" target="_blank">Mango Farm</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="https://legacy.ipassetstechnology.com/contact-us/" target="_blank">Contact Us</a></li>
+                      </ul>
+                    </nav>
+                    <div id="rvn_link">
+                        <a href="https://app.sequoir.com/signup?ref=fa258f29" target="_blank">Buy Ravencoin</a>
+                    </div>
+                </div>
+
+                <div id="mobile_dropdown" class="container">
+
+                  <div class="header"></div>
+                  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+                  <label for="openSidebarMenu" class="sidebarIconToggle">
+                    <div class="spinner diagonal part-1"></div>
+                    <div class="spinner horizontal"></div>
+                    <div class="spinner diagonal part-2"></div>
+                  </label>
+                  <div id="sidebarMenu">
+                    <ul class="sidebarMenuInner">
+                      <li>
+                        <a href="#">Home</a>
+                      </li>
+                      <li>
+                        <a href="about.html">About Us</a>
+                      </li>
+                      <li>
+                        ---- Platforms ---
+                      </li>
+                      <li>
+                        <a href="art.html">Art</a>
+                      </li>
+                      <li>
+                        <a href="https://ravencoinipfs.com/" target="_blank">RavencoinIPFS</a>
+                      </li>
+                      <li>
+                        <a href="https://theassetmarketplace.com/" target="_blank">Asset Marketplace</a>
+                      </li>
+                      <li>
+                        --- Wallets ---
+                      </li>
+                      <li>
+                        <a href="https://mangofarmassets.com/" target="_blank">Mango Farm</a>
+                      </li>
+                      <li>
+                        <a href="https://legacy.ipassetstechnology.com/contact-us/" target="_blank">Contact Us</a>
+                      </li>
+                      <li>
+                        <a href="https://app.sequoir.com/signup?ref=fa258f29" target="_blank">Buy Ravencoin</a>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                </div>
+
+                </div>
+            
+            <div id="home_body">
+                <h1 class="splash_header">Empowering Blockchain Integration</h1>
+                <p class="splash_paragraph">IPAssets helps businesses access the innovative tools of decentralized blockchains. Leveraging proprietary and open-source software, the IPA team facilitates customized industry solutions, translating new innovations to old business processes.</p>
+            </div>
+
+            <div id="home_get_started">
+                <h2>Get Started with IPAssets Suite of Tools</h2>
+                
+                <div class="desktop_carousel_container">
+                  <div class="carousel">
+                    <div class="carousel__face"><a href="https://mangofarmassets.com/" target="_blank"></a></div>
+                    <div class="carousel__face"><a href="https://ravencoinipfs.com/" target="_blank"></a></div>
+                    <div class="carousel__face"><a href="https://theassetmarketplace.com/" target="_blank"></a></div>
+                    <div class="carousel__face"><a href="https://mangofarmassets.com/" target="_blank"></a></div>
+                    <div class="carousel__face"><a href="https://ravencoinipfs.com/" target="_blank"></a></div>
+                    <div class="carousel__face"><a href="https://theassetmarketplace.com/" target="_blank"></a></div>
+                    <div class="carousel__face"><a href="https://mangofarmassets.com/" target="_blank"></a></div>
+                    <div class="carousel__face"><a href="https://ravencoinipfs.com/" target="_blank"></a></div>
+                    <div class="carousel__face"><a href="https://theassetmarketplace.com/" target="_blank"></a></div>
+                  </div>
+                </div>
+
+                <div class="mobile_carousel">
+                  <a href="https://mangofarmassets.com/" target="_blank">
+                    <img src="mango_mobile.png" alt="Mango Farm Website Preview" />
+                  </a>
+
+                  <a href="https://ravencoinipfs.com/" target="_blank">
+                    <img id="rvnipfs_mobile" src="rvnipfs_mobile.png" alt="RavencoinIPFS Website Preview" />
+                  </a>
+
+                  <a href="https://theassetmarketplace.com/" target="_blank">
+                    <img src="marketplace_mobile.png" alt="The Asset Marketplace Website Preview" />
+                  </a>
+
+                </div>
+
+            </div>
+        </div>
+      </div>
+    </body>
+    <footer>
+      <div class="footer">
+        <div class="footer_links">
+          <a href="terms.html">Terms</a> | <a href="privacy.html">Private Policy</a>
+        </div>
+        © IP Assets 2021. All rights reserved.
+      </div>
+    </footer>

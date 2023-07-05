@@ -1,0 +1,137 @@
+<!doctype html><html lang="de"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+    <title>Posts in category blog | Uvoks Blog</title>
+    <meta name="generator" content="Jekyll v4.3.0">
+    <meta property="og:title" content="Posts in category blog">
+    <meta property="og:locale" content="de">
+    <meta name="description" content="Ein Blog über Leben - und gelegentlich über Technik">
+    <meta property="og:description" content="Ein Blog über Leben - und gelegentlich über Technik">
+    <link rel="canonical" href="https://blog.uvokchee.de/category/blog/">
+    <meta property="og:url" content="https://blog.uvokchee.de/category/blog/">
+    <meta property="og:site_name" content="Uvoks Blog">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta property="twitter:title" content="Posts in category blog">
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebPage","description":"Ein Blog über Leben - und gelegentlich über Technik","headline":"Posts in category blog","url":"https://blog.uvokchee.de/category/blog/"}
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link rel="stylesheet" href="../../assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://blog.uvokchee.de/feed.xml" title="Uvoks Blog"></head>
+  <body>
+    <header class="site-header" role="banner">
+      <!-- built from 3cf81770131ef13eba15ca5b56fb93f69ce6569f -->
+      <div class="wrapper">
+        <a class="site-title" rel="author" href="../../index.html">Uvoks Blog</a>
+        <nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+          <div class="trigger">
+            <a class="page-link" href="../../search.html">Suche</a>
+            <a class="page-link" href="../../poem.html">Gedicht</a>
+            <a class="page-link" href="../../contact.html">Kontakt</a>
+            <a class="page-link" href="https://uvokchee.de/wiki/">Wiki</a>
+            <a class="rss-subscribe page-link" href="../../feed.xml">RSS feed</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+          <div id="AdBlock" style="border-radius: 10px; padding: 5px; background: #eeeeee; margin-bottom: 1em;">
+            <p>
+              </p><div style="font-weight: bold">You don't seem to be using an ad blocker.</div>
+              <div>Please consider installing one.</div>
+            <p></p>
+          </div>
+          <h1 class="page-heading">Posts in category blog</h1>
+          <div class="pagetrail">
+          </div>
+          <h2 class="post-list-heading"></h2>
+          <ul class="post-list">
+            <li><span class="post-meta">Saturday,  4. January 2020</span>
+              <h3>
+                <a class="post-link" href="../../2020/01/autodeploy.html">
+                  Auto-deploying my blog
+                </a>
+              </h3>
+              <ul>
+                <li>Update 2020-01-09: sourcing <code class="language-plaintext highlighter-rouge">.bashrc</code> is not necessary</li>
+              </ul>
+              <p>So, after fiddling around for several hours, I finally managed to auto-deploy my
+                <a href="https://jekyllrb.com/">Jekyll</a> blog from Git.</p>
+              <p>The main difficulty was that the blog is hosted on a standard shared web hoster,
+                whereas the actual Jekyll blog content is hosted in a Git repository on a VPS.</p>
+              <p>Of course I could’ve moved the blog, which would’ve made the whole ordeal
+                easier. But where’s the fun in that? So, after considering
+                <a href="http://weex.sourceforge.net/">Weex</a> for a moment, I reconsidered and decided to
+                use lftp’s mirroring mode instead. A strong must was the support of FTPS, by the
+                way. My shared hoster does allow SSH access, but I can’t (afaik) restrict access
+                to specific directories, and I wanted to minimize impact <em>if</em>, god forbid, the
+                credentials get in the wrong hands. With an FTP account, I could restrict access
+                to a specific subdirectory, however.</p>
+              <p>My setup also uses <a href="https://buildbot.net/">buildbot</a> as “CI/CD” server.
+                It was a lot of fiddling around with the following problems:</p>
+              <ul>
+                <li>I use <a href="https://rvm.io">RVM</a> to install Ruby (required for Jekyll) <s>and need to
+                    source the environment first (at least I think so), so I have to use a shell
+                    command of
+                    `["bash", "-c", "source ~/bash_profile &#x26;&#x26; bundle install &#x26;&#x26; <jekyll build="">"]`&#x3C;/s> 
+                      (update: this is not necessary as long as I start buildbot within this environment)</jekyll></s></li>
+                <li>I needed to add the <code class="language-plaintext highlighter-rouge">haltOnFailure=True</code> argument to all steps (why isn’t this
+                  the default?), to make sure I don’t end up mirroring an empty directory.</li>
+                <li>I needed to create a separate worker instead of using <code class="language-plaintext highlighter-rouge">LocalWorker</code>, because
+                  only this way I could specify the umask of the worker files. The default is
+                  secure (077), which leads to the umasks being mirrored to the server by lftp,
+                  resulting in an inaccessible blog. (I don’t quite get the lftp documentation
+                  about the <code class="language-plaintext highlighter-rouge">--no-umask</code> flag - what EXACTLY does it do, i.e. which umask does
+                  it use).</li>
+              </ul>
+              <p>During my fiddling, I saw someone mentioning <a href="https://drone.io/">Drone</a>, which
+                might be worth a closer look sometime in the future. From what I got it supports
+                the pipeline being set up in the repository itself, which means I wouldn’t have
+                to fumble around with the buildbot config were I to change the “build” procedure
+                in the future.</p>
+              <p>Also it supports docker. If I were to use a ruby docker image, I wouldn’t have
+                this weirdness with sourcing the <code class="language-plaintext highlighter-rouge">.bash_profile</code>. But since I’m using the
+                cheapest VPS with the lowest RAM + disk space possible, I’m quite reluctant of
+                that option.</p>
+            </li>
+          </ul>
+          <div class="pagetrail">
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer h-card">
+      <data class="u-url" href="/"></data>
+      <div class="wrapper">
+        <h2 class="footer-heading">Uvoks Blog</h2>
+        <div class="footer-col-wrapper">
+          <div class="footer-col footer-col-1">
+            <ul class="contact-list">
+              <li class="p-name">Uvoks Blog</li>
+            </ul>
+            Generiert: 2023-06-17 19:45:30
+          </div>
+          <div class="footer-col footer-col-2">
+            <ul class="social-media-list">
+              <li><a rel="me" href="https://furry.engineer/@uvok"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#mastodon"></use></svg> <span class="username">uvok</span></a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-3">
+            <p>Ein Blog über Leben - und gelegentlich über Technik</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+</body></html>

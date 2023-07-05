@@ -1,0 +1,45 @@
+^^ Qora Blockchain ^^
+
+Qora backup at this 7-zip file
+
+1. Qora_v0.26.11.zip
+Download from  https://github.com/Qoracoin/Qora/releases
+MD5 : 8e8dbc4d31f4490d75a6923ac847d2bd
+SHA1 : 0b8deb5d9853720d9ea0fce89dc4efdf569051ca
+SHA256 : 91883c58b095d01658d93947dfece33cbbea8365dd41f66ac7824b5cfbdb1425
+
+2. Qora "data" folder bootstrap at 25 November 2022
+3. new peers.json
+
+Howto install Qora?
+
+i) Unzip the Qora_vxx to C: or D:
+
+The folder lists :
+C:\Qora_vxx\
+	data
+	dataBak
+	images
+	languages
+	sounds
+	wallet
+	web
+  		peers.json
+		settings.json
+		run.sh
+		run.bat
+		Qora.jar
+		log4j2
+
+ii) Replace the "data" forlder with the bootstrap "data"
+iii) Replace the peers.json with new peers.json file.
+
+iv) To run Qora software:
+
+Windows : double click run.bat
+Linux : ./run.sh
+
+How to install:
+http://qora.co.uk/qora.htm
+
+

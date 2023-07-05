@@ -1,0 +1,31 @@
+import {
+  S as t,
+  i as s,
+  s as e,
+  q as a,
+  d as i,
+  n as l,
+} from "./client.3b254fe8.js";
+function n(t) {
+  return {
+    c() {
+      this.h();
+    },
+    l(t) {
+      a('[data-svelte="svelte-1q8mlkz"]', document.head).forEach(i), this.h();
+    },
+    h() {
+      document.title = "gps36.ru";
+    },
+    m: l,
+    p: l,
+    i: l,
+    o: l,
+    d: l,
+  };
+}
+export default class extends t {
+  constructor(t) {
+    super(), s(this, t, null, n, e, {});
+  }
+}
