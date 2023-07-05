@@ -1,0 +1,776 @@
+<!doctype html><html id="html" lang="en"><head><meta http-equiv="X-XSS-Protection" content="1"><meta charset="UTF-8"><meta name="title" content="Uncensored Media using IPFS - Storry.TV"><meta name="description" content="Storry.TV is a Video Sharing Platform"><meta name="keywords" content="storrytv,storry,ipfs,video sharing,uncensored,ipfs video,storry.tv,tezos video,tezos nft,nft,crypto video,decentralized video"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="dailymotion-domain-verification" content="dmtnsvnhtrbfng9o7"><meta name="theme-color" content="#7100e2"><title>Storry.TV - dApp</title><link href="https://ajax.cloudflare.com" rel="preconnect" crossorigin="anonymous" referrerpolicy="no-referrer"><link href="https://cdnjs.cloudflare.com" rel="preconnect" crossorigin="anonymous" referrerpolicy="no-referrer"><link href="https://i.ytimg.com" rel="preconnect" crossorigin="anonymous" referrerpolicy="no-referrer"><link href="https://ipfs.storry.tv" rel="preconnect" crossorigin="anonymous" referrerpolicy="origin"><link href="./js/jquery-3.6.0.min.js" rel="preload" as="script"><link rel="manifest" href="./manifest.json"><link media="screen" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"><link media="screen" rel="stylesheet" href="./css/font-awesome.min.css"><link media="screen" rel="stylesheet" href="./css/style.css" id="style-css"><link media="screen" rel="stylesheet" href="./css/night-mode.css" class="night-mode-css"><link media="screen" rel="stylesheet" href="./css/mediaelementplayer.min.css"><link media="screen" rel="stylesheet" href="./css/player-style.css"><link media="screen" rel="stylesheet" href="./css/player-speed.min.css"><link media="screen" rel="stylesheet" href="./css/player-jump-forward.min.css"><link media="screen" rel="stylesheet" href="./css/player-ads.min.css"><link media="screen" rel="stylesheet" href="./css/player-quality.min.css"><style>@media (min-width:992px){.pt_video_comments{width:64.333%;margin-left:15px;margin-right:15px}.video-player-page>div>div.ads-placment{width:63.333%;margin-left:15px;margin-right:15px}.ads-placment{width:100%;margin-left:0;margin-right:0}}.mejs__button *{transition:unset!important}.mejs__qualities-selector,.mejs__speed-selector{z-index:100}#save_to_ipfs.saved_{background-color:#029200!important;font-weight:500}#save_to_ipfs.saved_:hover{background-color:#028a00!important}#save_to_ipfs:hover{background-color:#337ab7!important}#save_to_ipfs{color:#fff;transition-duration:.3s}.video-options.pt_mn_wtch_opts>a,.video-options.pt_mn_wtch_opts>button{padding:3px 10px}.video-options .btn-share:active,.video-options .btn-share:hover{box-shadow:0 0!important}.fa.fa-link{color:#777}.btn-share{transform:scale(1.15)}button.btn-share.pull-right{transform:scale(1)!important}.player-video div.mejs__qualities-selector,.player-video div.mejs__qualities-selector *,.player-video div.mejs__speed-selector,.player-video div.mejs__speed-selector *{transition-duration:unset!important}.player-video.col-md-12 .pt_video_player .mejs__container,.player-video.col-md-12 .pt_video_player .mejs__container.mejs__video,.player-video.col-md-12 .video-player video{border-top-left-radius:0!important;border-top-right-radius:0!important}button.btn.btn-message{background-color:#7100e2;margin-left:15px;border-radius:20px;padding:4px 10px;color:#fff}button.btn.btn-message>svg{fill:#fff}.video-player *{max-height:80vh!important}.mejs__container-fullscreen video,.mejs__container-fullscreen.mejs__container,.mejs__container-fullscreen.mejs__container *{max-height:unset!important}.mejs__captions-text{font-size:24px;line-height:27px}.mejs__captions-layer{bottom:20px}.mejs__captions-selector-list-item label{font-size:14px}.lang_selected,.mejs__captions-selector-list-item:hover{background-color:#7100e2!important;color:#fff!important}.mejs__captions-button{position:absolute;right:216px}.mejs__captions-selector-list{background-color:#333!important}.mejs__captions-selector{background:0 0!important;padding-bottom:8px!important}.mejs__captions-selector-list-item{margin:0!important}.lang_selected{background-color:#7100e2!important}.navbar-header{width:75%}.home-page-categories>.videos>div>.col-md-3{padding-top:20px;padding-bottom:20px}.videos.pt_latest_vds>div>div{padding-top:0!important;padding-bottom:0!important}.pt_homepg_whote_bg{background-image:unset!important;background:unset!important}html{background:url(img/51-Chems-Optimized.webp)!important}form.navbar-form.navbar-left.search-header>.form-group{background-color:#fcfcfc;border-radius:3px}@media (min-width:460px){body .yp_side_drawer .open_side_menu_head,body nav.navbar-findcond{background:url(img/51-Chems-Optimized.webp)!important}}</style><style>#context_menu{display:none;position:absolute;width:150px;background-color:#333;border-radius:3px;z-index:999}#context_menu hr{width:85%;background-color:#e4e4e4;border-color:#e4e4e4;color:#e4e4e4;margin:5px 10px}.context_menu_items{list-style:none;margin:0;padding:0}.context_menu_items>li{padding:3px;padding-left:10px;font-size:16px;color:#f5f5f5!important}.context_menu_items>li:hover{color:#fff!important;background-color:#7100e2!important;border-radius:3px;cursor:pointer}</style><link rel="shortcut icon" href="./favicon.ico"><link rel="apple-touch-icon" href="./logo192.png"><script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script><script type="text/javascript" src="./js/is-ipfs-index.min.js"></script><script type="text/javascript" src="./js/plugins/jump-forward/jump-forward.min.js" defer="defer"></script><script type="text/javascript" src="./js/plugins/quality/quality.min.js" defer="defer"></script><script type="text/javascript" src="./js/plugins/markers/markers.min.js" defer="defer"></script><script type="text/javascript" src="./js/plugins/markersrolls/markersrolls.min.js" defer="defer"></script><script type="text/javascript" src="./js/plugins/snapshot/snapshot-i18n.js" defer="defer"></script><script type="text/javascript" src="./js/plugins/speed/speed.min.js" defer="defer"></script><script type="text/javascript" src="./js/plugins/picture-in-picture/picture-in-picture-i18n.js" defer="defer"></script><script type="text/javascript" src="./js/plugins/source-chooser/source-chooser.min.js" defer="defer"></script><link href="/static/css/main.2c5165f8.chunk.css" rel="stylesheet"></head><body><script type="text/javascript">var isNight=!0</script><noscript><div id="noscript-warning">StorryTV works best with JavaScript enabled</div><style>#noscript-warning{font-family:sans-serif;position:fixed;top:0;left:0;width:100%;z-index:5050;text-align:center;font-weight:700;font-size:120%;color:#fff;background-color:#c02d2e;padding:5px 0}.page-loader-wrapper{display:none!important}.header-layout{top:33px}body{padding-top:110px!important}body #side_menu ul{margin:100px 0 0 0}</style></noscript><style>.content,body{transition-duration:0s}.pt_homepg_whote_bg{padding-top:0!important}div#main-container.container{width:100%!important}.home-container{padding:0}@media (min-width:760px){.pt_homepg_whote_bg{margin-left:65px}}@media (min-width:500px){nav.navbar-findcond .header-image{margin-right:10px!important}body .video-list:hover{transform:scale3d(1.03,1.03,1.03)}}.IPFS_>a{background-color:rgba(119,119,119,.5);border-radius:3px}.IPFS_>a:hover{background-color:rgba(119,119,119,.3)!important}.yp_side_drawer ul.sections li a{height:auto!important}.page-loader-wrapper{will-change:opacity}.pt_home_vid_content .videos{height:235px}.pt_hmpg_vidlst .videos .video-list{box-shadow:unset!important}nav.navbar-findcond ul.navbar-nav.navbar-right>li>a>svg{transition-duration:0s!important}nav.navbar-findcond ul.navbar-nav.navbar-right>li>a:hover>svg{will-change:transform}nav.navbar-findcond ul.navbar-nav.navbar-right>li>a>svg{transform:scale(1.2)}.navbar-right>li>a>svg,.open_side_menu_head svg>path{fill:#fff}nav.navbar-findcond ul.navbar-nav.navbar-right>li>a>svg{width:21px;height:21px;vertical-align:middle;margin-top:-3px;margin-bottom:-4px}nav.navbar-findcond ul.navbar-nav a{color:#3e3e3e;font-size:15px;border-style:solid;border-width:0;border-color:transparent;padding-top:17.5px;padding-bottom:17.5px}body nav.navbar-findcond ul.navbar-nav a.upload_{font-size:11px!important;padding:4px 7px 3px 3px!important;border-radius:3px!important;background-color:red!important;background-image:linear-gradient(red,purple)!important}a.btn.import-button,a.btn.upload-button{transform:scale(1.4);padding:2px 8px!important;margin-top:18px;margin-bottom:6px;margin-right:32px}#side_menu a{color:#8c8c8c!important}.video-info a,.video-info a:focus,.video-info a:hover{color:#7100e2}.content{border-left:none}.player-video.col-md-12{margin-bottom:15px!important}.profile-container .page-container{border:unset!important}.pt_hmpg_hr{border-top:3px solid rgba(119,119,119,.25);border-radius:2px}header{z-index:10000!important}.open_side_menu_head{display:none!important}nav.navbar-findcond{padding:0 20px}nav.navbar-findcond .header-image{width:35px;height:35px;margin:-9px 0 -7px;border-radius:20px;transition-duration:0s!important}.home-container{padding-left:0!important;padding-right:0!important}@-webkit-keyframes LoadingGradient{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}@-moz-keyframes LoadingGradient{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}@-o-keyframes LoadingGradient{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}@keyframes LoadingGradient{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}.lozad{background:linear-gradient(270deg,rgba(119,119,119,.25),rgba(119,119,119,.5));background-size:400% 400%;-webkit-animation:LoadingGradient 2s ease infinite;-moz-animation:LoadingGradient 2s ease infinite;-o-animation:LoadingGradient 2s ease infinite;animation:LoadingGradient 2s ease infinite}.lozad[data-loaded=true]{background:unset!important;background-size:unset!important;-webkit-animation:unset!important;-moz-animation:unset!important;-o-animation:unset!important;animation:unset!important}.page-loader-wrapper>img{transition-duration:.5s}.page-loader-wrapper>img:hover{transform:translate(-50%,-50%) rotate(180deg)!important}.connect-wallet{position:relative;top:12px;right:24px;padding:2px 15px;background:#7100e2;font-size:18px!important;font-weight:400;line-height:28px;color:#efefef!important;border-radius:7px;margin-left:8px;border:0;background-image:linear-gradient(red,purple)!important;max-width:155px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.connect-wallet,.dropdown-menu.ani-acc-menu div{max-width:155px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav.navbar-findcond .search-header .search-dropdown{box-shadow:0 0 25px rgba(119,119,119,.25);border-radius:3px}nav.navbar-findcond .search-header .search-dropdown .search-result:hover{background-color:rgba(119,119,119,.25)!important}nav.navbar-findcond .search-header .search-dropdown .search-result{padding:10px 25px!important}.navbar-header{position:absolute;top:0;left:20px}.navbar-right{position:absolute;top:0;right:10px}.search-header{background-color:rgba(255,255,255,.1);border-radius:5px}</style><div id="navbar"></div><script type="text/javascript" class="rem">document.addEventListener('DOMContentLoaded', function() {
+        $('#search-bar').keyup( function(event) {
+		var search_value = $(this).val();
+		var search_dropdown = $('.search-dropdown');
+		if (search_value == '') {
+			search_dropdown.addClass('hidden');
+			search_dropdown.empty();
+			return false;
+		} else {
+			search_dropdown.removeClass('hidden');
+		}
+		$.post("https://storry.tv/aj/search", {search_value: search_value}, (data, textStatus, xhr) => {
+			if (data.status == 200) {
+				search_dropdown.html(data.html);
+			} else {
+				search_dropdown.addClass('hidden');
+				search_dropdown.empty();
+				return false;
+			}
+		});
+	});
+	$('.search-icon').click( (event) => {
+		event.preventDefault();
+		$('.search-bar').toggleClass('hidden');
+	});
+	$('#open_slide').click( (event) => {
+		event.preventDefault();
+		$('body').toggleClass('side_open');
+	});
+	$(document).click( (event) => {
+		if (!($(event.target).closest('.search-dropdown').length)) {
+			$('.search-dropdown').addClass('hidden');
+		}
+	});
+	$(document).click( (event) => {
+		if (!($(event.target).closest('#open_slide, .yp_side_drawer').length)) {
+			$('body').removeClass('side_open');
+}
+	});
+				// Passive event listeners
+				$.event.special.touchstart = {
+					setup: function( _, ns, handle ) {
+						this.addEventListener('touchstart', handle, { passive: !ns.includes('noPreventDefault') });
+					}
+				};
+				$.event.special.touchmove = {
+					setup: function( _, ns, handle ) {
+						this.addEventListener('touchmove', handle, { passive: !ns.includes('noPreventDefault') });
+					}
+				};
+			});
+			localStorage.setItem('IPFSAssetGateway', 'Auto');
+			const IPFSSettings = async () => {
+					let AutoSaveToIpfs_API;
+					let AutoSaveToIpfsChecked;
+					let AutoPinToIpfs;
+					if (localStorage.getItem('AutoSaveToIpfs_API')) {
+						AutoSaveToIpfs_API = localStorage.getItem('AutoSaveToIpfs_API');
+					} else {
+						AutoSaveToIpfs_API = 'http://127.0.0.1:5001';
+					}
+					if (localStorage.getItem('AutoSaveToIpfs') == 'true') {
+						AutoSaveToIpfsChecked = 'checked';
+					} else {
+						AutoSaveToIpfsChecked = '';
+					}
+					if (localStorage.getItem('AutoPinToIpfs') == 'true') {
+						AutoPinToIpfs = 'checked';
+					} else {
+						AutoPinToIpfs = '';
+					}
+					setTimeout ( () => {
+						checkgateways();
+					});
+					$('body').prepend('<div class="IPFS_SettingsPanel"><div>' +
+									  '<a href="https://ipns.storry.tv/ipns/ipfs.io/" target="_blank" rel="noopener"><img decoding="async" loading="lazy" src="./img/ipfs-logo.svg" alt="storrytv storry tv favicon icon ipfs logo" width="150" height="50" style="background-color:#54afb5;border-radius:5px;" crossorigin="anonymous" referrerpolicy="no-referrer"></a>' +
+									  '<br><br>' +
+									  '<label for="AutoSaveToIpfs_API"><h4>IPFS API</h4></label>' +
+									  '<br>' +
+									  '<input type="text" id="AutoSaveToIpfs_API" name="AutoSaveToIpfs_API" value="' +
+									  AutoSaveToIpfs_API + '" style="border:1px solid;border-radius:3px;padding:5px;font-weight:500;min-width:250px;text-align:center;">' +
+									  '<br>' +
+									  '<br>' +
+									  '<p style="background-color:rgba(255,59,0,0.2);padding:10px;border-radius:5px;border:1px solid rgba(255,0,0,0.5);box-shadow:0px 0px 10px rgba(0,0,0,0.25);">Make sure you enable CORS on your IPFS Node for this domain. Below is an example command you can use on Ubuntu or go to <a href="https://webui.ipfs.io/#/settings" target="_blank" rel="noopener" style="color:#7100e2;">https://webui.ipfs.io/#/settings</a> to edit your settings manually and allow <strong>' + top.location.protocol + '//' + top.location.host + '</strong> to save videos</p>' +
+									  '<textarea cols="30" rows="4" class="form-control" style="overflow:scroll;" readonly="" onclick="this.select();">ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin \'["http://webui.ipfs.io.ipns.localhost:8080", "http://127.0.0.1:8080", "http://localhost:8080", "http://127.0.0.1:3000", "http://localhost:3000", "http://127.0.0.1:5001", "http://localhost:5001", "https://webui.ipfs.io", "' + top.location.protocol + '//' + top.location.host + '"]\' && ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods \'["GET", "PUT", "POST", "OPTIONS"]\' && sudo systemctl restart ipfs</textarea>' +
+									  '<br>' +
+									  '<input type="checkbox" id="AutoSaveToIpfs" name="AutoSaveToIpfs" value="AutoSaveToIpfs" ' +
+									  AutoSaveToIpfsChecked + '>' +
+									  '<label for="AutoSaveToIpfs"> Automatically save videos to this IPFS Node </label>' +
+									  '<br><br>' +
+									  '<input type="checkbox" id="AutoPinToIpfs" name="AutoPinToIpfs" value="AutoPinToIpfs" ' +
+									  AutoPinToIpfs + '>' +
+									  '<label for="AutoPinToIpfs"> Automatically Pin videos to this IPFS Node</label>' +
+									  '<br><br>' +
+									  '<h4>Choose your preferred IPFS Gateway</h4>' +
+									  '<select id="video_gateway">' +
+									  '<option>Video IPFS Gateway</option>' +
+									  '<option value="AUTO">Automatic (Default)</option>' +
+									  '<option value="LOCAL">127.0.0.1:8080</option>' +
+									  '<option value="StorryTV">Storry.TV</option>' +
+									  '<option value="dTube">ipfs.d.tube</option>' +
+									  '<option value="IpfsPin">ipfs-pin.com</option>' +
+									  '<option value="Subutai">ipfs.subutai.io</option>' +
+									  '<option value="Foreverland">4everland.io</option>' +
+									  '<option value="BestPractice">ipfs.best-practice.se</option>' +
+									  '<option value="Dweb">dweb.link</option>' +
+									  //'<option value="Astyanax">astyanax.io</option>' +
+									  '<option value="Infura_ipfs">ipfs.infura.io</option>' +
+									  //'<option value="IPFS">ipfs.io</option>' +
+									  //'<option value="Fleek">ipfs.fleek.co</option>' +
+									  '<option value="Brave">Brave Browser IPFS Node</option>' +
+									  '<option value="CUSTOM">Custom Gateway</option>' +
+									  '</select>' +
+									  '<br><br>' +
+									  '<span class="close_" onclick="IPFSSettings_Clicked();">Go Back</span>' +
+									  '<br><br>' +
+									  '</div></div>');
+				setTimeout( () => {
+					document.getElementsByClassName('IPFS_SettingsPanel')[0].addEventListener('click', () => {
+						IPFSSettings_Clicked();
+					});
+					document.querySelector('.IPFS_SettingsPanel>div').addEventListener('click', (e) => {
+						e.stopPropagation();
+					});
+					document.getElementById('AutoSaveToIpfs_API').addEventListener('change', () => {
+						try {
+							let Ipfs_API_ = new URL(document.getElementById('AutoSaveToIpfs_API').value);
+							if ((Ipfs_API_.protocol !== '') &&
+								(Ipfs_API_.hostname !== '') &&
+								(Ipfs_API_.port !== '')) {
+								localStorage.setItem('AutoSaveToIpfs_API', document.getElementById('AutoSaveToIpfs_API').value);
+							}
+						} catch (error) {
+							//console.log(error);
+						}
+					});
+					document.getElementById('AutoSaveToIpfs').addEventListener('change', () => {
+						if (document.getElementById('AutoSaveToIpfs')?.checked) {
+							localStorage.setItem('AutoSaveToIpfs', 'true');
+						} else {
+							localStorage.removeItem('AutoSaveToIpfs');
+						}
+					});
+					document.getElementById('AutoPinToIpfs').addEventListener('change', () => {
+						if (document.getElementById('AutoPinToIpfs')?.checked) {
+							localStorage.setItem('AutoPinToIpfs', 'true');
+						} else {
+							localStorage.removeItem('AutoPinToIpfs');
+						}
+					});
+					document.getElementById('video_gateway').addEventListener('change', () => {
+						let video_gateway = document.getElementById('video_gateway').value;
+						if (video_gateway && (video_gateway != '')) {
+							if (video_gateway == 'AUTO') {
+								AUTO();
+							} else if (video_gateway == 'LOCAL') {
+								LOCAL();
+							} else if (video_gateway == 'StorryTV') {
+								StorryTV();
+							} else if (video_gateway == 'IpfsPin') {
+								IpfsPin();
+							} else if (video_gateway == 'Subutai') {
+								Subutai();
+							} else if (video_gateway == 'Foreverland') {
+								Foreverland();
+							} else if (video_gateway == 'dTube') {
+								dTube();
+							} else if (video_gateway == 'Infura_ipfs') {
+								Infura_ipfs();
+							} else if (video_gateway == 'BestPractice') {
+								BestPractice();
+							} else if (video_gateway == 'Dweb') {
+								Dweb();
+							//} else if (video_gateway == 'Astyanax') {
+							//	Astyanax();
+							//} else if (video_gateway == 'IPFS') {
+							//	IPFS();
+							//} else if (video_gateway == 'Fleek') {
+							//	Fleek();
+							} else if (video_gateway == 'Brave') {
+								Brave();
+							} else if (video_gateway == 'CUSTOM') {
+								CUSTOM();
+							} else {
+								AUTO();
+							}
+							IPFSSettings_Clicked();
+							IpfsGw();
+						}
+						console.log(video_gateway);
+					});
+				});
+					$('.IPFS_Settings')?.attr('class', 'IPFS_Settings_clicked');
+					$('.IPFS_SettingsPanel option').click( () => {
+						IPFSSettings_Clicked();
+					});
+				}
+				const IPFSSettings_Clicked = () => {
+					$('.IPFS_SettingsPanel')?.remove();
+					$('.IPFS_Settings_clicked')?.attr('onclick', 'IPFSSettings();');
+					$('.IPFS_Settings_clicked')?.attr('class', 'IPFS_Settings');
+				}
+				if (!localStorage.getItem('IPFSGateway')) {
+					localStorage.setItem('IPFSGateway', 'Auto');
+				}
+				const AUTO = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'Auto');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const StorryTV = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', '');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const IpfsPin = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'https://ipfs-pin.com');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const Subutai = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'https://ipfs.subutai.io');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const Foreverland = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'https://4everland.io');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const dTube = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'https://ipfs.d.tube');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const IPFS = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'https://ipfs.io');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const BestPractice = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'https://ipfs.best-practice.se');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const Dweb = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'https://dweb.link');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const Infura_ipfs = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'https://ipfs.infura.io');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				//const Astyanax = () => {
+				//	if ($('video')?.length > 0) {
+				//		$('video')[0]?.pause();
+				//	}
+				//	localStorage.setItem('IPFSGateway', 'https://astyanax.io');
+				//	IPFSSettings_Clicked();
+				//	if (location.href.startsWith('./watch')) {
+				//		ChooseIPFSGW($('video')[0]?.currentTime);
+				//	}
+				//}
+				const Fleek = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'https://ipfs.fleek.co');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const LOCAL = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'http://127.0.0.1:8080');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const IpfsGw = (FastestGW__) => {
+					//let IpfsGW = localStorage.getItem('IPFSGateway');
+					//$('.IpfsGW').prepend(IpfsGW);
+					if (FastestGW__) {
+						$('.IpfsGW').html(localStorage.getItem('IPFSGateway') + FastestGW__);
+					} else {
+						$('.IpfsGW').html(localStorage.getItem('IPFSGateway'));
+					}
+				}
+				const IpfsAssetsGw = (FastestAssetsGW__) => {
+					$('.IpfsAssetsGW').css('font-weight', '500');
+					if (FastestAssetsGW__) {
+						//$('.IpfsAssetsGW').html(localStorage.getItem('IPFSAssetGateway') + FastestAssetsGW__);
+						$('.IpfsAssetsGW').html(FastestAssetsGW__);
+					} else {
+						$('.IpfsAssetsGW').html(getCookie('assetsipfsurl'));
+					}
+				}
+				window.addEventListener('load', (event) => {
+					IpfsGw();
+					IpfsAssetsGw();
+				});
+				const Brave = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					localStorage.setItem('IPFSGateway', 'http://127.0.0.1:48084');
+					IPFSSettings_Clicked();
+					if (location.href.startsWith('./watch')) {
+						ChooseIPFSGW($('video')[0]?.currentTime);
+					}
+				}
+				const CUSTOM = () => {
+					if ($('video')?.length > 0) {
+						$('video')[0]?.pause();
+					}
+					let cGW = prompt("Please enter your IPFS Gateway:", "http://127.0.0.1:8080");
+					if (cGW == null || cGW == '') {
+						if (localStorage.getItem('cIPFSGateway')) {
+							localStorage.removeItem('cIPFSGateway');
+						}
+						IPFSSettings_Clicked();
+						if (location.href.startsWith('./watch')) {
+							ChooseIPFSGW($('video')[0]?.currentTime);
+						}
+					} else {
+						localStorage.setItem('IPFSGateway', 'custom');
+						localStorage.setItem('cIPFSGateway', cGW);
+						Snackbar?.show({
+							text: 'Video IPFS Gateway changed to: ' +
+							localStorage.getItem('cIPFSGateway')
+						});
+						IPFSSettings_Clicked();
+						if (location.href.startsWith('./watch')) {
+							ChooseIPFSGW($('video')[0]?.currentTime);
+						}
+					}
+				}
+			const isInViewport = (element) => {
+				const rect =  element.getBoundingClientRect();
+				return (
+					rect.top >= 0 &&
+					rect.left >= 0 &&
+					rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+					rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+				);
+			}
+			const OpenShareWindow = (url, windowName) => {
+				if (window.focus) {
+					window.open(url, windowName, 'height=600,width=800').focus();
+				}
+				return false;
+			}
+			const getCookie = (name) => {
+				let value = "; " + document.cookie;
+				let parts = value.split("; " + name + "=");
+				if (parts.length == 2) return parts.pop().split(";").shift();
+			}
+			const getUrlVars = () => {
+				let vars = {};
+				let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, (m,key,value) => {
+					vars[key] = value;
+				});
+				return vars;
+			}
+			const getUrlParameter = (parameter, defaultvalue) =>{
+				let urlparameter = defaultvalue;
+				if(window.location.href.indexOf(parameter) > -1){
+					urlparameter = getUrlVars()[parameter];
+				}
+				return urlparameter;
+			}</script><div class="yp_side_drawer"><span class="open_side_menu_head"><span onclick='$("body").removeClass("side_open")'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg> </span><a class="navbar-brand logo-img" href="./" itemprop="url"><img decoding="async" loading="lazy" itemprop="logo" src="./img/logo-light.png" alt="What's your Storry? (Uncensored media) storrytv storry tv favicon icon ipfs logo" crossorigin="anonymous" referrerpolicy="no-referrer"></a></span><ul class="sections"><li><div class="IPFS_"><a href="https://ipns.storry.tv/ipns/ipfs.io/" target="_blank" rel="noopener"><img decoding="async" loading="lazy" src="./img/ipfs-logo.svg" alt="storrytv storry tv favicon icon ipfs logo ipfs.io ipfs-logo" width="150" height="50" crossorigin="anonymous" referrerpolicy="no-referrer"></a><hr><p>Current video IPFS Gateway:</p><p class="IpfsGW">Auto</p><hr><p>Current assets IPFS Gateway:</p><p class="IpfsAssetsGW">https://cloudflare-ipfs.com</p><hr><br><span class="IPFS_Settings" onclick="IPFSSettings()">Settings</span></div></li><style>.IPFS_{padding:20px;text-align:center;margin-left:10px;margin-right:10px}.IPFS_>img{margin-top:-10px;margin-bottom:5px;border-radius:3px;background-color:#4ba3a9}.IPFS_Settings,.IPFS_SettingsPanel>div>span,.IPFS_Settings_clicked{font-size:18px;padding:10px 20px;border-radius:3px;background-color:#7100e2;color:#fff}.IPFS_>p:hover{cursor:default}.IPFS_Settings:hover,.IPFS_SettingsPanel>div>span:hover,.IPFS_Settings_clicked:hover{background-color:#5900b3;cursor:pointer}.IPFS_SettingsPanel{position:absolute;width:100%;height:100%;top:0;left:0;text-align:center;z-index:10000}.IPFS_SettingsPanel>div{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);padding:50px 25px;background-color:#f5f5f5;border-radius:5px;box-shadow:0 0 10px rgba(0,0,0,.2);z-index:10000}</style></ul><ul class="sections"><li class="active" id="home_menu_"><a href="/" data-load="?link1=home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path></svg> Home</a></li><li class="hide-from-mobile" id="articles_menu_"><a href="/articles" data-load="?link1=articles"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 3H2.99a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1H21a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 16H3.99V5H20v14z"></path><path d="M7 13h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1zm1-4h3v2H8V9zM6 15h12v2H6zM15 7h3v2h-3zM15 11h3v2h-3z"></path></svg> Articles</a></li></ul><ul class="sections"><li class="hide-from-mobile" id="latest_menu_"><a href="/videos/latest" data-load="?link1=videos&amp;page=latest"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z"></path></svg> Latest videos</a></li><li id="trending_menu_"><a href="/videos/trending" data-load="?link1=videos&amp;page=trending"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"></path></svg> Trending</a></li><li class="hide-from-mobile" id="top_menu_"><a href="/videos/top" data-load="?link1=videos&amp;page=top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 6h2v11h-2zM17 3h2v14h-2zM9 9h2v8H9zM5 12h2v5H5zM4 19h16v2H4z"></path></svg> Top videos</a></li><li class="hide-from-mobile" id="movies_menu_"><a href="/videos/category/775" data-load="?link1=videos&amp;page=category&amp;id=775"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18,9H16V7H18M18,13H16V11H18M18,17H16V15H18M8,9H6V7H8M8,13H6V11H8M8,17H6V15H8M18,3V5H16V3H8V5H6V3H4V21H6V19H8V21H16V19H18V21H20V3H18Z"></path></svg> Movies</a></li><li class="hide-from-mobile" id="popular_channels_menu_"><a href="/popular_channels" data-load="?link1=popular_channels"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg> Popular Channels</a></li></ul><ul class="sections"><h3>Categories</h3><li><a class="category" href="/videos/category/1">General</a></li><li><a class="category" href="/videos/category/3">Music</a></li><li><a class="category" href="/videos/category/4">Pets &amp; Animals</a></li><li><a class="category" href="/videos/category/5">Sports</a></li><li><a class="category" href="/videos/category/6">Travel &amp; Events</a></li><li><a class="category" href="/videos/category/7">Gaming</a></li><li><a class="category" href="/videos/category/8">People &amp; Blogs</a></li><li><a class="category" href="/videos/category/9">Comedy</a></li><li><a class="category" href="/videos/category/10">Entertainment</a></li><li><a class="category" href="/videos/category/11">News &amp; Politics</a></li><li><a class="category" href="/videos/category/12">How-to &amp; Style</a></li><li><a class="category" href="/videos/category/13">Non-profits &amp; Activism</a></li><li><a class="category" href="/videos/category/599">Crypto</a></li><li><a class="category" href="/videos/category/755">Education</a></li><li><a class="category" href="/videos/category/775">Movies</a></li><li><a class="category" href="/videos/category/776">Film &amp; Animation</a></li><li><a class="category" href="/videos/category/other">Other</a></li></ul><footer class="pt_footer"><div class="container-fluid"><div class="container phone-container"><div class="footer-container"><div class="footer-copyright">Copyright © 2022 StorryTV. All rights reserved.</div><div class="footer-links"><ul><li><a href="./terms/terms">Terms of use</a></li><li><a href="./terms/privacy-policy">Privacy Policy</a></li><li><a href="./terms/about-us">About us</a></li><li><a href="./contact">Contact us</a></li></ul></div></div></div></div></footer></div><div><div class="announcement-renderer"></div><div id="main-container" class="container home-container main-content"></div><script type="text/javascript" src="./js/quicklink.umd.min.js" defer=""></script><input type="hidden" id="main-url" value="{{MAIN_URL}}"></div><link media="screen" href="./css/material-icons.css" rel="stylesheet"><link media="screen" href="./css/jquery.tagit.min.css" rel="stylesheet"><link media="screen" href="./css/sweetalert2.min.css" rel="stylesheet"><link media="screen" href="./css/emojionearea.min.css" rel="stylesheet"><link media="screen" href="./css/bootstrap-toggle.min.css" rel="stylesheet"><link media="screen" href="./css/twemoji-awesome.css" rel="stylesheet"><link media="screen" href="./css/bootstrap-glyphicons.css" rel="stylesheet"><script type="text/javascript">if (!(localStorage.getItem('r'))) {
+				if (localStorage.getItem('tibrrCookieConsent')) {
+					(async () => {
+						setTimeout( async () => {
+							$.ajax({
+								url: 'https://www.cloudflare.com/cdn-cgi/trace',
+								type: 'GET',
+							})
+							.done( async (data) => {
+								data = data.trim().split('\n').reduce( (obj, pair) => {
+									pair = pair.split('=');
+									return obj[pair[0]] = pair[1], obj;
+								}, {});
+								if (data.loc) {
+									localStorage.setItem('r', window.btoa(data.loc));
+								} else {
+									localStorage.setItem('r', window.btoa(navigator.userAgent).substring(0,10));
+								}
+							})
+							.fail( () => {
+								localStorage.setItem('r', window.btoa(navigator.userAgent).substring(0,10));
+							})
+							.always( () => {});
+						});
+					})();
+				}
+			}
+			const getParameter = (url, parameter) => {
+				return new URLSearchParams(new URL(url).search).get(parameter);
+			};
+			setTimeout( () => {
+				if ('serviceWorker' in navigator) {
+					navigator.serviceWorker.register('./sw_.js?c=354', {scope: '/'})
+					.then((reg) => {
+						// registration worked
+						console.log('[Service Worker] Registration succeeded. Scope is ' + reg?.scope);
+					}).catch((err) => {
+						// registration failed
+						console.log('[Service Worker]Registration failed with ', err);
+					});
+				}
+			});
+			window.addEventListener('load', async () => {
+				$('.tibrr-cookie-consent-button button').click( async () => {
+					setTimeout( async () => {
+						localStorage.getItem('tibrrCookieConsent', 'true');
+					});
+				});
+			});
+			let api = 'https://api.storry.tv';
+			const get_videos = async (element, apiPath) => {
+				window.addEventListener('load', () => {
+					fetch(api + apiPath)
+						.then(response => response?.json())
+						.then(data => {
+						$(element + '>div').each(function(index) {
+							if (data[index]) {
+								$(this).css('display', '');
+								$(this).attr('data-id', data[index]?.id);
+							} else {
+								return false;
+							}
+						});
+						$(element + ' .video-list-image img').each(function(index) {
+							if (data[index]) {
+								let thumbnail = data[index]?.thumbnail;
+								if (thumbnail.startsWith('upload/photos/')) {
+									thumbnail = 'https://images.storry.tv/' + thumbnail;
+								} else if (thumbnail.startsWith('/ipfs/')) {
+									thumbnail = 'https://ipfs.storry.tv' + thumbnail;
+								}
+								$(this).attr('src', thumbnail);
+							} else {
+								return false;
+							}
+						});
+						$(element + ' .video-duration').each(function(index) {
+							if (data[index]) {
+								$(this).html(data[index]?.duration);
+								//let is_ipfs = (data[index]?.video_location.startsWith('http')) ? data[index].video_location : 'http://not-ipfs/';
+								if (data[index]?.youtube?.length > 0) {
+									$(this).after('<div class="video-source"><img loading="lazy" src="./img/youtube.ico" title="Youtube" alt="Youtube" decoding="async"></div>');
+								} else if (data[index]?.video_location.startsWith('/ipfs/') ||
+									data[index]?.video_location.startsWith('ipfs/') ||
+									(data[index]?.video_location.startsWith('https%3A%2F%2F') && new URL(decodeURIComponent(data[index]?.video_location))?.pathname.startsWith('/ipfs/'))) {
+									$(this).after('<div class="video-source"><img loading="lazy" src="./img/ipfs.ico" title="IPFS" alt="IPFS" decoding="async"></div>');
+								} else if (data[index]?.video_location.startsWith('/') ||
+									(data[index]?.video_location.startsWith('https%3A%2F%2F') && new URL(decodeURIComponent(data[index]?.video_location))?.hostname.endsWith('storry.tv')) ||
+									(data[index]?.video_location.startsWith('https://') && new URL(decodeURIComponent(data[index]?.video_location))?.hostname.endsWith('storry.tv'))) {
+									$(this).after('<div class="video-source"><img loading="lazy" src="./favicon.ico" title="StorryTV" alt="StorryTV" decoding="async"></div>');
+								}
+							} else {
+								return false;
+							}
+						});
+						$(element + ' .video-list-title h4').each(function(index) {
+							if (data[index]) {
+								$(this).attr('title', data[index]?.title);
+								$(this).html(data[index]?.title);
+							} else {
+								return false;
+							}
+						});
+						$(element + ' .video-list-image>a').each(function(index) {
+							if (data[index]) {
+								$(this).attr('href', './watch?v=' + data[index]?.video_id);
+							} else {
+								return false;
+							}
+						});
+						$(element + ' .video-list-title>a').each(function(index) {
+							if (data[index]) {
+								$(this).attr('href', './watch?v=' + data[index]?.video_id);
+							} else {
+								return false;
+							}
+						});
+						let timestamp = Date.now() / 1000;
+						function time (data_time) {
+							let time_ago = timestamp - data_time;
+							if (time_ago < 60) {
+								time_ago = Math.round(time_ago) + ' seconds ago';
+							} else if (time_ago < 3600) {
+								time_ago = Math.round(time_ago / 60) + ' minutes ago';
+							} else if (time_ago < 86400) {
+								time_ago = Math.round((time_ago / 60) / 60) + ' hours ago';
+							} else if (time_ago < 604800) {
+								time_ago = Math.round(((time_ago / 60) / 60) / 24) + ' days ago';
+							} else if (time_ago < 2419200) {
+								time_ago = Math.round((((time_ago / 60) / 60) / 24) / 7) + ' weeks ago';
+							} else if (time_ago < 18144000) {
+								time_ago = Math.round(((((time_ago / 60) / 60) / 24) / 7) / 4) + ' months ago';
+							} else {
+								time_ago = Math.round(((((time_ago / 60) / 60) / 24) / 7) / 52) + ' years ago';
+							}
+							return time_ago;
+						}
+						$(element + ' .video-list-by span').each(function(index) {
+							if (index === 1 && data[0]) {
+								$(this).html(data[0]?.views + ' Views');
+							} else if (index === 5 && data[1]) {
+								$(this).html(data[1]?.views + ' Views');
+							} else if (index === 9 && data[2]) {
+								$(this).html(data[2]?.views + ' Views');
+							} else if (index === 13 && data[3]) {
+								$(this).html(data[3]?.views + ' Views');
+							} else if (index === 17 && data[4]) {
+								$(this).html(data[4]?.views + ' Views');
+							} else if (index === 21 && data[5]) {
+								$(this).html(data[5]?.views + ' Views');
+							} else if (index === 25 && data[6]) {
+								$(this).html(data[6]?.views + ' Views');
+							} else if (index === 29 && data[7]) {
+								$(this).html(data[7]?.views + ' Views');
+							} else if (index === 33 && data[8]) {
+								$(this).html(data[7]?.views + ' Views');
+							} else if (index === 37 && data[9]) {
+								$(this).html(data[7]?.views + ' Views');
+							} else if (index === 3 && data[0]) {
+								$(this).html(time(data[0]?.time));
+							} else if (index === 7 && data[1]) {
+								$(this).html(time(data[1]?.time));
+							} else if (index === 11 && data[2]) {
+								$(this).html(time(data[2]?.time));
+							} else if (index === 15 && data[3]) {
+								$(this).html(time(data[3]?.time));
+							} else if (index === 19 && data[4]) {
+								$(this).html(time(data[4]?.time));
+							} else if (index === 23 && data[5]) {
+								$(this).html(time(data[5]?.time));
+							} else if (index === 27 && data[6]) {
+								$(this).html(time(data[6]?.time));
+							} else if (index === 31 && data[7]) {
+								$(this).html(time(data[7]?.time));
+							} else if (index === 35 && data[8]) {
+								$(this).html(time(data[8]?.time));
+							} else if (index === 39 && data[9]) {
+								$(this).html(time(data[9]?.time));
+							}
+						});
+						/*$('.pt_no_vid_found_trend ').attr('', data[0].gif);*/
+						$(element + '>div').each(function(index_) {
+							if (!(data[index_])) {
+								return false;
+							} else {
+								sessionStorage.setItem('stv_data', JSON.stringify(data));
+								let user_id = data[index_]?.user_id || false;
+								let username = sessionStorage.getItem('user_' + user_id);
+								let verified = sessionStorage.getItem('user_verified_' + user_id);
+								let avatar = sessionStorage.getItem('user_avatar_' + user_id);
+								if (username && avatar) {
+									if ($(element + ' .video-list-by a')[index_]) {
+										$(element + ' .video-list-by a')[index_].setAttribute('href', './@' + username);									
+										$(element + ' .video-list-by a')[index_].innerHTML += username;
+										if (verified === '1') {
+											$(element + ' .video-list-by a')[index_].insertAdjacentHTML('beforeend', '<i class="fa fa-check-circle fa-fw verified"></i>');
+										}
+									}
+									if ($(element + ' .video-list-by #publisher_img')[index_]) {
+										$(element + ' .video-list-by #publisher_img')[index_].src = 'https://images.storry.tv/' + avatar;
+									}
+								} else if ($(element + ' .video-list-by a')[index_]) {
+									fetch(api + '/user/' + user_id)
+										.then(response => response?.json())
+										.then(data_ => {
+										if (data_[0]) {
+											sessionStorage.setItem('user_' + user_id, data_[0]?.username);
+											$(element + ' .video-list-by a')[index_].setAttribute('href', './@' + data_[0]?.username);
+											$(element + ' .video-list-by a')[index_].innerHTML += data_[0]?.username;
+										}
+										if (data_[0].verified === 1) {
+											sessionStorage.setItem('user_verified_' + user_id, '1');
+											$(element + ' .video-list-by a')[index_].insertAdjacentHTML('beforeend', '<i class="fa fa-check-circle fa-fw verified"></i>');
+										}
+										sessionStorage.setItem('user_avatar_' + user_id, data_[0]?.avatar);
+										if ($(element + ' .video-list-by #publisher_img')[index_]) {
+											$(element + ' .video-list-by #publisher_img')[index_].src = 'https://images.storry.tv/' + data_[0]?.avatar;
+										}
+									});
+								}
+							}
+						});
+						//console.log(data);
+						//document.getElementById('root').innerHTML = '';
+						//document.getElementById('root').innerHTML = '<p>' + JSON.stringify(data) + '</p>';
+					});
+				});
+			};
+			let locationpathname = new URL(window.location.href).pathname;
+			if ((locationpathname == '/') || locationpathname == '/index.html') {
+				try {
+					get_videos('.pt_no_vid_found_trend', '/videos/trending');
+				} catch (err) {
+					//console.error(err);
+				}
+				try {
+					get_videos('.pt_no_vid_found_top', '/videos/top');
+				} catch (err) {
+					//console.error(err);
+				}
+				try {
+					get_videos('.pt_latest_vds>div', '/videos/latest');
+				} catch (err) {
+					//console.error(err);
+				}
+				try {
+					get_videos('.music_vds', '/videos/category/music/10');
+				} catch (err) {
+					//console.error(err);
+				}
+				try {
+					get_videos('.news_politics_vds', '/videos/category/news-politics/10');
+				} catch (err) {
+					//console.error(err);
+				}
+				try {
+					get_videos('.non_profits_activism_vds', '/videos/category/non-profits-activism/10');
+				} catch (err) {
+					//console.error(err);
+				}
+				try {
+					get_videos('.crypto_vds', '/videos/category/crypto/10');
+				} catch (err) {
+					//console.error(err);
+				}
+				try {
+					get_videos('.education_vds', '/videos/category/education/10');
+				} catch (err) {
+					//console.error(err);
+				}
+				try {
+					get_videos('.movies_vds', '/videos/category/movies/10');
+				} catch (err) {
+					//console.error(err);
+				}
+			}
+			const NextVid_onEnded = async (e) => {
+				if (localStorage.getItem('autoplay') === 'true') {
+					let nextvideotimer;
+					let url = sessionStorage.getItem('next_vid');
+					if (url.startsWith('./watch')) {
+						url = window.location.origin + url.replace('./watch', '/watch');
+					}
+					const stopNextVideo = async () => {
+						clearInterval(nextvideotimer);
+					}
+					let next_video_ = async () => {
+						if (url) {
+							let next_video_title = $('div#next-video .video-thumb img').attr('alt');
+							let next_btn = '<div class="mejs__overlay mejs__layer" style="width: 100%;height: 100%;" id="next-video-5s" role="button" tabindex="0" aria-pressed="false"><div id="count"><p id="count-p">3</p></div><div id="hh"><p>' + next_video_title + '</p><br/><span id="cancel-next-video">Click to cancel</span></div><style>div#count {width: 100%;z-index: 999;color: #fff;font-weight: 600;text-align: center;}div#count>p {padding: 5px;margin-left: calc( 50% - 15px );margin-right: calc( 50% - 15px );border-radius: 30px;background-color:#333;}#next-video-5s>#hh>p {width: 100%;height: 100%;z-index: 998;color: #fff;font-size: 21px;background-color: rgba(0,0,0,0.7);text-align: center;padding-top: 35%;}#cancel-next-video {font-size: 16px;position: absolute;color: #fff;margin-top: -100%;z-index: 998;width: 100%;text-align: center;padding-top: 85%;}div#hh {position: absolute;width: 100%;height: 100%;}</style></div>';
+							document.getElementsByClassName('mejs__layers')[0].innerHTML += next_btn;
+							$('head').append('<link rel="prefetch" href="' + url + '">');
+							let counter = 3;
+							nextvideotimer = setInterval(async () => {
+								counter--;
+								if (counter >= 0) {
+									document.getElementById('count-p').innerHTML = counter;
+								}
+								if (counter === 0) {
+									clearInterval(counter);
+									window.location.href = url;
+								}
+							}, 1000);
+							$('#next-video-5s *').on('click', async () => {
+								stopNextVideo();
+								$('.mejs__overlay-button, .mejs__overlay-play').on('click', function(e) {
+									e.preventDefault();
+									$('video')[0].play();
+									$('.mejs__overlay-play').hide();
+									$('video').on('pause', function() {
+										$('.mejs__overlay-play').show();
+									});
+								});
+							});
+							document.getElementById('count').addEventListener('click', stopNextVideo);
+						}
+					}
+					await next_video_();
+					$(window).scroll(async () => {
+						let eLheight = $('#next-video-5s').height() / 2;
+						//let meHeight = $('.mejs__mediaelement').height() / 2;
+						if ($(window).scrollTop() > eLheight) {
+							stopNextVideo();
+						}
+					});
+				}
+			};
+			const observer = new MutationObserver(function(mutations) {
+				if (document.getElementById('autoplay')) {
+					if (localStorage.getItem('autoplay') !== 'false') {
+						document.getElementById('autoplay').checked = true;
+					}
+					document.getElementById('autoplay').onchange = function() {
+						localStorage.setItem('autoplay', this?.checked);
+					}
+					observer.disconnect();
+				}
+			});
+			document.addEventListener('DOMContentLoaded', async () => {
+				observer.observe(document.body, {
+					childList: true,
+					subtree: true
+				});
+				setTimeout( () => {
+					observer.disconnect();
+				}, 60000);
+			});
+			if (localStorage.getItem('autoplay') === null) {
+				localStorage.setItem('autoplay', 'true');
+			}</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww==" crossorigin="anonymous" referrerpolicy="no-referrer" defer=""></script><script type="text/javascript" src="./js/scripts2.min.js" defer=""></script><script type="text/javascript" src="./js/script.js" defer=""></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js" integrity="sha512-F636MAkMAhtTplahL9F6KmTfxTmYcAcjcCkyu0f0voT3N/6vzAuJ4Num55a0gEJ+hRLHhdz3vDvZpf6kqgEa5w==" crossorigin="anonymous" referrerpolicy="no-referrer" defer=""></script><script type="text/javascript" src="./js/lozad.min.js" defer=""></script><script type="text/javascript" src="./js/footer.min.js" defer=""></script><script>!function(e){function r(r){for(var n,p,l=r[0],a=r[1],f=r[2],c=0,s=[];c<l.length;c++)p=l[c],Object.prototype.hasOwnProperty.call(o,p)&&o[p]&&s.push(o[p][0]),o[p]=0;for(n in a)Object.prototype.hasOwnProperty.call(a,n)&&(e[n]=a[n]);for(i&&i(r);s.length;)s.shift()();return u.push.apply(u,f||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,l=1;l<t.length;l++){var a=t[l];0!==o[a]&&(n=!1)}n&&(u.splice(r--,1),e=p(p.s=t[0]))}return e}var n={},o={1:0},u=[];function p(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,p),t.l=!0,t.exports}p.m=e,p.c=n,p.d=function(e,r,t){p.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},p.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},p.t=function(e,r){if(1&r&&(e=p(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(p.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)p.d(t,n,function(r){return e[r]}.bind(null,n));return t},p.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return p.d(r,"a",r),r},p.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},p.p="/";var l=this["webpackJsonpStorryTV Tezos Dapp"]=this["webpackJsonpStorryTV Tezos Dapp"]||[],a=l.push.bind(l);l.push=r,l=l.slice();for(var f=0;f<l.length;f++)r(l[f]);var i=a;t()}([])</script><script src="/static/js/2.bc528e34.chunk.js"></script><script src="/static/js/main.db337945.chunk.js"></script></body></html>

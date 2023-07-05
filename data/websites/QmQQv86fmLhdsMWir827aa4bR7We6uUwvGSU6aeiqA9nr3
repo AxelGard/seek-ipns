@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>D5 - D5 aggregates Order Books and AMMs, providing a revolutionary on-chain trading experience</title>
+    <meta content="D5 Exchange" name="author" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <meta name="description" content="D5 aggregates Order Books and AMMs, providing a revolutionary on-chain trading experience" />
+    <meta name="keywords" content="D5, DeFi, Dex, Bitcoin exchange, BTC price, ETH price, Ethereum, Bitcoin, GMOB, Cryptocurrency Exchange, Swap, Order book, AMM, Spot trading"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta content="D5 Exchange" name="apple-mobile-web-app-title" />
+    <meta content="D5 Exchange" name="application-name" />
+    <meta property="og:title" content="D5 | D5 aggregates Order Books and AMMs, providing a revolutionary on-chain trading experience" />
+    <meta property="og:site_name" content="D5" />
+    <meta property="og:description" content="D5 aggregates Order Books and AMMs, providing a revolutionary on-chain trading experience"/>
+    <meta property="og:type" content="website"/>
+    <meta property="twitter:title" content="D5 - D5 aggregates Order Books and AMMs, providing a revolutionary on-chain trading experience" />
+    <meta property="twitter:site" content="@trade.d5.xyz"/>
+    <meta property="twitter:creator" content="@GridexProtocol" />
+    <meta property="twitter:description" content="D5 aggregates Order Books and AMMs, providing a revolutionary on-chain trading experience" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta name="robots" content="all" />
+    <link rel="shortcut icon" sizes="128x128" href="/favicon.ico" />
+    <script src="/datafeeds/udf/dist/bundle.js"></script>
+
+    <script type="module" crossorigin src="/static/js/index-cb8d85e4.js"></script>
+    <link rel="modulepreload" crossorigin href="/static/js/dom-vendor-ed481ae2.js">
+    <link rel="modulepreload" crossorigin href="/static/js/ethers-vendor-37da7173.js">
+    <link rel="modulepreload" crossorigin href="/static/js/ui-vendor-6a005168.js">
+    <link rel="modulepreload" crossorigin href="/static/js/utils-vendor-8aec7c2d.js">
+    <link rel="stylesheet" href="/static/css/index-527eddbd.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+  </body>
+</html>

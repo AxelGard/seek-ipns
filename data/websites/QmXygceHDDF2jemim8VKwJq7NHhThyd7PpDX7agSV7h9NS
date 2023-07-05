@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Flash Fiction - Archive - MayVaneDay Studios</title>
+		<link href="../../style.css" rel="stylesheet" type="text/css" media="all">
+		<meta name="author" content="Vane Vander">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body class="mayvaneday">
+		<div class="box">
+			<p><h1>Flash Fiction</h1></p>
+		</div>
+		<div class="box">
+			<p><h2>Erin</h2></p>
+			<ol>
+				<li><a href="./e/erin.html">Erin</a></li>
+				<li><a href="./e/erin2.html">Erin Hidden</a></li>
+				<li><a href="./e/erin3.html">Erin Devoted</a></li>
+				<li><a href="./e/erin4.html">Erin Torn</a></li>
+				<li><a href="./e/erin5.html">Erin Entreated</a></li>
+				<li><a href="./e/erin6.html">Erin Egress</a></li>
+				<li><a href="./e/erin7.html">First Contact</a></li>
+				<li><a href="./e/erin8.html">Erin Educated</a></li>
+				<li><a href="./e/erin9.html">Erin Eyed</a></li>
+				<li><a href="./e/erin10.html">Erin Interred</a></li>
+				<li><a href="./e/erin11.html">Erin Permeated</a></li>
+				<li><a href="./e/erin12.html">Erin Examined</a></li>
+				<li><a href="./e/erin13.html">"The world is an onion"</a></li>
+			</ol>
+		</div>
+		<div class="box">
+			<ul>
+				<li><a href="./b/beno.html">beno</a></li>
+				<li><a href="./c/corre.html">¡corre!</a></li>
+				<li><a href="./c/cetra.html">Cetra</a></li>
+				<li><a href="./d/desaparecer.html">desaparecer</a></li>
+				<li><a href="./h/hollow-war.html">Hollow War</a></li>
+				<li><a href="./i/in-100-words.html">in 100 words</a></li>
+				<li><a href="./i/minutes.html">i'll be there in a few minutes</a></li>
+				<li><a href="./k/kiel-resti.html">kiel resti</a></li>
+				<li><a href="./l/lucine-whence.html">lucine, whence you came</a></li>
+				<li><a href="./m/medusa-must-live.html">medusa must live</a></li>
+				<li><a href="./m/midnight-hands.html">midnight hands</a></li>
+				<li><a href="./n/nostalgia-1.html">nostalgia week, day 1</a></li>
+				<li><a href="./n/nostalgia-2.html">nostalgia week, day 2</a></li>
+				<li><a href="./o/ora-statuo.html">ora statuo</a></li>
+				<li><a href="./s/solace.html">solace</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

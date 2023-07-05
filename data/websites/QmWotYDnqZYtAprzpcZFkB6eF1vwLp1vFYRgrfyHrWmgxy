@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Web3.0门户</title>
+</head>
+<style>
+  .collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active,
+  .collapsible:hover {
+    background-color: #ccc;
+  }
+
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+</style>
+
+<body>
+
+  <div width="100%" id="screen">
+    <table border="0" id="download" align="center" width="100%">
+      <tr>
+
+        <td align="center" bgcolor="#00FFFF">
+          <a href="down.html">
+            <font size="6px">下载安装Hayek</font>
+          </a>
+        </td>
+      </tr>
+      <hr />
+    </table>
+    <font id="block" size=1>正在取得区块号 </font>
+    </td>
+
+    <hr />
+
+
+    <table border="0">
+      <tr>
+        <td width="8%"><img src="images/favicon.ico" width="23"></img></td>
+
+        <td align="left"><text>IPFS</text></td>
+        <td width="100%" align="right"><text id="ipfsnodes" align="right">N/A</text></td>
+      </tr>
+    </table>
+    <hr />
+    <button type="button" class="collapsible">我的钱包</button>
+    <div class="content">
+
+      <table border="0">
+        <tr>
+          <td width="8%"><img src="0xf3DD11F7d8fA791c2Da46a5D26634592E417Af6C.png" width="23"></img></td>
+          <td width=30%" align="left"><text>地址</text></td>
+          <td align="right">
+            <font id="account" size=1><a href="down.html">点这里下载安装Hayek</a></font>
+          </td>
+        </tr>
+      </table>
+      <hr />
+      <a href="./dapp/uniswapv2/">
+        <table border="0">
+          <tr>
+            <td width="8%"><img src="0xf3DD11F7d8fA791c2Da46a5D26634592E417Af6C.png" width="23"></img></td>
+
+            <td align="left"><text>HYK</text></td>
+            <td width="100%" align="right"><text id="balance" align="right">N/A</text></td>
+          </tr>
+        </table>
+        <hr />
+        <table border="0">
+          <tr>
+            <td width="8%"><img src="./0xf3DD11F7d8fA791c2Da46a5D26634592E417Af6C.png" width="23"></img></td>
+
+            <td align="left"><text>WHYK</text></td>
+            <td width="100%" align="right"><text id="whyk" align="right">N/A</text></td>
+          </tr>
+        </table>
+      </a>
+      <hr />
+      <a href="/ipfs/QmeUsRgoHxTqEJGs7J7Tt533G5s6fta4tJjzPUd9qy8wqh">
+        <table border="0">
+          <tr>
+            <td width="8%"><img src="./0xb7C8d76587DbE244d25a76555aEBcB2dd77ae4F0.png" width="23"></img></td>
+
+            <td align="left"><text>USDT</text></td>
+            <td width="100%" align="right"><text id="usdt" align="right">N/A</text></td>
+          </tr>
+        </table>
+    </div>
+    <hr />
+    </a>
+
+    <button type="button" class="collapsible">如何获得哈耶克币(HYK)</button>
+    <div class="content">
+
+      <table border="0">
+        <tr>
+
+          <td align="left">
+            <text>邀请奖励：近期推出</text>
+          </td>
+        </tr>
+      </table>
+
+      <hr />
+      <table border="0">
+        <tr>
+
+          <td align="left">
+            <text>手机挖矿获得哈耶克币:依次点右下方#号按钮，右上角三点，设定，开启挖矿。(挖矿会消耗手机电力，建议插上电源，关闭省电模式,允许Hayek后台运行。否则会进入休眠而降低挖矿效率)</text>
+          </td>
+        </tr>
+      </table>
+
+      <hr />
+      <table border="0">
+        <tr>
+
+          <td align="left"><text>分享优质视频获得打赏</text></td>
+        </tr>
+      </table>
+    </div>
+    <hr />
+    <a href="element://room/#hayek:hayek.link">
+      <table border="0">
+        <tr>
+
+          <td align="left"><text>加入哈耶克官方中文群</text></td>
+        </tr>
+      </table>
+      <hr />
+    </a>
+    <table border="0">
+      <tr>
+
+        <td width="100%" align="center"> <a href="./web3tube/">WEB3TUBE视频</a></td>
+      </tr>
+    </table>
+    <div id="videos" width="100%">
+
+    </div>
+
+    <hr />
+  </div>
+</body>
+<script src="./web3.min.js"></script>
+<script src="./ethers-5.2.umd.min.js" type="application/javascript"></script>
+<script>
+  // import { ethers } from "./ethers-5.2.esm.min.js";
+  const web3 = new Web3("http://127.0.0.1:8999");
+  web3.eth.isSyncing()
+    .then(sync => {
+
+      if (sync.highestBlock - sync.currentBlock > 1000) {
+        window.location.href = "./syncing.html"
+
+      }
+    }
+
+    );
+  var provider
+ 
+  if (typeof window.ethereum != 'undefined') {
+  //if (true) {
+
+    provider = new ethers.providers.Web3Provider(window.ethereum)
+
+  } else {
+
+    // provider=  new ethers.providers.WebSocketProvider("ws://192.168.2.20:8546");
+    //provider=  new ethers.providers.WebSocketProvider("ws://192.168.2.71:8998");
+    // provider=  new ethers.providers.JsonRpcProvider("http://192.168.2.71:8999");
+     provider = new ethers.providers.JsonRpcProvider("https://rpct.hayek.link");
+
+    //provider=  new ethers.providers.WebSocketProvider("ws://192.168.2.154:8998");
+    //provider=  new ethers.providers.WebSocketProvider("ws://127.0.0.1:8998");
+
+  }
+
+
+
+
+  var account = ""
+  // account= await provider.send("eth_requestAccounts", []);
+  var block = provider.getBlockNumber()
+  block.then(res => {
+    document.getElementById("block").innerText = "当前区块号：" + res
+  }, error => {
+    console.log('失败结果：' + error);
+
+  });
+
+  // const a= provider.getBlockNumber()
+
+
+  provider.send("eth_requestAccounts", []).then(res => {
+    account = res + ""
+    document.getElementById("account").innerText = "" + account
+    const d = provider.getBalance(res + "")
+    d.then(res => {
+      document.getElementById("balance").innerText = "" + ethers.utils.formatEther(res)
+    }, error => {
+      console.log('失败结果：' + error);
+
+    });
+    const daiAddress = "0xa5E265Bf313b24476dA9681D61bDbdC03c66F271";
+    const daiAbi = [
+      "function name() view returns (string)",
+      "function symbol() view returns (string)",
+      "function balanceOf(address) view returns (uint)",
+      "function transfer(address to, uint amount)",
+      "event Transfer(address indexed from, address indexed to, uint amount)"
+    ];
+    const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
+    daiContract.balanceOf(account).then(res => {
+      document.getElementById("usdt").innerText = "" + ethers.utils.formatUnits(res, 8)
+
+    }, error => {
+      console.log('失败结果：' + error);
+
+    })
+
+    var daiContractwhyk = new ethers.Contract("0xf3DD11F7d8fA791c2Da46a5D26634592E417Af6C", daiAbi, provider);
+    daiContractwhyk.balanceOf(account).then(res => {
+      document.getElementById("whyk").innerText = "" + ethers.utils.formatUnits(res, 18)
+
+    }, error => {
+      console.log('失败结果：' + error);
+
+    })
+
+
+
+  }, error => {
+    document.getElementById("account").innerText = "获取钱包地址失败，您应该在Hayek中使用"
+
+  })
+  //document.getElementById("t1").innerText="ttt"
+
+  //console.log("ddd"+a)
+
+
+
+
+
+  const daiAbi1 =
+    [
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "likeText",
+            "type": "string"
+          }
+        ],
+        "name": "like",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "payable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "string",
+            "name": "ipfs",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "title",
+            "type": "string"
+          }
+        ],
+        "name": "publicVideo",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "allVideo",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "publicdatetime",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "publicAddr",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "ipfs",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "income",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "name": "balance",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "bbs",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "poster",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "content",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getVideoCount",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "myVideo",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "endLineNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "MaxLines",
+            "type": "uint256"
+          }
+        ],
+        "name": "queryNewVideo",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "id",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "publicdatetime",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "publicAddr",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "ipfs",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "income",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct NewVideo.Video[]",
+            "name": "r",
+            "type": "tuple[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ];
+
+  const daiAddress1 = "0x7d1C275BfE0A597e11af0e2F9ECCAE73e9e0D9fE";
+  //   const daiAddress1="0x61F683Bd8A9fA643Cc35e03716aD3f03797176F3";
+  const daiContract1 = new ethers.Contract(daiAddress1, daiAbi1, provider);
+  var s = 0
+  window.anybusy = false;
+  function refresh() {
+    if (window.anybusy) {
+      console.log("------" + window.anybusy)
+      return
+    }
+    window.anybusy = true
+    const myNode = document.getElementById("videos");
+    while (myNode.firstChild) {
+      myNode.removeChild(myNode.lastChild);
+    }
+    console.log("begin refresh:" + s)
+    daiContract1.getVideoCount().then(count => {
+
+
+      daiContract1.queryNewVideo(s, 10).then(res => {
+        res.forEach(element => {
+          console.log(element)
+          AppendVideo(element.ipfs, element.id, element.title, element.publicAddr, element.publicdatetime, element.income)
+          // lastvideoid = element.id
+
+          s = element.id - 1
+          if (element.id < 20) { s = 20 }
+        });
+        window.anybusy = false
+      }, error => {
+        window.anybusy = false
+        // document.getElementById("video").innerText = error
+        alert(error)
+      })
+
+    }, error => {
+      window.anybusy = false
+      // document.getElementById("video").innerText=error
+
+    })
+  }
+  if (typeof window.ethereum != 'undefined') {
+
+    document.getElementById("download").innerText = ""
+
+  }
+
+  refresh()
+  function getDu(ee){
+   // alert(parseInt(e.duration/60))
+   //alert(ee.src+" "+ee.toSource())
+   //alert(JSON.stringify(ee, null, 4));
+   alert(ee.duration);
+  }
+  
+  function AppendVideo(ipfs, id, title, address, posttime, income) {
+    var date = new Date(posttime * 1000);
+    const vfull=document.createElement("a")
+   // vfull.setAttribute("width", "50%");
+    vfull.setAttribute("href","./v/?ipfs="+ipfs+"?title="+title+"?id="+id)
+    const p = document.createElement("video")
+    p.currentTime=0.01;
+    p.src =  ipfs;
+   
+    //p.src =  ipfs;
+    //p.id = "video" + id;
+  
+    //p.setAttribute("controls", "{false}");
+    //p.setAttribute("onloadeddata", "canplay(this)");
+   // p.setAttribute("onloadeddata", "canplay(this)");
+    
+    //p.preload="{metadata}";
+    //p.setAttribute("proload", "metadata");
+  //  p.addEventListener("loadedmetadata",getDu(p))
+    //p.addEventListener("durationchange",getDu(p))
+    //p.oncanplay="{getDu(this)}"
+   // p.width="100%";
+    p.setAttribute("width", "100%");
+    //p.autopictureinpicture = "{true}";
+    vfull.appendChild(p)
+  //  vfull.setAttribute("width", "50%");
+    document.getElementById("videos").appendChild(vfull);
+
+    const p1 = document.createElement("h10")
+    p1.innerText = title + " \n发布者地址：" + address.toString().substring(0, 10) + "..." + address.toString().substring(30) + " \n发布时间：" + date.toDateString() + "\n 打赏收入:" + income + "HYK";
+    document.getElementById("videos").appendChild(p1);
+    document.getElementById("videos").appendChild(document.createElement("hr"))
+    document.body.removeChild
+  }
+
+
+  window.onscroll = () => {
+    // 变量scrollTop 是滚动条滚动时距离顶部的距离
+    var scrollTop = document.documentElement.scollTop || document.body.scrollTop;
+    // 变量windowHeight 是可视区的高度
+    var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+    // 变量scrollHeight 是滚动条的总高度
+    var scrollHeight = document.documentElement.scrollHeight;
+    // 滚动条到底部的条件
+
+    var sTop = document.body.scrollTop + document.documentElement.scrollTop;
+    //  console.log("will refresh"+windowHeight+"scrollHeight "+(scrollHeight-sTop-windowHeight))
+    if ((scrollHeight - sTop - windowHeight) < 5) {
+
+      refresh()
+    }
+
+  }
+  setInterval(function () {
+    document.getElementById("ipfsnodes").innerText = window._tw_.getIPFSnodes() + "/" + window._tw_.getIPFSPublicGateways() + "/" + window._tw_.getIPFSPublicPins()
+  }, 3000);
+  document.getElementById("ipfsnodes").innerText = window._tw_.getIPFSnodes() + "/" + window._tw_.getIPFSPublicGateways() + "/" + window._tw_.getIPFSPublicPins()
+
+
+  function canplay(obj) {
+    //document.getElementById("video1").currentTime=0;
+    obj.currentTime = 0.01
+    //   alert(obj.duration)
+    //   document.getElementById("t1").innerText="ttt"
+  }
+ function   uploadipfs() {
+
+
+    provider.send("get_ipfs", "fff").then(res => {
+
+      console.log("get_ipfs:re" + res)
+
+    }, error => {
+
+      alert("get_ipfs:" + error)
+    },onprogress=>{
+      
+    })
+  }
+</script>
+
+<script>
+
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+</script>
+
+</html>
