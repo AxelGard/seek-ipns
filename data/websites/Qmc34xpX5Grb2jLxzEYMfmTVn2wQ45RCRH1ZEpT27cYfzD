@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Smiling The Innovation Company</title>
+    <meta name="description" content="Smiling The Innovation Company" />
+    <meta name="author" content="Smiling Dev team." />
+    <style>
+        body {
+            margin: 15px auto;
+            max-width: 650px;
+            line-height: 1.2;
+            font-family: sans-serif;
+            font-size: 2em;
+            color: #fff;
+            background: rgb(11, 61, 11);
+        }
+
+        a {
+            color: yellowgreen;
+        }
+
+        /* img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        } */
+
+        img.resize {
+            width: 250px;
+            height: auto;
+        }
+
+        /* .cat {
+            height: 200px;
+            width: 200px;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1>Smiling The Innovation Company</h1>
+    <!-- <div class="cat"> -->
+        <img class="resize" src="logo.png" />
+    <!-- </div> -->
+    <p id="output_p">We work on on best technology for us and for our clients</p>
+    <h2><a href="about.html">About this website</a></h2>
+    <script>
+        function main() {
+            const facts = [
+
+            ]
+            document.querySelector('#output_p').innerHTML =
+                facts[Math.floor(Math.random() * facts.length)]
+        }
+    </script>
+</body>
+
+</html>

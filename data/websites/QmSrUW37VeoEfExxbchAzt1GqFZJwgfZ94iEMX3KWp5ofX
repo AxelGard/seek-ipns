@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html><head>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<title>Khugati.ru | Официальный сайт художника Хугаева Николая Константиновича</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Content-Language" content="ru" />
+<meta name="keywords" content="Хугаев, Хугати, Хугаты, Хуыгаты, Хугаев Николай Константинович, Хугаев Роман Николаевич, Хугаев Радий Николаевич, официальный сайт, художник, живопись, Осетия, Кавказ, Сибирь, Портрет, Пейзаж, Натюрморт, Тематическая живопись, Абстракция, картины" />
+<meta name="description" content="Официальный сайт художника Хугаева Николая Константиновича" />
+<link href="styles/styles.css" rel="stylesheet" type="text/css" />
+<link rel="prerender" href="portrait" />
+<link rel="prefetch" href="styles/styles_gallery.css" />
+<link rel="next" href="portrait"/>
+<!--<meta name="msapplication-TileColor" content="#ffffff"/>-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="application-name" content="Khugati.ru"/>
+<meta name="msapplication-square70x70logo" content="images/tiny.jpg"/>
+<meta name="msapplication-square150x150logo" content="images/square.jpg"/>
+<meta name="msapplication-wide310x150logo" content="images/wide.png"/>
+<meta name="msapplication-square310x310logo" content="images/large.jpg"/>
+<meta property="og:image" content="https://khugati.ru/images/gallery_img/big/niv164.jpg"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-53893805-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script>
+    function toggleMenu() {
+        var subMenu = document.getElementById("subMenu");
+        subMenu.classList.toggle("showSubMenu");
+    }
+</script>
+</head>
+<body>
+	<div id="menu">
+    	<div id="header">
+        	<ul>
+            	<li><a>Главная</a></li>
+                <li onclick="toggleMenu()"><a aria-haspopup="true">Галерея<div id="sim">&nbsp;&#x2335;</div></a>
+                	<div id="subMenu">
+                    <ul class="dropdown">
+                    	<li><a href="portrait.html">Портрет</a></li>
+                        <li><a href="landscape.html">Пейзаж</a></li>
+                        <li><a href="still_life.html">Натюрморт</a></li>
+                        <li><a href="thematic_painting.html">Тематическая живопись</a></li>
+                        <li><a href="abstraction.html">Абстракция</a></li>
+                    </ul>
+                    </div>
+                </li>                 
+                <li><a href="about.html">О художнике</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <!--<li><a href="#">5я страница</a></li>-->
+            </ul>
+        </div>
+    </div>
+    <div id="logo">
+        	<!--<img src="images/favicon.ico" width="100">-->
+            <h2>ХУДОЖНИК</h2>
+            <h1>ХУГАЕВ НИКОЛАЙ</h1>
+    </div>
+	<div id="yandex">
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=25343858&amp;from=informer"
+target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/25343858/3_1_FFFFFFFF_FFFFFFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" /></a>
+<!-- /Yandex.Metrika informer -->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter25343858 = new Ya.Metrika({id:25343858,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/25343858" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+	</div>
+	<div id="footer">
+		&copy; 2014 ─ 2022 Khugati.ru
+	</div>
+</body>
+</html>

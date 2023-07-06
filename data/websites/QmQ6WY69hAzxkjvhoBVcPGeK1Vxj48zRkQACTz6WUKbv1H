@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>emblem.mp4</title>
+
+  <link rel="stylesheet" href="/assets/css/gallery.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body class="">
+  <section class="main">
+    
+
+<h1 class="title">emblem.mp4</h1>
+<h4 class="mtime">2021-09-06 17:08:22 UTC</h4>
+
+
+
+<div class="animation-preview" id="preview">
+  <video muted autoplay loop controls>
+    <source src="/assets/animations/emblem.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+<div class="button-group">
+  
+
+  <a title="download" class="button" href="/assets/animations/emblem.mp4" download>Download</a>
+
+  
+
+  
+    <a title="next (right arrow key)" class="button next" href="/animations/elevator.html">&gt;&gt;&gt;</a>
+  
+</div>
+
+
+    <footer>
+      ascii art by polyhurt | [<a href="/catalog.html">catalog</a>] [<a href="/backgrounds/">bgs</a>] [<a href="/animations/">movies</a>] [<a href="/scroll.html">scroll</a>] [<a href="/">home</a>]
+    </footer>
+  </section>
+
+  <script src="/assets/js/base.js"></script>
+  
+  
+    <script src="/assets/js/preview.js"></script>
+  
+</body>
+</html>
