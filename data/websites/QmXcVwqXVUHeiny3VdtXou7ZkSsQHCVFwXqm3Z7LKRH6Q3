@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="icon" href="./icons/fontawesome/svgs/solid/fingerprint.svg" type="image/png" />
+  <link rel="icon" type="image/x" href="./icons/fontawesome/svgs/solid/fingerprint.svg" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <title>Irakli Gozalishvili</title>
+</head>
+
+<body>
+  <div id="profile" class="center">
+    <img id="profile-avatar" alt="" src="avatar.jpeg" />
+    <input id="profile-avatar-upload" type="file" accept="image/*" />
+    <div id="profile-summary">
+      <h3 id="profile-name" class="field" placeholder="name">Irakli Gozalishvili</h3>
+      <p id="profile-bio" class="field" placeholder="bio">Curious tinkerer at Mozilla who fancies functional paradigm & aims for fare distribution</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<h1>Deletion logs of local files which are in my IPFS node</h1>
+<h2><a href="ipns://k51qzi5uqu5diwzufekv38cynmdqlh0lwic1ve0d9w5a0glpy52qjc0l77h4t5">homepage</a> > <a href="ipns://k51qzi5uqu5diwzufekv38cynmdqlh0lwic1ve0d9w5a0glpy52qjc0l77h4t5/ia/">ia</a> > logs</h2>
+<ul>
+<li><a href="ipfs://bafybeie2s75aokawm6s6x4b44iu2busidovlzjol6p7wycufy4hewcilee">wdc_wd5000avvs-63zwb0_skip40500000_count500000_bs512</a> - 6d6573796e63642e736572766963652d, /ipfs/bafybeig735dhf2mcn5nyrsdansrectalpa2aboxitcjlptcralggkmoji4, derived file</li>
+<li><a href="ipfs://bafybeibdylgyolmrl6f4k47r4htgu7xhf5r7q7f423ogul2z7o5ao7xkqy">wdc_wd5000avvs-63zwb0_skip41000000_count500000_bs512</a> - 6c78624755592f0d0a2f746d702f7379, /ipfs/bafybeiboowxon3xwh2fxskupcyig3xi3zrgy7a75itmkvfow5d7mamctwa, derived file</li>
+<li><a href="ipfs://bafybeig3tkzkr4cs3dbkctl5bebi2lfsas6aztmwyulsrv6dai62yrcaze">wdc_wd5000avvs-63zwb0_skip41500000_count500000_bs512</a> - 7374656d642d707269766174652d313, /ipfs/bafybeiblzzxvnvfmhfzkqp24jelz5otmfyfyhijffrbcpsb3ifbd4pyw5a, derived file</li>
+<li><a href="ipfs://bafybeidwgoi3cuqvyzxtnuhucghy23hgbp2scj46ngm24li7o6smhik5uq">wdc_wd5000avvs-63zwb0_skip42000000_count500000_bs512</a> - 61643834656334616465346639323863_202108, /ipfs/bafybeiawjfvkung4pjehjzwgext43gioed4k7i55zfjv733m4qpuw2j2au, derived file</li>
+</ul>
+</body>
+</html>
