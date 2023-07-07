@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>About - MaTTeo&#39;s Dlog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.110.0"><meta property="og:site_name" content="MaTTeo&#39;s Dlog">
+  <meta property="og:title" content="About">
+  <meta property="og:description" content="About the creator of this Decentralized Blog, or Dlog, if you will">
+  <meta property="description" content="About the creator of this Decentralized Blog, or Dlog, if you will">
+  <meta property="og:url" content="/about/">
+  <meta property="og:type" content="article">
+  
+    <meta property="og:image" content="/img/main/avatar-oval.png">
+  
+  <link rel="stylesheet" href="../css/bundle.min.b6b9b8366c481423149499a0fabce9ee8fa1437015f852c2360d2533c149c992.css"><link rel="stylesheet" href="../css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="../" class="nav">
+        
+          About
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="../" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="../about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="../blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="../categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="../contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=About&amp;url=https%3a%2f%2fdecapa.io%2fabout%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+
+
+
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fdecapa.io%2fabout%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+
+
+
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fdecapa.io%2fabout%2f&amp;title=About" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+
+
+
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdecapa.io%2fabout%2f&amp;title=About" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+
+
+
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fdecapa.io%2fabout%2f&amp;description=About" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+
+
+
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by MaTTeo%20DeCaPa&amp;body=https%3a%2f%2fdecapa.io%2fabout%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="../"><img src="../img/main/avatar-oval.png" class="circle" width="100" alt="MaTTeo" /></a>
+  <header>
+    <h1>MaTTeo's Dlog</h1>
+  </header>
+  <main>
+    <p>A Web3 Blog for the new internet</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/DeCaPa" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/DeCaPa" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/decapua" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//reddit.com/user/DeCaPaio" target="_blank" rel="noopener" title="Reddit" class="fab fa-reddit"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/DeCaPa_io" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+<li><a href="//www.pinterest.com/solutionprovide" target="_blank" rel="noopener" title="Pinterest" class="fab fa-pinterest-p"></a></li>
+<li><a href="//telegram.me/DeCaPaio" target="_blank" rel="noopener" title="telegram" class="fab fa-telegram"></a></li>
+
+
+
+
+
+
+
+
+      </ul>
+    </footer>
+  
+  <a href="../"><img src="../img/main/brave-verified.png" class="rectangle" width="100" alt="Brave Creator" /></a>
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+      <div class="title">
+        <h1><a href="../about/">About</a></h1>
+        <p>About the creator of this Decentralized Blog, or Dlog, if you will</p>
+      </div>
+    </header>
+    <div id="content">
+      <p>Podcasts I listen to often ask their guests to provide an “origin” story about their background and experiences that led up to their current field of work or interest.   Here is mine …</p>
+<p>I became fascinated with the internet in the mid 90’s when I realized it would transform the world.  After purchasing my first “real” computer, I began learning as much as I could.  BTW, “first real” computer to me a is a computing device with a hard drive, and modem.  I’m not counting the 80’s era TI-99-4a from my youth.  Don&rsquo;t you love the cassette tape for mass storage?<br>
+
+
+    <p><img src="ti99-4a-computer.jpg" alt="TI99-4A" width="600" height="400" /> </p>
+
+I also don&rsquo;t consider the DOS 1.0 Compaq luggable that I traded my guitar and amp for in college either.  I&rsquo;m thinking I got the worst of that deal, because the guitar and amp would still be working, and I&rsquo;d surely be a rock star by now.
+
+
+    <p><img src="Compaq_portable.jpg" alt="Compaq portable" width="600" height="400" /></p>
+
+Everything that was necessary to learn and do to create a website led me to eventually leave my job at a bank and jump into a passion that was love at first sight.   I added a section to my site called “the proposal”, which documented how I asked girl friend to marry me.  Even though the term hadn’t been named yet, I created a blog!  The sites primary draw was “An Introduction to the Internet”, and it opened a few doors for me.   I still have an email from <a href="mailto:alan@yahoo.com">alan@yahoo.com</a>, who let me know that he had categorized my website for Yahoo.  Still funny when I think about how small Yahoo must have been to give its employees an email with only a first name.</p>
+<p>After taking a few classes at a local university, I obtained an IT position.   I attended university part-time eventually earning a degree in Computer Programming Technology.  It led me to a programmer analyst position which allowed me to gain experience and skills.   The degree opened a few doors for me, but it was my passion and love of the tech which enabled all the opportunities that I’ve taken advantage of while rising thru the ranks of IT.</p>
+<p>A few years passed, and again, I pivoted my career, taking knowledge and experience with me from application development, enterprise architecture, and integration architecture to wrap that into a focus on security and protecting data and applications.  Application Security became my passion, and I took great satisfaction with identifying and helping developers and product teams ensure a secure product from the start of development.  I felt that getting security correct from the beginning to prevent an offensive attack against software in production was the best approach.  Security-first, entailed awareness, training, and the right tools at the right time to create a secure product.</p>
+<p>Along with creating secure software in the new world of cloud computing, it is additionally necessary to ensure the product is configured securely as well.  A misconfigured application is as big of a problem as is producing insecure code.   In the world of Infrastructure As Code, there really isn’t a difference, is there?</p>
+<p>My career has focused on protecting an individual’s right to have a secure virtual presence, while working for various companies.   As big tech business models monetized the individual’s personal information, they became the wealthiest companies the world has seen and maybe more powerful than individual nations themselves.  The rights of individuals and an individual&rsquo;s right to privacy doesn’t exist anymore.   The tech oligarchs provide free services and tell us we should be happy with it and accept the control they have over our lives. Remember, if you don’t have to pay for it, you are the product.   The individual has become an indentured servant to these companies.</p>
+<p>Believing there must be a better way.  My search has led me to what many are calling Web3.  It is where my passions have led and is the purpose of this Dlog.  Thank you for coming along with me on my journey to what is certain to becoming the next “big thing”.</p>
+
+    </div>
+  </article>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="../blog/shift-everywhere/" class="image" style="--bg-image: url('/img/appsec/everywhere.png');">
+    <img src="../img/appsec/everywhere.png" alt="Shift Everywhere">
+  </a>
+        <header>
+          <h2><a href="../blog/shift-everywhere/">Shift Left? Shift Everywhere!</a></h2>
+          <time class="published" datetime="2023-03-18 00:00:00 &#43;0000 UTC">March 18, 2023</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="../blog/opensource-security-tools-across-the-devops-lifecycle/" class="image" style="--bg-image: url('/img/appsec/opensource.jpg');">
+    <img class="stretchV" src="../img/appsec/opensource.jpg" alt="Opensource AppSec">
+  </a>
+        <header>
+          <h2><a href="../blog/opensource-security-tools-across-the-devops-lifecycle/">Opensource AppSec for DevOps</a></h2>
+          <time class="published" datetime="2022-02-20 00:00:00 &#43;0000 UTC">February 20, 2022</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="../blog/whitepaper-grt/" class="image" style="--bg-image: url('/img/whitepaper/grt.png');">
+    <img src="../img/whitepaper/grt.png" alt="The Graph">
+  </a>
+        <header>
+          <h2><a href="../blog/whitepaper-grt/">The Graph (GRT) Whitepaper Review</a></h2>
+          <time class="published" datetime="2021-08-15 00:00:00 &#43;0000 UTC">August 15, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="../blog/nft-security/" class="image" style="--bg-image: url('/img/appsec/nft.png');">
+    <img src="../img/appsec/nft.png" alt="nft">
+  </a>
+        <header>
+          <h2><a href="../blog/nft-security/">Is Your NFT Collectable Secure and Legitimate?</a></h2>
+          <time class="published" datetime="2021-06-28 00:00:00 &#43;0000 UTC">June 28, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="../blog/starting-application-security-program/" class="image" style="--bg-image: url('/img/appsec/application-security-program.jpg');">
+    <img class="stretchH" src="../img/appsec/application-security-program.jpg" alt="Application Security">
+  </a>
+        <header>
+          <h2><a href="../blog/starting-application-security-program/">Starting an Application Security Program</a></h2>
+          <time class="published" datetime="2021-05-12 00:00:00 &#43;0000 UTC">May 12, 2021</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="../blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+
+      <section id="categories">
+        <header>
+          <h1><a href="../categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="../categories/web3/">web3<span class="count">5</span></a>
+          
+          <li>
+              <a href="../categories/web2/">web2<span class="count">3</span></a>
+          
+          <li>
+              <a href="../categories/random/">random<span class="count">2</span></a>
+          
+          <li>
+              <a href="../categories/blockchain/">blockchain<span class="count">1</span></a>
+          
+          <li>
+              <a href="../categories/infrastructure/">infrastructure<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>This site is committed to Web and Decentralized Computing</p>
+      <footer>
+        <a href="../about" class="button">Learn More</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/DeCaPa" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/DeCaPa" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="//www.linkedin.com/in/decapua" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+<li><a href="//reddit.com/user/DeCaPaio" target="_blank" rel="noopener" title="Reddit" class="fab fa-reddit"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/DeCaPa_io" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+<li><a href="//www.pinterest.com/solutionprovide" target="_blank" rel="noopener" title="Pinterest" class="fab fa-pinterest-p"></a></li>
+<li><a href="//telegram.me/DeCaPaio" target="_blank" rel="noopener" title="telegram" class="fab fa-telegram"></a></li>
+
+
+
+
+
+
+
+
+      </ul>
+  
+  <p class="copyright">
+    © 2023 MaTTeo&#39;s Dlog
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.110.0' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="../js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="../js/bundle.min.bd6c6026e27c1a4420f4b04f761f6afb28de6d780b8e1e69d5bc6268b0fd3c1b.js"></script>
+    <script src="../js/add-on.js"></script>
+    </div>
+  </body>
+</html>

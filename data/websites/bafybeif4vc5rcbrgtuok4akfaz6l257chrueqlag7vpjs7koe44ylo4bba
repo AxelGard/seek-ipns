@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://broadbandidc.com/ -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="./bbidc_files/analytics.js"></script><script type="text/javascript" async="" src="./bbidc_files/js"></script><script type="text/javascript" async="" src="./bbidc_files/analytics.js"></script><script type="text/javascript" async="" src="./bbidc_files/js(1)"></script><script async="" src="./bbidc_files/js(2)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-174490519-1');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./bbidc_files/js(3)">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-232718280-1');
+</script>
+	
+	<title>브로드밴드 IDC</title>
+	<meta name="author" content="브로드밴드IDC ">
+	<meta name="subject" content="브로드밴드IDC ">
+	<meta name="ROBOTS" content="INDEX, FOLLOW">
+	<meta content="1개월 무료 테스트–브로드밴드IDC" property="og:title">
+	<meta content="”1개월무료" 테스트="" –브로드밴드idc,="" 와우자,="" 라이브방송,="" 스트리밍,="" 동영상스트리밍,="" 호스팅"="" property="og:description">
+	<meta content="1개월 무료 테스트–브로드밴드IDC" property="og:site_name">
+	<meta name="Keywords" content="브로드밴드,IDC, 호스팅,브로드밴드IDC, 와우자,와우자호스팅,와우자스트리밍,라이브방송,라이브스트리밍,스트리밍,동영상스트리밍">
+	<meta name="Description" content="”1개월무료" 테스트="" –브로드밴드idc,="" 와우자,="" 라이브방송,="" 스트리밍,="" 동영상스트리밍,="" 호스팅"="">
+	<meta name="naver-site-verification" content="7e807698bf62fd0396feccab2b16a9f3df9ff4d6">
+	<meta content="브로드밴드" property="article:tag">
+	<meta content="IDC" property="article:tag">
+	<meta content="호스팅" property="article:tag">
+	<meta content="브로드밴드IDC" property="article:tag">
+	<meta content="와우자" property="article:tag">
+	<meta content="와우자호스팅" property="article:tag">
+	<meta content="와우자스트리밍" property="article:tag">
+	<meta content="라이브방송" property="article:tag">
+	<meta content="라이브스트리밍" property="article:tag">
+	<meta content="스트리밍" property="article:tag">
+	<meta content="동영상스트리밍" property="article:tag">
+	<meta content="호스팅" property="article:tag">
+	<meta content="데이타센터" property="article:tag">
+	<meta property="og:image" content="/images/logo.png">
+	<meta property="og:title" content="브로드밴드 IDC">
+	<meta property="og:description" content="IDC, 서버호스팅, 서버운영관리 전문">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="./bbidc_files/default.css">
+	<link rel="stylesheet" href="./bbidc_files/import.css">
+	<link rel="stylesheet" href="./bbidc_files/font-awesome.min.css">
+	<link href="./bbidc_files/css2" rel="stylesheet"> <!-- font-family: 'Roboto', sans-serif; -->
+	<link rel="stylesheet" href="./bbidc_files/animate.min.css">
+
+	<script language="javascript" src="./bbidc_files/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="./bbidc_files/jquery-1.7.1.js"></script>
+	<script language="javascript" src="./bbidc_files/basic.js.php"></script>
+	<script language="javascript" src="./bbidc_files/httpRequest.php"></script>
+	<script language="javascript" src="./bbidc_files/common.js"></script>
+	<script language="javascript" src="./bbidc_files/slick.min.js"></script>
+	<script language="javascript" src="./bbidc_files/jquery.rolling.js"></script>
+
+	<script>
+		var dep1_id = "<?=$dep1_id;?>";
+		var dep2_id = "<?=$dep2_id;?>";
+		var dep1_tit = "<?=$dep1_tit;?>";
+		var dep2_tit = "<?=$dep2_tit;?>";
+	</script>
+</head>
+
+<body>
+<script type="text/javascript">
+function addFavorite() {
+        // IE Favorite
+        window.external.AddFavorite('http://broadbandidc.com', '브로드밴드 IDC');
+}
+</script>
+
+<div class="blackbg_gra_no" id="login_layer" style="display:none">
+<form name="loginFrmLayer" action="http://broadbandidc.com/#11" method="post">
+        <div class="login_pop">
+                <div class="login_pop_s">
+                        <div class="login_tab">
+                                <li class="on">로그인</li>
+                                <li onclick="location.href=&#39;/join/join.php&#39;;">회원가입</li>
+                        </div>
+                        <div class="popup_close" onclick="jQuery(&#39;#login_layer&#39;).hide();"></div>
+                        <div class="pop_jonbs" style="display:;">
+                                <div class="login_pop_s_tot">    
+                                        <div class="title"><span></span></div>
+                                        <div class="lopop_fom"> 
+                                                <li class="txt">아이디</li>      
+                                                <li><input id="memID" name="memID" type="text" class="input_id" value=""></li>
+                                                <li class="txt">비밀번호</li>      
+                                                <li><input id="memPW" name="memPW" type="password" class="input_pw" onkeypress="if(event.keyCode==13) LoginChkLayer();"></li>
+                                                <li class="txt2">
+                                                        <span class="ttxt2"><input name="memSAVE" id="memSAVE" type="checkbox" value="Y"> 아이디 저장</span>  
+                                                        <!--<span class="txtR"><input name="" type="checkbox" value="" />  아이디/비밀번호 찾기</span> --> 
+                                                </li>
+                                        </div>  
+                                </div>  <!-- login_pop_s_tot end!-->
+                                <div class="btn_login" onclick="LoginChkLayer();">로그인하기</div> 
+                        </div>  <!-- pop_jonbs end!-->
+                </div>
+        </div>
+</form>
+</div>
+
+<header>
+        <div id="header">
+                <div class="gnb">
+                        <div class="gnb_s">
+                                <div class="top_lang">
+                                        <ul>
+                                                <li class="icon_kor"><a href="http://www.broadbandidc.com/" class="on">Korean</a></li>
+                                                <li class="icon_usa"><a href="http://en.broadbandidc.com/">English</a></li>
+                                        </ul>
+                                </div>
+
+                                <div class="gnb_menuL">
+                                        <ul>
+
+                                                                                <li><a href="http://broadbandidc.com/#" onclick="jQuery(&#39;#login_layer&#39;).show(); return false;">LOGIN</a></li>
+                                        <li><a href="http://broadbandidc.com/join/join.php">JOIN</a></li>
+                                                                                </ul>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="top">
+                        <div class="top_s">
+                                <div class="logo" onclick="location.href=&#39;/&#39;"></div>
+                                <div class="nav">      
+                                        <ul>
+                                                <li><a href="http://broadbandidc.com/company/?doc=company">회사소개</a></li>    
+                                                <li><a href="http://broadbandidc.com/hosting/?doc=hosting">서버호스팅</a></li>
+                                                <li><a href="http://broadbandidc.com/colocation/?doc=colocation">코로케이션</a></li>
+                                                <li><a href="http://broadbandidc.com/cdn/?doc=cdn">CDN / 와우자</a></li>
+                                                <li class="dep1">
+                                            <a>클라우드</a>
+                                            <ul class="dep2_wrap">
+                                                <li><a href="http://broadbandidc.com/cloud/?doc=cloud">NCP</a></li>
+                                                <li><a href="http://broadbandidc.com/cloud/?doc=aws">AWS</a></li>
+                                            </ul>
+                                        </li>
+                                                <li><a href="http://broadbandidc.com/service/?doc=optional">부가서비스</a></li>
+                                                <li><a href="http://broadbandidc.com/cscenter/?doc=onetoone_write">고객센터</a></li>
+                                        </ul>
+                                        <a href="http://broadbandidc.com/cscenter/?doc=onetoone_write#board_form" class="btn_ask"><span>견적문의</span></a>
+
+					<div style="position:absolute;right:-245px;top:4px;border: 1px solid #000;height:72px;">
+                                        <a href="https://www.koreahtml5.kr/front/diagnosis/diagnosticUrl.do" target="_blank"><img src="./bbidc_files/banner_top220x70.jpg" alt="event banner"></a>
+					</div>
+                                </div>
+                                <a href="http://broadbandidc.com/#" class="m_menu" onclick="return false;">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                </a>
+                                <!-- 모바일 메뉴 -->
+                                <div class="m_menu_bx">
+                                        <div class="bx">
+                                                <div class="top">
+                                                        <a href="http://en.broadbandidc.com/" class="m_lang_btn"></a>
+                                                </div>
+                                                <div class="mid">
+                                                                                                                <ul class="log_bx">
+                                                                <li><a href="http://broadbandidc.com/#" onclick="jQuery(&#39;#login_layer&#39;).show(); return false;">Login</a></li>
+                                                                <li><a href="http://broadbandidc.com/join/join.php">Join</a></li>
+                                                        </ul>
+                                                        
+                                                        <a href="http://broadbandidc.com/cscenter/?doc=onetoone_write#board_form" class="btn_ask"><span>견적문의</span></a>
+                                                </div>
+                                                <div class="btm">
+                                                        <ul>
+                                                                <li><a href="http://broadbandidc.com/company/?doc=company">회사소개</a></li>    
+                                                                <li><a href="http://broadbandidc.com/hosting/?doc=hosting">서버호스팅</a></li>
+                                                                <li><a href="http://broadbandidc.com/colocation/?doc=colocation">코로케이션</a></li>
+                                                                <li><a href="http://broadbandidc.com/cdn/?doc=cdn">CDN / 와우자</a></li>
+                                                                <li class="dep1">
+                                                                    <a href="http://broadbandidc.com/cloud/?doc=cloud">클라우드</a>
+                                                                    <ul class="dep2_wrap">
+                                        <li><a href="http://broadbandidc.com/cloud/?doc=cloud">NCP</a></li>
+                                        <li><a href="http://broadbandidc.com/cloud/?doc=aws">AWS</a></li>
+                                    </ul>
+                                                                </li>
+                                                                <li><a href="http://broadbandidc.com/service/?doc=optional">부가서비스</a></li>
+                                                                <li><a href="http://broadbandidc.com/cscenter/?doc=onetoone_write">고객센터</a></li>
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+                </div>
+        </div>
+</header>
+<script type="text/javascript">
+	var interval = 500;
+	var intervaltime = 5000;
+	var animatetime = 1000;
+
+	$("#slider > div:not(.main_on)").css("opacity",0);
+
+	interval = setInterval(function() {
+		var currentimg = $("#slider > div.main_on");
+		currentimg.removeClass("main_on");
+
+		var nextimg = $(currentimg.next().size() > 0 ? currentimg.next() : "#slider > div:eq(0)");
+		nextimg.addClass("main_on").animate({opacity:1},animatetime ,function() {
+			//currentimg.css("opacity",0);
+			currentimg.animate({opacity:0},animatetime ,function() {});
+		});
+	},intervaltime );
+</script>
+
+<div id="main_mid">
+	
+	<!-- section -->
+	<div class="main_v_wrap">
+		<ul class="main_v_slide slick-initialized slick-slider"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;">Previous</button><div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 5709px;"><div class="slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1" style="width: 1903px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 700ms ease 0s;"><div><li style="width: 100%; display: inline-block;">
+				<div class="img_bx img03"><div></div></div>
+				<div class="txt_bx">
+					<p><img src="./bbidc_files/210311_logo.png"></p>
+					<p>한국인터넷진흥원<br></p>
+					<p> → 국내 최대규모 공공기관 클라우드 적용사례</p>
+					<p class="pc_show_font30">전자문서유통센터 <span style="color:orange">클라우드</span> 이전 구축 사업 수주</p>
+					<p>[성공적 이전 및 안정적 운영중]</p><br><br>
+					<div class="call_bx">
+						<div>
+							<span>빠른 견적상담</span>
+							<strong>070-4700-9944</strong>
+						</div>
+					</div>
+				</div>
+			</li></div></div><div class="slick-slide slick-current slick-active" data-slick-index="1" aria-hidden="false" style="width: 1903px; position: relative; left: -1903px; top: 0px; z-index: 999; opacity: 1;"><div><li style="width: 100%; display: inline-block;">
+				<div class="img_bx img01"><div></div></div>
+				<div class="txt_bx">
+					<strong class="animate__animated animate__fadeInUp"><span>SK브로드밴드</span>의<br>최첨단 인프라<br></strong>
+					<p class="animate__animated animate__fadeInUp delay s02 slow">200Gbps의 광대역 네트워크 기반<br>전문 엔지니어를 통한24시간 365일 안정적인 서비스</p>
+					<div class="call_bx animate__animated animate__fadeInUp delay s04 slow">
+						<div>
+							<span>빠른 견적상담</span>
+							<strong>070-4700-9944</strong>
+						</div>
+					</div>
+				</div>
+			</li></div></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 1903px; position: relative; left: -3806px; top: 0px; z-index: 998; opacity: 0;"><div><li style="width: 100%; display: inline-block;">
+				<div class="img_bx img02"><div></div></div>
+				<div class="txt_bx">
+					<strong>차원이 다른 <span><br>서버운영관리</span></strong>
+					<p>최고 엔지니어들의 Consulting을 통해 고객에게 최적화된 운영관리 서비스를 제공합니다.<br>서비스 이전에 필요한 계획 및 서버이전까지 One-stop 서비스를 제공합니다.</p>
+					<div class="call_bx">
+						<div>
+							<span>빠른 견적상담</span>
+							<strong>070-4700-9944</strong>
+						</div>
+					</div>
+				</div>
+			</li></div></div></div></div><button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;">Next</button></ul>
+		<!-- 이미지 -->
+		<div class="main_banner">
+																	<a href="http://broadbandidc.com/cscenter/?doc=onetoone_write#board_form">
+						<img src="./bbidc_files/M1597978433_59b2900aa03cb2182a51cdb520b535b6.jpg" alt="DONATE">
+					</a>		
+										
+
+					</div> 
+		<!-- //이미지 -->
+	</div>
+	<script type="text/javascript">
+		$('.main_v_slide').slick({
+			fade: true,
+			infinite: true,
+			dots: false,
+			arrows: true,
+			slidesToShow: 1,
+			 slidesToScroll: 1,
+			autoplay: true,
+			speed: 700,
+			autoplaySpeed: 4000
+		});
+
+	</script>
+	<!-- section -->
+
+	
+	<!-- section -->
+	<div class="sec03">
+		<div class="layout rolling animate__animated animate__fadeInUp slow animate__animated" style="visibility: visible; animation-name: fadeInUp;">
+			<div class="main_con_tit">
+				<strong>Broadband <span>IDC</span></strong> 주요서비스
+			</div>
+			<ul>
+				<li class="li01">
+					<a href="http://broadbandidc.com/hosting/?doc=hosting">
+						<div class="img_bx"></div>
+						<div class="txt_bx">
+							<strong>서버호스팅</strong>
+							<p>
+								인터넷 비즈니스에 필요한 IT 장비(서버/스토리지/스위치 등)를 전산실 및 네트워크와 함께 제공하는 서비스 입니다.
+							</p>
+							<span class="plus"></span>
+						</div>
+					</a>
+				</li>
+				<li class="li02">
+					<a href="http://broadbandidc.com/colocation/?doc=colocation">
+						<div class="img_bx"></div>
+						<div class="txt_bx">
+							<strong>코로케이션</strong>
+							<p>
+								무중단 전원시스템, 고용량 항온항습 설비, 다중보안 및 방제 시설을 완비한 상면에 고객이 보유한 서버, 스토리지, 방화벽, 스위치 등의 IT 장비를
+							</p>
+							<span class="plus"></span>
+						</div>
+					</a>
+				</li>
+				<li class="li03">
+					<a href="http://broadbandidc.com/cdn/?doc=cdn">
+						<div class="img_bx"></div>
+						<div class="txt_bx">
+							<strong>CDN/와우자</strong>
+							<p>
+								고객님의 멀티미디어 컨텐츠를 사용자에게 안정적으로 제공해주는 서비스 입니다.
+							</p>
+							<span class="plus"></span>
+						</div>
+					</a>
+				</li>
+				<li class="li04">
+					<a href="http://broadbandidc.com/cloud/?doc=cloud">
+						<div class="img_bx"></div>
+						<div class="txt_bx">
+							<strong>클라우드</strong>
+							<p>
+								인터넷 비즈니스에 필요한 IT장비(서버/스토리지/스위치 등)를 전산실 및 네트워크와 함께 제공하는 서비스 입니다.
+							</p>
+							<span class="plus"></span>
+						</div>
+					</a>
+				</li>
+				<li class="li05">
+					<a href="http://broadbandidc.com/ddos/?doc=ddos">
+						<div class="img_bx"></div>
+						<div class="txt_bx">
+							<strong>DDos 방어</strong>
+							<p>
+								클린존 서비스를 이용한 100G 이상의 공격도 철통방어
+							</p>
+							<span class="plus"></span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- section -->
+
+	<!-- section -->
+	<div class="sec04">
+		<div class="layout  rolling animate__animated animate__fadeInUp slow" style="visibility: hidden; animation-name: none;">
+			<div class="main_con_tit">
+				<strong>Broadband <span>IDC</span></strong> 부가서비스
+				<p>최고 기술진의 보안 및 백업 서비스 등 다양한 기술지원을 제공 </p>
+			</div>
+			<ul>
+				<li>
+					<a href="http://broadbandidc.com/service/?doc=optional">
+						<span>매니지먼트</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://broadbandidc.com/service/?doc=optional">
+						<span>보안관제 서비스</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://broadbandidc.com/service/?doc=optional">
+						<span>라이선스 임대</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://broadbandidc.com/service/?doc=optional">
+						<span>백업 서비스</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- section -->
+
+	<!-- section -->
+	<div class="sec05">
+		<div class="layout  rolling animate__animated animate__fadeInUp slow" style="visibility: hidden; animation-name: none;">
+			<div class="main_con_tit"><strong>Broadband <span>IDC</span></strong> 공지사항</div>
+			<div id="board">
+				<ul class="basic_list">
+															<li class="no_list">
+						등록된 데이터가 없습니다.
+					</li>
+										<!-- <li>
+						<a href="#">
+							<div class="date_bx">
+								<strong>25</strong>
+								<span>2020.07</span>
+							</div>
+							<div class="txt_bx">
+								<strong>제목노출 영역 입니다. 감사합니다. 제목노출 영역 입니다. 감사합니다.제목노출 영역 입니다. 감사합니다. 제목노출 영역 입니다. 감사합니다.제목노출 영역 입니다. 감사합니다. 제목노출 영역 입니다. 감사합니다.</strong>
+								<p>내용노출 내용노출 내용노출 내용노출 내용노출 내용노출 내용노출 내용노출 내용노출 내용노출 내용노출 내용노출 </p>
+							</div>
+						</a>
+					</li> -->
+				</ul>
+			</div>	
+		</div>
+	</div>
+	<!-- section -->
+
+	<!-- section -->
+	<div class="sec06">
+		<div class="layout rolling animate__animated animate__fadeInUp slow" style="visibility: hidden; animation-name: none;">
+			<div class="bx_wrap">
+				<div class="bx01">
+					<dl>
+						<dt>영업상담</dt>
+						<dd>
+							<ul class="info">
+								<li>070-4700-9944</li>
+								<li>sales@bbidc.co.kr</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="bx02">
+					<dl>
+						<dt>기술지원</dt>
+						<dd>
+							<ul class="info">
+								<li>070-4700-6464</li>
+								<li>tech@bbidc.co.kr</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<a href="http://broadbandidc.com/cscenter/?doc=onetoone_write#board_form" class="bx03">
+					<dl>
+						<dt>견적문의</dt>
+						<dd>
+							다년간의 IDC 운영을 통해 축적한 노하우를 바탕으로, <br class="m_show">
+							전문가들이 1:1 상담해 드립니다.
+						</dd>
+					</dl>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- section -->
+
+</div>
+<!-- main_mid end!-->
+
+
+	<div id="footer">
+		<a href="http://broadbandidc.com/#" class="goto_top" onclick="return false;"><span>TOP</span></a>
+		<div class="inner">
+			<div class="left">
+				<img src="./bbidc_files/logo.png" alt="">
+			</div>
+			<div class="right">
+				<ul>
+					<li><a href="http://broadbandidc.com/company/?doc=company">회사소개</a></li>
+					<li><a href="http://broadbandidc.com/doc/privacy.php">개인정보처리방침</a></li>
+					<li><a href="http://broadbandidc.com/doc/">서비스 이용약관</a></li>
+				</ul>
+				<div class="info_txt">
+					<span>(주)브로드밴드아이디씨</span><br class="m_show">
+					<span>대표이사 박진현</span>
+					<span>사업자등록번호 126-88-00635</span><br class="m_show">	
+					<span>E-MAIL sales@bbidc.co.kr</span>
+					<span>상담문의 070-4700-9944</span>
+					<span>경기도 성남시 분당구 성남대로 2번길 12 SK브로드밴드IDC 분당센터</span>
+				</div>
+				<p><span>ⓒ Broadband IDC.</span> All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="./bbidc_files/wcslog.js"></script>
+<script type="text/javascript">
+ if(!wcs_add) var wcs_add = {};
+ wcs_add["wa"] = "s_3059b57ed127";
+ if (!_nasa) var _nasa={};
+ if (window.wcs) {
+ wcs.inflow("broadbandidc.com");
+ wcs_do(_nasa);
+ }
+</script>
+
+
+</body></html>

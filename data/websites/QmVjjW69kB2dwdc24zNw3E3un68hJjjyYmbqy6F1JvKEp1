@@ -1,0 +1,25 @@
+
+<html>
+  <head>
+    <title>チラシCSS</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="js/index.min.js"></script>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <main class="chirashi">
+      <div class="heading">
+        <h1 class="heading_text">待望の新商品</h1>
+      </div>
+      <div class="main_text">
+        <p class="text-1">今回はラスクですわ</p>
+        <p class="text-2">ランチパックの耳なんで</p>
+        <p class="text-3">何をどうしても</p>
+        <p class="text-4">美味いに決まってますわ</p>
+        <p class="text-5">美味すぎて</p>
+        <p class="text-6">手が止まりませんわ</p>
+        <p class="text-7">パクパクですわ</p>
+      </div>
+    </main>
+  </body>
+</html>
