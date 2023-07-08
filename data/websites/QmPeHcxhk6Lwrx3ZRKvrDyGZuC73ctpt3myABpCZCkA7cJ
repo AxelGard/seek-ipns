@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://yves.lempereur.name/edit/">
+<title>Command Center</title>
+<meta name="robots" content="noindex">
+<style type="text/css">
+  body { background-color: white; background-image: url("../images/marble.gif") }
+  div.center { text-align: center }
+  table { margin-left: auto; margin-right: auto }
+  td.label { font-weight: bold }
+  td { white-space: nowrap }
+</style>
+</head>
+<body onload="document.forms[0].password.focus()">
+<div class="center">
+<h1>Command Center</h1>
+<form action="https://www.omniupdate.com/servlet/OmniEdit2/login2" method="post">
+<div>
+<input id="skinid" name="skinid" type="hidden" value="0">
+<table border="0">
+<colgroup><col align="right"><col></colgroup>
+<tbody>
+<tr>
+<td class="label"><label for="username">Username:</label></td>
+<td><input id="username" name="username" type="text" size="32" value="skyrider"></td>
+</tr>
+<tr>
+<td class="label"><label for="password">Password:</label></td>
+<td><input id="password" name="password" type="password" size="32"></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input id="login" name="login" type="submit" value="Login">
+<input id="reset" name="reset" type="reset" value="Reset"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+<br>
+<a href="http://www.facebook.com/ylempereur">Facebook me!</a> |
+<a href="https://www.darkconquest.org/">DC</a> |
+<a href="https://www.omniupdate.com/ox/login.jsp?user=DarkConquest&amp;username=Karpan">DC OU</a> |
+<a href="http://www.network54.com/Forum/19844/">Forum</a> |
+<a href="https://www.omniupdate.com/admin/ox/skins.jsp">OU Admin</a> |
+<a href="https://test.omniupdate.com/admin/ox/skins.jsp">Test OX Admin</a> |
+<a href="https://dev.omniupdate.com/admin/ox/skins.jsp">Dev OX Admin</a> |
+<a href="..">Home</a>
+<br><br>
+Last Modified: Jun 13, 2007 2:55:29 AM
+</div>
+</body>
+</html>

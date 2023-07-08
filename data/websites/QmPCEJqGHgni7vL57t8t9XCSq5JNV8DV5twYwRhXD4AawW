@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ParamConverter à la Django</title>
+        <link rel="stylesheet" href="../../../../theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Gergely Polonkai Atom Feed" />
+    </head>
+
+    <body id="index" class="home">
+        <header id="navigation">
+            <nav>
+                <ul>
+                    <li>
+                        <h1><a href="../../../../"><img src="../../../../images/profile.svg"></a></h1>
+                    </li>
+                    <li><a href="../../../../about/">About the&nbsp;author</a></li>
+                    <li><a href="../../../../disclaimer/">Disclaimer</a></li>
+                    <li><a href="../../../../resume/">Resume</a></li>
+                    <li class="active category" ><a href="../../../../category/blog.html">blog</a></li>
+                    <li class="category" ><a href="../../../../category/misc.html">misc</a></li>
+                    <li class="category" ><a href="../../../../category/stories.html">stories</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="header-padding"></div>
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">
+                <a href="../../../../2015/06/07/paramconverter-a-la-django/" rel="bookmark"
+                   title="Permalink to @ParamConverter à la Django">&#64;ParamConverter à la&nbsp;Django</a></h1>
+        </header>
+
+        <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-06-07T18:14:32+00:00">
+                Published: Sun 07 June 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../../../../author/gergely-polonkai.html">Gergely Polonkai</a>
+        </address>
+<p>In <a href="../../../../category/blog.html">blog</a>.</p>
+<p>tags: <a href="../../../../tag/python/">python</a> <a href="../../../../tag/django/">django</a> </p>
+</footer><!-- /.post-info -->            <p>One thing I really miss from <a class="reference external" href="https://www.djangoproject.com/">Django</a> is <a class="reference external" href="http://symfony.com/">Symfony</a>’s <a class="reference external" href="http://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html">&#64;ParamConverter</a>. It
+made my life so much easier while developing with Symfony.  In Django, of course, there is
+<a class="reference external" href="https://docs.djangoproject.com/en/dev/topics/http/shortcuts/#get-object-or-404">get_object_or_404</a> but, for
+example, in one of my projects I had a view that had to resolve 6(!) objects from the <span class="caps">URL</span>, and
+writing <tt class="docutils literal">get_object_or_404</tt> six times is not what a programmer likes to do (yes, this view had a
+refactor later on).  A quick Google search gave me one <a class="reference external" href="http://openclassrooms.com/forum/sujet/middleware-django-genre-paramconverter-doctrine">usable result</a> (in
+French), but it was very generalized that I cannot always use.  Also, it was using a middleware,
+which may introduce performance issues sometimes <sup>[citation needed]</sup>.  So I decided to go
+with decorators, and at the end, I came up with&nbsp;this:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">def</span> <span class="nf">convert_params</span><span class="p">(</span><span class="o">*</span><span class="n">params_to_convert</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert parameters to objects. Each parameter to this decorator</span>
+<span class="sd">    must be a model instance (subclass of django.db.models.Model) or a</span>
+<span class="sd">    tuple with the following members:</span>
+<span class="sd">    * model: a Model subclass</span>
+<span class="sd">    * param_name: the name of the parameter that holds the value to be</span>
+<span class="sd">      matched. If not exists, or is None, the model’s class name will</span>
+<span class="sd">      be converted from ModelName to model_name form, suffixed with</span>
+<span class="sd">      &quot;_id&quot;. E.g. for MyModel, the default will be my_model_id</span>
+<span class="sd">    * the field name against which the value in param_name will be</span>
+<span class="sd">      matched. If not exists or is None, the default will be &quot;id&quot;</span>
+<span class="sd">    * obj_param_name: the name of the parameter that will hold the</span>
+<span class="sd">      resolved object. If not exists or None, the default value will</span>
+<span class="sd">      be the model’s class name converted from ModelName to model_name</span>
+<span class="sd">      form, e.g. for MyModel, the default value will be my_model.</span>
+<span class="sd">    The values are resolved with get_object_or_404, so if the given</span>
+<span class="sd">    object doesn’t exist, it will redirect to a 404 page. If you want</span>
+<span class="sd">    to allow non-existing models, pass prevent_404=True as a keyword</span>
+<span class="sd">    argument.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">prevent_404</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;prevent_404&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">is_model</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">m</span><span class="p">),</span> <span class="n">models</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">ModelBase</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">params_to_convert</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must pass at least one parameter spec!&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">params_to_convert</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> \
+            <span class="nb">hasattr</span><span class="p">(</span><span class="n">params_to_convert</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;__call__&#39;</span><span class="p">)</span> <span class="ow">and</span> \
+            <span class="ow">not</span> <span class="n">is_model</span><span class="p">(</span><span class="n">params_to_convert</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;This decorator must have arguments!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">convert_params_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">converted_params</span> <span class="o">=</span> <span class="p">()</span>
+            <span class="k">for</span> <span class="n">pspec</span> <span class="ow">in</span> <span class="n">params_to_convert</span><span class="p">:</span>
+                <span class="c1"># If the current pspec is not a tuple, let’s assume</span>
+                <span class="c1"># it’s a model class</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pspec</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                    <span class="n">pspec</span> <span class="o">=</span> <span class="p">(</span><span class="n">pspec</span><span class="p">,)</span>
+
+                <span class="c1"># First, and the only required element in the</span>
+                <span class="c1"># parameters is the model name which this object</span>
+                <span class="c1"># belongs to</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="n">pspec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">is_model</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="s2">&quot;First value in pspec must be a Model subclass!&quot;</span><span class="p">)</span>
+
+                <span class="c1"># We will calculate these soon…</span>
+                <span class="n">param_name</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">calc_obj_name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+                    <span class="s1">&#39;([a-z0-9])([A-Z])&#39;</span><span class="p">,</span>
+                    <span class="sa">r</span><span class="s1">&#39;\1_\2&#39;</span><span class="p">,</span>
+                    <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+                        <span class="s1">&#39;(.)([A-Z][a-z]+)&#39;</span><span class="p">,</span>
+                        <span class="sa">r</span><span class="s1">&#39;\1_\2&#39;</span><span class="p">,</span>
+                        <span class="n">model</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="n">obj_field_name</span> <span class="o">=</span> <span class="kc">None</span>
+
+                <span class="c1"># The second element, if not None, is the keyword</span>
+                <span class="c1"># parameter name that holds the value to convert</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pspec</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">pspec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">param_name</span> <span class="o">=</span> <span class="n">calc_obj_name</span> <span class="o">+</span> <span class="s1">&#39;_id&#39;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">param_name</span> <span class="o">=</span> <span class="n">pspec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="n">converted_params</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is already converted&#39;</span> <span class="o">%</span> <span class="n">param_name</span><span class="p">)</span>
+
+                <span class="n">converted_params</span> <span class="o">+=</span> <span class="p">(</span><span class="n">param_name</span><span class="p">,)</span>
+                <span class="n">field_value</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">param_name</span><span class="p">)</span>
+
+                <span class="c1"># The third element is the field name which must be</span>
+                <span class="c1"># equal to the specified value. If it doesn’t exist or</span>
+                <span class="c1"># None, it defaults to &#39;id&#39;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pspec</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">or</span> <span class="n">pspec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">obj_field_name</span> <span class="o">=</span> <span class="s1">&#39;id&#39;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">obj_field_name</span> <span class="o">=</span> <span class="n">pspec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+                <span class="c1"># The fourth element is the parameter name for the</span>
+                <span class="c1"># object. If the parameter already exists, we consider</span>
+                <span class="c1"># it an error</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pspec</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">or</span> <span class="n">pspec</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">obj_param_name</span> <span class="o">=</span> <span class="n">calc_obj_name</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">obj_param_name</span> <span class="o">=</span> <span class="n">pspec</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">obj_param_name</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                        <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; already exists as a parameter&quot;</span> <span class="o">%</span> <span class="n">obj_param_name</span><span class="p">)</span>
+
+                <span class="n">filter_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">obj_field_name</span><span class="p">:</span> <span class="n">field_value</span><span class="p">}</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">prevent_404</span><span class="p">):</span>
+                    <span class="n">kwargs</span><span class="p">[</span><span class="n">obj_param_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                        <span class="o">**</span><span class="n">filter_kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">kwargs</span><span class="p">[</span><span class="n">obj_param_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span>
+                        <span class="n">model</span><span class="p">,</span>
+                        <span class="o">**</span><span class="n">filter_kwargs</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+    <span class="k">return</span> <span class="n">convert_params_decorator</span>
+</pre></div>
+<p>Now I can decorate my views, either class or function based, with <tt class="docutils literal">&#64;convert_params(User,
+(Article, <span class="pre">'aid'),</span> (Paragraph, None, <span class="pre">'pid'),</span> (AnotherObject, None, None, <span class="pre">'obj'))</span></tt> and all the
+magic happens in the background.  The <tt class="docutils literal">user_id</tt> parameter passed to my function will be popped
+off, and be resolved against the <tt class="docutils literal">User</tt> model by using the <tt class="docutils literal">id</tt> field; the result is put in
+the new <tt class="docutils literal">user</tt> parameter.  For Article, the <tt class="docutils literal">aid</tt> parameter will be matched against the <tt class="docutils literal">id</tt>
+field of the <tt class="docutils literal">Article</tt> model putting the result into <tt class="docutils literal">article</tt>, and finally, the
+<tt class="docutils literal">another_object_id</tt> will be matched against the <tt class="docutils literal">id</tt> field of the <tt class="docutils literal">AnotherObject</tt> model, but
+in this case, the result is passed to the original function as <tt class="docutils literal">obj</tt>.</p>
+
+        </div>    </article>
+    <footer>
+        <a href="/coincidents.html" class="next">Coincidents &rarr;</a>
+        <a href="/blog/2015/4/28/cross-browser-border-radius-sass-mixin-with-varargs.html" class="previous">&larr; Cross browser border-radius <span class="caps">SASS</span> mixin with&nbsp;varargs</a>
+    </footer>
+</section>
+        <section id="extras" class="body">
+            <div class="blogroll">
+                <h2>links</h2>
+                <ul>
+                    <li><a href="http://getpelican.com/">Pelican</a></li>
+                    <li><a href="http://python.org/">Python.org</a></li>
+                    <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                </ul>
+            </div><!-- /.blogroll -->
+            <div class="social">
+                <h2>social</h2>
+                <ul>
+                    <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                    <li><a href="https://matrix.to/#/@gergely:polonkai.eu">Matrix</a></li>
+                    <li><a href="xmpp:gergely@polonkai.eu?message">XMPP</a></li>
+                    <li><a href="mailto:website@gergely.polonkai.eu">Email</a></li>
+                    <li><a href="https://gitea.polonkai.eu/gergely/">Gitea</a></li>
+                    <li><a href="https://liberapay.com/gergelypolonkai">Liberapay</a></li>
+                    <li><a href="https://social.polonkai.eu/@gergely">Mastodon</a></li>
+                    <li><a href="https://paypal.me/GergelyPolonkai/330">Pay me a coffee</a></li>
+                </ul>
+            </div><!-- /.social -->
+        </section><!-- /#extras -->
+        <footer id="contentinfo" class="body">
+            <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+            </address><!-- /#about -->
+            <p>The theme is a modified version of Pelican’s notmyidea by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+    </body>
+</html>
