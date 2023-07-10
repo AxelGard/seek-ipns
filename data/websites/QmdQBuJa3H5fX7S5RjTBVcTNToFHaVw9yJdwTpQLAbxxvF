@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:image" content="https://i.imgur.com/t5zyAsq.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:title" content="Chihlin & Sherri's Wedding!">
+    <meta property="og:description" content="Created by 0xYCL.eth">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./img/GalaXYKats1751.png" type="image/x-icon" />
+    <!--
+    <meta name="description" content="Created by 0xYCL.eth">
+    <title>YCL & Sherri's Wedding!</title>
+     -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="./css/bootstrap.css">-->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+</head>
+
+<body class="text-center">
+    <div class="bg">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid" id="navbar">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#"><img width="160px" src="./img/LOGO2.png"></a>
+
+                <!-- mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#linkbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- computer -->
+                <div class="collapse navbar-collapse" id="linkbar">
+                    <!-- links -->
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#story">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#info">婚禮資訊</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">回覆參加</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">照片</a>
+                        </li>
+                    </ul>
+                    <!-- list on the right -->
+                </div>
+            </div>
+        </nav>
+
+        <!-- 頂頁 -->
+
+        <div class="container-fluid">
+            <!-- 內容 -->
+            <div class="row" id="home">
+                <div class="col" id="home-child">
+                    <!-- <img style="display:block; margin:auto;" width="80px" height="80px" src="./img/pic.png"
+                    alt="save the date"> -->
+                    <h1>芝林 & 康嫻</h1>
+                    <h2>2022 Apr. 30</h2>
+                    <h3>We Are Getting Married!</h3>
+                    <a href="https://forms.gle/f1t4wKdJdPHGToZu5" target="_blank">
+                        <button type="button" class="btn btn-secondary">回覆參加</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-sm">
+        <!--Info-->
+        <div class="row" id="info">
+            <p><br><br><br><br></p>
+            <div class="col">
+                <h1 class="text-center">晚宴資訊</h1>
+                <p class="text-center">Apr 30, 2023</p>
+                <p class="text-center">16:00/ 賓客入場</p>
+                <p class="text-center">16:30/ 證婚儀式</p>
+                <p class="text-center">18:00/ 晚宴開始</p>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row" id="traffic">
+                <p><br><br><br><br></p>
+                <div class="col">
+                    <h1 class="text-center">交通資訊</h1>
+                    <p class="text-center"><a href="http://www.by33.com.tw/" target="_blank">Brick Yard 33 1/3
+                            美軍俱樂部</a>
+                    </p>
+                    <p class="text-center">台北市士林區凱旋路49號</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <img style="display:block; margin:auto;" height="250px" src="./img/map.jpg" alt="map">
+                    <div class="iframe-rwd">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.9858011072442!2d121.54424321830386!3d25.13617088843992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442adddc4f00009%3A0x536ec7d7e70b3478!2zQlJJQ0sgWUFSRCAzMyAxLzPnvo7ou43kv7HmqILpg6go5aSn5qiC5Y-45paH5Ym16IKh5Lu95pyJ6ZmQ5YWs5Y-4KQ!5e0!3m2!1szh-TW!2stw!4v1668667579962!5m2!1szh-TW!2stw"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <br>
+                    <p class="text-center">因周末下午陽明山遊客眾多容易塞車，提醒賓客可以早點出門</p>
+                    <p class="text-center">開車的賓客在行經仰德大道管制點時，可持紙本或電子喜帖通行</p>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="story">
+            <p><br><br><br></p>
+            <div class="col" style="background-color: rgba(255, 255, 255, 0.26); padding:25px; ">
+                <h1 class="story-title">Once upon a time...</h1>
+                <p>The founder of Scouting, Lord Robert Baden-Powell (B-P) was born in 1857 in England. He lived a busy
+                    and adventurous life, and as a boy spent much of his spare time in open-air pursuits, hunting in the
+                    woods, and joining his brothers in expeditions by land and in their boats. Thus he developed his
+                    powers of observation and resourcefulness and acquired many useful skills.
+
+                    He won a scholarship which gave him entry into the British Army, where he was sent to India and
+                    served for many years. He tried out his ideas of training soldiers in “Scouting”, teaching them how
+                    to develop experience in stalking and fending for themselves and to be observant of all signs that
+                    would give them an advantage as soldiers. He set down his ideas in the book Aids to Scouting, which
+                    was used as a textbook for many years.
+
+                    As a soldier, Baden-Powell rose to public prominence during the war against the Boers in Africa at
+                    the end of the 1800s. Most noteworthy was his leadership of the defending force in the siege of the
+                    South African town of Mafeking. Baden-Powell returned to England as a national hero in 1899 having
+                    successfully defended the town against the Boers.</p>
+
+                <h2>The first Scout Camp</h2>
+                <p>Baden-Powell was encouraged to set down his views on how he would apply Scouting to the training of
+                    boys. He first conducted an experimental camp in 1907 on Brownsea Island off the Dorset coast of the
+                    UK. With some 20 boys from all walks of life and suitable adult leaders, Baden-Powell taught the
+                    boys what he meant by Scouting. They lived in tents, cooked their own food and learnt many valuable
+                    skills through games.</p>
+
+                <p>1 August 1907 is regarded as the beginning of the Scout Movement worldwide.</p>
+
+                <h2>A best seller!</h2>
+                <p>The camp was a great success and proved Baden-Powell’s ideas, so he tackled the task of writing down
+                    his experience in a book. Scouting for Boys was first published in fortnightly parts, beginning 15
+                    January 1908. Every issue sold out as soon as it hit the news stands, despite the cover price of 4d
+                    which was expensive at the time. In fact, Scouting for Boysranks fourth in the best-selling books of
+                    the 20th Century after the Bible, the Koran and Mao’s Little Red Book.</p>
+
+                <p>Every other Wednesday until the end of March, boys (and girls) all over England eagerly awaited the
+                    next issue ofScouting for Boys.</p>
+
+                <h2>Movement is born</h2>
+                <p>It was suggested that boys form themselves into Patrols within other organisations but boys didn’t
+                    want to be school-Scouts, cadet-Scouts or brigade-Scouts, they simply wanted to be Scouts. Long
+                    before the last instalment of Scouting for Boys had hit the book stands, Scout Patrols and Troops
+                    had magically appeared all over Britain. Baden-Powell finally bowed to the inevitable and accepted
+                    that Scouting would have to become a Movement in its own right.</p>
+
+                <p>Two years later Baden-Powell retired from the army as a General to devote his life to this new
+                    Movement called Scouting. A rally at the Crystal Palace, London, drew together 10,000 boys.</p>
+
+                <h2>Scouting expands and grows</h2>
+                <p>The Girl Guides were formed in 1910 by Baden-Powell’s sister, Agnes. In quick succession came the
+                    Sea Scout Branch in the same year, Wolf Cubs in 1916, Rover Scouts in 1918 and the Special Test (now
+                    “Extension”) Department in 1926. The Group system of Cub Scouts, Scouts and Rover Scouts under the
+                    leadership of the Group Scoutmaster was established in 1927, Deep Sea Scouts in 1928, Air Scouts in
+                    1941 and Senior Scouts in 1946 (now known as Venturer Scouts).</p>
+
+                <p>Meanwhile Scouting spread to Australia, New Zealand and India in 1908 and other countries followed
+                    shortly after. In 1909 Chile was the first country outside the British Empire to take up Scouting,
+                    followed closely by France, the Scandinavian countries and the United States in 1910. Scouts of
+                    China formed their first scout group in 1912. By 1937 over two and a half million Scouts from nearly
+                    fifty countries were affiliated with the International Bureau which was set up to safeguard Scouting
+                    and to prevent control drifting into the hands of the purely religious, political or military
+                    bodies.</p>
+
+                <h2>How we met</h2>
+                <p>Fast forward to 1996 Taiwan, Ming-Hu Junior High School has started up its first ever girl scout
+                    troop, and boy scout troop in the following year. And yeah... Here is where we first met, in 2006.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="slider">
+            <span id="slide-1"></span>
+            <span id="slide-2"></span>
+            <span id="slide-3"></span>
+            <div class="image-container">
+                <img src="./img/map.jpg" class="slide" width="500" height="300" />
+                <img src="./img/GalaXYKats1751.png" class="slide" width="500" height="300" />
+                <img src="./img/pic.png" class="slide" width="500" height="300" />
+            </div>
+            <div class="buttons">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+            </div>
+        </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <!-- <script src="./js/bootstrap.bundle.js"></script> -->
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
