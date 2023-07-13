@@ -1,8 +1,8 @@
 package main
 
 func main() {
-	SwarmCrawl()
-	//RunCompare()
+	//SwarmCrawl()
+	RunCompare()
 	//recollectData()
 	//CrawlingEachNode()
 	//CheckGitProvders()
