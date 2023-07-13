@@ -79,12 +79,12 @@ func Compare(peers []string) error {
 		checkedAllOnes()
 		timesIter++
 		log.Println("ALL peers have been checked", timesIter, "times")
-		if STOP_CHECK_AFTER_ITER && timesIter == TIMES_TRY_TO_CHECK_COMPARE {
-			log.Println("Gave up trying to check all peers, all peers have not been checked")
-			log.Println("Have checked ", len(checkedPeers), '/', len(peers))
-			LogCrash("StoppedTrying")
-			return nil
-		}
+		//if STOP_CHECK_AFTER_ITER && timesIter == TIMES_TRY_TO_CHECK_COMPARE {
+		//	log.Println("Gave up trying to check all peers, all peers have not been checked")
+		//	log.Println("Have checked ", len(checkedPeers), '/', len(peers))
+		//	LogCrash("StoppedTrying")
+		//	return nil
+		//}
 		log.Println("Tried all peers will wait 1 hour and automatically try again.")
 		time.Sleep(time.Hour * 1)
 	}
