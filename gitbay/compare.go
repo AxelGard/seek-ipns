@@ -2,8 +2,8 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"log"
+	"strconv"
 	"time"
 
 	shell "github.com/ipfs/go-ipfs-api"
@@ -39,14 +39,12 @@ func LoadPeers(filePath string) ([]string, error) {
 			empty_peers = append(empty_peers, row[0])
 		}
 	}
-	fmt.Println(len(peers))
 	all_peers := append(peers, empty_peers...)
 	return all_peers, nil
 }
 
 func Compare(peers []string) error {
 	log.Println("Started running compearance of peers IPNS CIDs")
-
 	sh := shell.NewShell("localhost:5001")
 	ic := IpnsCollector{}
 	ic.Init()
@@ -64,6 +62,7 @@ func Compare(peers []string) error {
 
 	for len(checkedPeers) < len(peers) {
 		log.Println("Have checked ", len(checkedPeers), "/", len(peers))
+		logIterations(timesIter)
 		for _, peer := range peers {
 			if Contains(checkedPeers, peer) {
 				continue
@@ -77,8 +76,10 @@ func Compare(peers []string) error {
 			go ArchivePeer(peer, ic)
 			checkedPeers = append(checkedPeers, peer)
 		}
+		checkedAllOnes()
 		timesIter++
-		if timesIter == TIMES_TRY_TO_CHECK_COMPARE {
+		log.Println("ALL peers have been checked", timesIter, "times")
+		if STOP_CHECK_AFTER_ITER && timesIter == TIMES_TRY_TO_CHECK_COMPARE {
 			log.Println("Gave up trying to check all peers, all peers have not been checked")
 			log.Println("Have checked ", len(checkedPeers), '/', len(peers))
 			LogCrash("StoppedTrying")
@@ -89,7 +90,7 @@ func Compare(peers []string) error {
 	}
 
 	log.Println("ALL CHECKED, ALL DONE!")
-
+	checkedAllOnes()
 	return nil
 }
 
@@ -106,4 +107,28 @@ func ArchivePeer(peer string, ic IpnsCollector) error {
 	}
 
 	return nil
+}
+
+func logIterations(iter int) error {
+	row := []string{
+		time.Now().Format("2006-01-02 15:04:05"),
+		strconv.Itoa(iter),
+	}
+	err := AddRowToCSV(DATA_STORE_PATH_WEEK+ITER_FILE, row)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func checkedAllOnes() error {
+	row := []string{
+		time.Now().Format("2006-01-02 15:04:05"),
+	}
+	err := AddRowToCSV("/home/axel/Desktop/done.csv", row)
+	if err != nil {
+		return err
+	}
+	return nil
+
 }
