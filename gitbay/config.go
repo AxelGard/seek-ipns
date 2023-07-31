@@ -4,7 +4,7 @@ package main
 
 const DATA_STORE_PATH = "../store/week1/"
 
-const DATA_STORE_PATH_WEEK = "../store/week3/"
+const DATA_STORE_PATH_WEEK = "../store/week4/"
 
 const WEEK_FILE = "time.csv"
 
