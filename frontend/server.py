@@ -14,7 +14,7 @@ def query():
     q = request.args.get("q")
     r = requests.get(f"http://127.0.0.1:5000/api/query/{q}")
     if r.status_code != 200:
-        return r.status_code
+        return f"<h1>Error:{r.status_code}<h1>"
     data = r.json()
     return render_template("results.html", data=data, search_query=q)
 
