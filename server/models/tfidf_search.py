@@ -3,6 +3,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from .template import SearchModel
 from . import util
 import numpy as np
+from .config import USE_METADATA
+from .metadata import apply_metadata
 
 
 class TfIdf(SearchModel):
@@ -48,10 +50,16 @@ class TfIdf(SearchModel):
     def query(self, q: str) -> list:
         result = []
         p_result = self.query_proba(q)
+        intermediate_results = []
         idxs = np.array(p_result).argsort()
         for i in idxs:
             if p_result[i] > self.prob_cut_of:
-                result.append(self.files[i])
+                intermediate_results.append([p_result[i],self.files[i]])
+        intermediate_results.sort()
+        intermediate_results.reverse()
+        if USE_METADATA: 
+            intermediate_results = apply_metadata(intermediate_results)
+        result = [f for _, f in intermediate_results]
         return result
 
     def __str__(self) -> str:

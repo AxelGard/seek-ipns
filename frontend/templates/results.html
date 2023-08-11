@@ -12,9 +12,11 @@
                 <ul class="list-group list-group-flush">
                     {% for file in data %}
                         <li class="list-group-item">
-                            <a class="cidTitle" href="{{file['file']}}">{{file['cid']}}</a>
+                            <a class="cidTitle" href="http://localhost:48084/ipns/{{file['pid']}}">ipns/{{file['pid']}}</a>
                             <br>
-                            <small><a class="cidLink" href="https://gateway.ipfs.io/ipfs/{{file['cid']}}">https://gateway.ipfs.io/ipfs/{{file['cid']}}</a></small>
+                            <small>
+                                <a class="cidLink" href="{{file['file']}}">cid/{{file['cid']}}</a>
+                            </small>
                             <br>
                             <small class="cidUnderText">{{file['info']}}</small>
                             <br>

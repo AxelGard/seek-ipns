@@ -2,6 +2,7 @@ from os import listdir
 from os.path import isfile, join
 from html.parser import HTMLParser
 from bs4 import BeautifulSoup
+import pandas as pd
 from . import config
 
 def load_data():
@@ -9,12 +10,9 @@ def load_data():
     contents = []
     files = [f"{PATH}{f}" for f in listdir(PATH) if isfile(join(PATH, f))]
     for file_path in files:
-        with open(file_path, "r") as f:
-            try:
-                contents.append(f.read())
-            except: 
-                print("Problem reading:",f.name)
-                continue
+        with open(file_path, "rb") as f:
+            byte_content = f.read()
+            contents.append(byte_content.decode('utf-8', errors='ignore'))
     return files, contents
 
 
@@ -83,3 +81,14 @@ def words_to_vec(words: str, labels: dict = {}):
             labels[word] = len(labels)
         vec.append(labels[word])
     return vec, labels
+
+
+def get_pid_from_cid(cid:str) -> str:
+    df = pd.read_csv(config.META_DATA_STORE + "/week1/number_of_hosts.csv") # used number of hosts since it is short 
+    pid = df[df["cid"] == cid]["peer"]
+    if pid.to_list() == [] or pid.hasnans: 
+        df = pd.read_csv(config.META_DATA_STORE + "/old/old_found.csv") # used number of hosts since it is short 
+        pid = df[df["cid"] == cid]["peer"]
+    if pid.to_list() == [] or pid.hasnans: return ""
+    return pid.to_list()[0]
+    
