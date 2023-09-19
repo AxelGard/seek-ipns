@@ -7,6 +7,7 @@ asttokens==2.2.1
 attrs==23.1.0
 Babel==2.12.1
 backcall==0.2.0
+base58==2.1.1
 beautifulsoup4==4.12.2
 black==23.3.0
 bleach==6.0.0
@@ -30,6 +31,8 @@ idna==3.4
 importlib-metadata==6.6.0
 importlib-resources==5.12.0
 ipfs-api==0.2.3
+ipfsapi==0.4.4
+ipfshttpclient==0.4.13.2
 ipykernel==6.22.0
 ipython==7.34.0
 ipython-genutils==0.2.0
@@ -59,12 +62,14 @@ MarkupSafe==2.1.2
 matplotlib==3.7.1
 matplotlib-inline==0.1.6
 mistune==2.0.5
+multiaddr==0.0.9
 mypy-extensions==1.0.0
 nbclassic==0.5.6
 nbclient==0.7.4
 nbconvert==7.3.1
 nbformat==5.8.0
 nest-asyncio==1.5.6
+netaddr==0.8.0
 nltk==3.8.1
 notebook==6.5.4
 notebook-shim==0.2.3
@@ -122,6 +127,7 @@ traitlets==5.9.0
 typing-extensions==4.5.0
 tzdata==2023.3
 urllib3==1.26.15
+varint==1.0.2
 wcwidth==0.2.6
 webencodings==0.5.1
 websocket-client==1.5.1
