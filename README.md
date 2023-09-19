@@ -34,17 +34,17 @@ For each IPNS record found
 
 was eveluated 
 
-Number of peers crawled: 35K
+
 
 The records some of the records found on the network was saved and used for search. 
 
+35K unique peers were crawled, and of those, 333 were hosting a nonempty record
+in their default IPNS record.
+
 ![peer crawled](./charts/peers_time.png)
 
-
-What the peers is hosting was also looked at: 
-
-![hosted by peers](./charts/peers_count_format_pie_simple.png)
-
+83099 files was found in the crawling.
+![number of files](./charts/files_per_peer_log.png)
 
 The decentralization of the content was also looked at: 
 
