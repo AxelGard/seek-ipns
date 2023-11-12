@@ -7,7 +7,9 @@ However feel free to fork and use as you wish.
 
 ## The thesis
 
-The full thesis can be found **[HERE]()**.
+The full thesis can be found **[HERE](https://urn.kb.se/resolve?urn=urn:nbn:se:liu:diva-198457)**.
+
+My presentation for the thesis can be found **[HERE](./doc/TQDT33%20-%20Final%20presentation.pdf)**
 
 
 ### Search
